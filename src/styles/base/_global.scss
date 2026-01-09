@@ -16,6 +16,18 @@ body{
   .text-secondary{ color: v.$secondary !important;}
   .text-danger, .text-error { color: v.$error !important;}
 
+  // Angular Material 
+  .mat-internal-form-field>label{
+    font-family: v.$font-family-base !important; 
+    margin-top: 10px;
+    font-size: 16px; 
+  }
+  .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, 
+  .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background{
+      border-color: #0032A0 !important;
+      background-color: #0032A0 !important;
+  }
+
   // Form Controls
   .form-control {
     border-radius: 4rem;
@@ -31,6 +43,12 @@ body{
     .mat-mdc-dialog-surface{
       box-shadow: none;
       background-color: transparent;
+    }
+  }
+
+  .mat-mdc-checkbox{
+    .mat-internal-form-field{
+      align-items: flex-start;
     }
   }
 }  

@@ -15,8 +15,9 @@
         width: 40%; 
         .ar--inner{
             padding: 1rem 8.75rem;
-            // max-height: calc(100vh - 52px);
-            // overflow: auto; 
+            padding-bottom: 2rem !important;
+            max-height: calc(100vh - 70px);
+            overflow: auto;
             .logo{
                 margin-bottom: 3rem;
             }
@@ -101,6 +102,9 @@
         font-size: 1rem;
         margin-bottom: 1rem;
     }
+    .auth-container .auth-right .ar--inner{
+        max-height: unset;
+    }
 } 
 @media only screen and (min-width: 1280px) and (max-width: 1440px){
     .auth-container .auth-left{
@@ -138,7 +142,7 @@
         font-size: 1rem !important;
     }
     .auth-container .auth-right .ar--inner {
-        padding: 1rem 1rem !important;
+        padding: 1rem 1rem 3rem 1rem !important;
     }
     .auth-container .auth-right .lang--sec,
     .auth-container .auth-right {
@@ -147,6 +151,9 @@
     .auth-container .auth-right .ar--inner .logo {
         margin-bottom: 2rem;
         width: 56%;
+    }
+    .auth-container .auth-right .ar--inner{
+        max-height: unset;
     }
 }
 
@@ -190,6 +197,9 @@
     }
     .auth-container .auth-right .lang--sec{
         width: 40%;
+    }
+    .auth-container .auth-right .ar--inner{
+        max-height: unset;
     }
 }
 

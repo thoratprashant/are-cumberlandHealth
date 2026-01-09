@@ -1,0 +1,44 @@
+@use '../abstracts/variables' as v;  
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+a { 
+  text-decoration: none !important;
+  cursor: pointer;
+} 
+
+body{
+
+  .text-primary { color: v.$primary !important; }
+  .text-secondary{ color: v.$secondary !important;}
+  .text-danger, .text-error { color: v.$error !important;}
+
+  // Form Controls
+  .form-control {
+    border-radius: 4rem;
+    padding: 0.44rem 0.875rem;
+    border-color: v.$grey !important ;
+    &:focus{
+      box-shadow: none;
+    }
+  }
+
+  // Loader
+  .loader-dialog{
+    .mat-mdc-dialog-surface{
+      box-shadow: none;
+      background-color: transparent;
+    }
+  }
+}  
+
+ @media (max-width: 767px) {
+  ::placeholder,
+  .form-control,
+  .form-label{
+    font-size: 0.875rem !important;
+  } 
+ }

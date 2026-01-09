@@ -1,0 +1,23 @@
+<div class="login--wrapper d-flex flex-column">
+  <h2 class="fw-medium">Login</h2>
+  <form [formGroup]="loginForm">
+    <div class="row">
+      <div class="col-12 mb-4">
+        <label for="exampleFormControlInput1" class="form-label">Enter email ID / Mobile number <span
+            class="text-error">*</span></label>
+        <input type="email" class="form-control" id="first" formControlName="username" placeholder="Enter email ID / Mobile number">
+        @if (loginForm.get('username')?.touched && loginForm.get('username')?.invalid) {
+        <div class="font-13 mt-1 text-danger">Enter valid Email Id or Mobile Number </div>
+        }
+      </div>
+      <div class="col-12">
+        <button type="button" class="btn btn-primary w-100 mb-3" (click)="onLoginViaOtp()">Log in via Verification Code</button>
+        <button type="button" class="btn btn-primary w-100 mb-3" routerLink="/auth/set-password">Log in via Password</button>
+      </div>
+      <div class="col-12 d-flex justify-content-end">
+        <a class="text-primary" routerLink="/auth/forgot-password">Forgot Password?</a>
+      </div>
+    </div> 
+  </form>
+
+</div>

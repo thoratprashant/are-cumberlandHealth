@@ -1,0 +1,16 @@
+@use '../abstracts/variables' as v;
+
+body{
+    .btn {
+        border-radius: 4rem;
+        background-color: v.$primary;
+        font-weight: 500;
+        padding: 0.44rem 1.125rem;
+    }
+}
+ @media (max-width: 767px) {
+    .btn {
+        font-size: 0.875rem !important;
+        padding: 0.4rem 0.2rem !important;
+    } 
+ }

@@ -8,6 +8,7 @@ html, body {
 a { 
   text-decoration: none !important;
   cursor: pointer;
+  color: v.$primary !important;
 } 
 
 body{
@@ -19,13 +20,13 @@ body{
   // Angular Material 
   .mat-internal-form-field>label{
     font-family: v.$font-family-base !important; 
-    margin-top: 10px;
-    font-size: 16px; 
+    margin-top: 0.625rem;
+    font-size: 1rem; 
   }
   .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, 
   .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background{
-      border-color: #0032A0 !important;
-      background-color: #0032A0 !important;
+      border-color:v.$primary !important;
+      background-color: v.$primary!important;
   }
 
   // Form Controls
@@ -54,9 +55,11 @@ body{
 }  
 
  @media (max-width: 767px) {
+  body .mat-internal-form-field > label,
   ::placeholder,
   .form-control,
   .form-label{
     font-size: 0.875rem !important;
   } 
+  
  }

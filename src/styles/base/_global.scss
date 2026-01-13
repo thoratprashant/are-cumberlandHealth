@@ -16,6 +16,7 @@ body{
   .text-primary { color: v.$primary !important; }
   .text-secondary{ color: v.$secondary !important;}
   .text-danger, .text-error { color: v.$error !important;}
+  .wb-ba{word-break: break-all !important}
 
   // Angular Material 
   .mat-internal-form-field>label{
@@ -88,6 +89,7 @@ body{
     border-radius: 0.75rem;
     border: 1px solid v.$bg-light;
     padding: 1.5625rem 1.5rem;
+    margin-bottom: 1.5rem;
   }
 }  
 

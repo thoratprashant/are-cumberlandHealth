@@ -4,15 +4,21 @@
     <img src="images/admin-logo.svg" alt="img" class="logo">
   </div>
 
-  <!-- Desktop Nav --> 
+  <div class="nav-desktop menus-desktop">
+    <ul class="m-0 p-0 d-flex ">
+        <li class="active"><a>Dashboard</a></li>
+        <li><a>History</a></li>
+    </ul>
+  </div>
 
+  <!-- Desktop Nav -->  
   <nav class="nav-desktop">
     <div class="btn-group status--dd">
         <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
            <span class="status available"></span> Available
         </button>
         <ul class="dropdown-menu w-100 p-0">
-            <li><button class="dropdown-item" type="button"> <span class="status available"></span> Available</button></li> 
+            <li ><button class="dropdown-item" type="button"> <span class="status available"></span> Available</button></li> 
             <li><button class="dropdown-item" type="button"> <span class="status unavailable"></span> Unavailable</button></li>  
             <li><button class="dropdown-item" type="button"> <span class="status away"></span> Away</button></li>  
             <li><button class="dropdown-item" type="button"> <span class="status grey"></span> Offline</button></li>
@@ -62,10 +68,12 @@
 
 <!-- MOBILE SIDEBAR -->
 <aside class="sidebar" [class.open]="mobileMenuOpen()">
+    <div class="logo--sm">
+    <img src="images/admin-logo.svg" alt="img" class="">
+  </div>
   <nav>
     <a routerLink="/admin/dashboard" (click)="closeMenu()">Dashboard</a>
-    <a routerLink="/admin/users" (click)="closeMenu()">Users</a>
-    <a routerLink="/admin/settings" (click)="closeMenu()">Settings</a>
+    <a routerLink="/admin/users" (click)="closeMenu()">History</a> 
   </nav>
 </aside>
 

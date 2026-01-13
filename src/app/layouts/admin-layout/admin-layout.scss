@@ -1,0 +1,142 @@
+/* RESET */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* TOP BAR */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 1rem 2rem; 
+    color: #fff;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #E5E7EB;   
+
+    /* DESKTOP NAV */
+    .nav-desktop {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        .status--dd{
+            .btn-light{
+                border-color: transparent !important; 
+            }
+            .status{
+                width: 8px;
+                height: 8px; 
+                border-radius: 20px;
+                display: inline-flex;
+                margin-right: 8px;
+                &.available{
+                    background-color: #22C55E;
+                }
+                &.unavailable{
+                    background-color: #FF181C;
+                }
+                &.away{
+                    background-color: yellow;
+                }
+                &.grey{
+                    background-color: grey;
+                }
+            }
+        }
+        .notifications{
+            .mat-icon{
+                color: #6C757D; 
+            }
+            .badge-indicator{
+                width: 8px;
+                height: 8px;
+                background-color: #FF181C;
+                border-radius: 20px;
+                position: absolute;
+                right: 11px;
+                top: 10px;
+            }
+        } 
+        .user--profile--round{
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 624.9375rem;
+            border: 2px solid #DEE2E6; 
+            cursor: pointer;
+            overflow: hidden;
+            img{
+                max-height: 100%;
+            }
+        }
+        .dropdown-menu{
+            // min-width: 215px; 
+        }
+    }
+
+    /* MOBILE MENU BUTTON */
+    .menu-btn {
+        display: none;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: white;
+    }
+} 
+
+/* CONTENT */
+.content {
+    padding: 4.75rem 2rem 2rem 2rem;
+    height: calc(100vh - 3px); 
+}
+
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+  background: #020617;
+  padding: 1rem;
+  transition: left 0.3s ease;
+  z-index: 1000;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  a {
+    color: #cbd5f5;
+  }
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+/* BACKDROP */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}

@@ -83,6 +83,12 @@ body{
       align-items: flex-start;
     }
   }
+
+  .card{
+    border-radius: 0.75rem;
+    border: 1px solid v.$bg-light;
+    padding: 1.5625rem 1.5rem;
+  }
 }  
 
  @media (max-width: 767px) {

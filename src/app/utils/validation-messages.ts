@@ -11,11 +11,12 @@ export const Messages = {
     USERNAME_INVALID: "Enter a valid email or mobile number",
     USER_NOT_FOUND: 'User not found',
     USER_FOUND: "Account found",
-    
+    LOGIN_SUCCESS:"Login Successful.",
+
     OTP_REQUIRED: "OTP is required",
-    OTP_INVALID: "Invalid OTP",
+    OTP_INVALID: "Incorrect OTP. Please re-enter.",
     OTP_LENGTH: "OTP must be exactly 6 digits",
-    OTP_EXPIRED: "OTP has expired", 
+    OTP_EXPIRED: "OTP expired. Please click 'Resend OTP'.", 
     OTP_FAILED: "Failed to send OTP. Please try again.",
     OTP_SENT: "OTP sent successfully.",
     OTP_SUCCESS: "OTP verified successfully.",
@@ -35,7 +36,7 @@ export const Messages = {
     LOWERCASE_PASSWORD: "One lowercase letter",
     NUMBER_PASSWORD: "One number",
     SPECIAL_PASSWORD: "One special character",
-    PASSWORD_ERROR: "Password not valid."
+    PASSWORD_INVALID: "Incorrect password."
   }
   
 };

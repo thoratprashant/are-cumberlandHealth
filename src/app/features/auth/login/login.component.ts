@@ -172,10 +172,11 @@ export class LoginComponent {
         // Remove temp session
         localStorage.removeItem('loginSession');
 
+        this.commonService.showToastSuccess(Messages.AUTH.LOGIN_SUCCESS);
         // Navigate to dashboard
         this.router.navigate(['/dashboard']);
 
-        this.commonService.showToastSuccess(res.message || Messages.AUTH.OTP_SUCCESS);
+        
       },
       error: (error) => {
         this.commonService.hideLoader();
@@ -206,12 +207,12 @@ export class LoginComponent {
 
        localStorage.setItem('refresh_token', res.data.refreshToken);
        
-       this.commonService.showToastSuccess(res.message);
+       this.commonService.showToastSuccess(res.message || Messages.AUTH.LOGIN_SUCCESS);
        //this.router.navigate(['/dashboard']);
      },
      error: (error) => {
         this.commonService.hideLoader();
-        this.commonService.showToastError(error.message || Messages.PASSWORD_RULES.PASSWORD_ERROR);
+        this.commonService.showToastError(error.message || Messages.PASSWORD_RULES.PASSWORD_INVALID);
      }
    });
 }

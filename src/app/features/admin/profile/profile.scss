@@ -20,6 +20,26 @@
             font-size: 0.9375rem;
             margin-bottom: 1.25rem;
         }
-    }
+    } 
+}
 
+@media (max-width: 768px) {
+    .profile--wrapper{
+        .pp--sec{
+            .pp--round{
+                width: 9rem;
+                height: 9rem; 
+                overflow: hidden;
+                margin-bottom: 1rem; 
+            }
+            h2{
+                font-size: 1rem;
+                margin-bottom: 0.45rem;
+            }
+            p{
+                font-size: 0.8rem;
+                margin-bottom: 1rem;
+            }
+        } 
+    } 
 }

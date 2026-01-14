@@ -23,6 +23,10 @@ body{
     font-family: v.$font-family-base !important; 
     margin-top: 0.625rem;
     font-size: 1rem; 
+    color: v.$secondary;
+  }
+  .mdc-checkbox__background{
+    border: 1px solid #909090 !important;
   }
   .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, 
   .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background{
@@ -146,6 +150,10 @@ body{
   body .card{
     padding: 1rem;
     margin-bottom: 1rem;
+  }
+  body .modal--wrapper .mat-mdc-dialog-surface .mat-mdc-dialog-title{
+      font-size: 17px; 
+      padding: 14px 45px 14px 15px;
   }
   
  }

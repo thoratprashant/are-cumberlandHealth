@@ -19,7 +19,7 @@
           <div class="card">
             <div class="row">
               <div class="col-12 d-flex align-items-center justify-content-between">
-                <h3 class="font-16 fw-medium text-primary m-0">Personal Information</h3>
+                <h3 class="font-16 fw-semibold text-primary m-0">Personal Information</h3>
                 <button matIconButton (click)="editPersonalInfo()">
                   <img src="images/edit.svg" alt="user img" class="img-fluid">
                 </button>
@@ -43,7 +43,7 @@
           <div class="card">
             <div class="row">
               <div class="col-12 d-flex align-items-center justify-content-between">
-                <h3 class="font-16 fw-medium text-primary mb-3">Contact Information</h3> 
+                <h3 class="font-16 fw-semibold text-primary mb-3">Contact Information</h3> 
               </div>
               <div class="col-12 mb-3 d-flex align-items-start justify-content-between"> 
                 <div class="d-flex w-100">
@@ -53,7 +53,7 @@
                         <p class="font-16 text-secondary fw-medium mb-0 wb-ba">william.smith@loremipsum.com</p>
                     </div>
                 </div>
-                <button matIconButton class="flex-shrink-0">
+                <button matIconButton class="flex-shrink-0" (click)="alert()">
                   <img src="images/edit.svg" alt="user img" class="img-fluid">
                 </button>
               </div>
@@ -68,8 +68,23 @@
                 <button matIconButton class="flex-shrink-0">
                   <img src="images/edit.svg" alt="user img" class="img-fluid">
                 </button>
+              </div> 
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card">
+            <div class="row">
+              <div class="col-12 d-flex align-items-center justify-content-between">
+                <h3 class="font-16 fw-semibold text-primary mb-3">Notification Preferences </h3> 
               </div>
-               
+              <div class="col-12 "> 
+                 <mat-checkbox class="mb-1 w-100">All </mat-checkbox>
+                 <mat-checkbox class="mb-1 w-100">Email </mat-checkbox>
+                 <mat-checkbox class="mb-1 w-100">In-App </mat-checkbox>
+                 <mat-checkbox class="mb-1 w-100">SMS </mat-checkbox>
+                 <mat-checkbox class="mb-1 w-100">None </mat-checkbox>
+              </div> 
             </div>
           </div>
         </div>

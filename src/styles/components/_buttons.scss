@@ -6,11 +6,14 @@ body{
         background-color: v.$primary;
         font-weight: 500;
         padding: 0.44rem 1.125rem;
+        &.btn-light{
+            background-color: #F8F9FA;
+        }
     }
 }
  @media (max-width: 767px) {
     .btn {
         font-size: 0.875rem !important;
-        padding: 0.4rem 0.2rem !important;
+        padding: 0.4rem 0.6rem !important;
     } 
  }

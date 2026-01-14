@@ -8,19 +8,27 @@ import { Messages } from '../../utils/validation-messages';
 export function emailOrMobileValidator() {
   return (control: any) => {
 
+    const value = control.value;
+
     // Required validation
-    if (!control.value) {
+    if (!value) {
       return { message: Messages.AUTH.USERNAME_REQUIRED };
     }
 
-    const value = control.value;
+    // If input contains letters or @ . _ - → Email mode
+    const isEmailMode = regex.EMAIL_TRIGGER.test(value);
 
-    // Pattern validation
-    const isValid =
-      regex.EMAIL.test(value) || regex.MOBILE.test(value);
+    // EMAIL MODE
+    if (isEmailMode) {
+      return regex.EMAIL.test(value)
+        ? null
+        : { message: Messages.AUTH.INVALID_EMAIL };
+    }
 
-    return isValid
-      ? null
-      : { message: Messages.AUTH.USERNAME_INVALID };
+    
+      return regex.MOBILE.test(value)
+        ? null
+        : { message: Messages.AUTH.INVALID_MOBILE };
+   
   };
 }

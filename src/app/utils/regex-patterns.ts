@@ -4,6 +4,10 @@ export const regex = {
     MOBILE: /^\d{10}$/,
     OTP:/^\d{6}$/,
 
+    // this is username - login with email or mobile validation
+    PHONE_ALLOWED: /^[0-9+ ]+$/,
+    EMAIL_TRIGGER: /[a-zA-Z@._-]/,
+
     PASSWORD_RULES:{
         MIN_LENGTH_PASSWORD: 8,
         UPPERCASE_PASSWORD: /(?=.*[A-Z])/,

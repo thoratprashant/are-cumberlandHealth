@@ -7,17 +7,18 @@ import { Router, RouterLink } from '@angular/router';
 import { finalize, map, Subscription, takeWhile, timer } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { AuthApi } from '../../../core/api-service/auth/auth.api';
+import { CommonService } from '../../../core/helper/common.service';
+import { UserNameIdentifierDirective } from '../../../shared/directives/identifier.directive';
 import { NumbersOnlyDirective } from '../../../shared/directives/numbers-only.directive';
 import { ShowErrorPipe } from '../../../shared/pipes/show-error.pipe';
 import { emailOrMobileValidator } from '../../../shared/validators/email-or-mobile.validator';
 import { regex } from '../../../utils/regex-patterns';
 import { Messages, validationMessages } from '../../../utils/validation-messages';
-import { CommonService } from '../../core/helper/common.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterLink, ShowErrorPipe, MatButtonModule, MatIconModule, NumbersOnlyDirective],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink, ShowErrorPipe, MatButtonModule, MatIconModule, NumbersOnlyDirective, UserNameIdentifierDirective],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
@@ -31,6 +32,7 @@ export class LoginComponent {
   canResend = false;
   otpExpired = false;
   timerSub!: Subscription;
+  isPhoneMode = false;
 
   /** Controls which screen is visible */
   authStep: 'LOGIN' | 'OTP' | 'PASSWORD' = 'LOGIN';
@@ -108,13 +110,13 @@ export class LoginComponent {
             this.authStep = 'PASSWORD';
             this.cd.detectChanges();
           }else{
-            this.commonService.showToastError(res.message || Messages.AUTH.USER_NOT_FOUND);
+            this.commonService.error(res.message || Messages.AUTH.USER_NOT_FOUND);
           }
           
         },
         error: (error) => {
           //this.commonService.hideLoader();
-          this.commonService.showToastError(error.message || Messages.AUTH.USER_NOT_FOUND);
+          this.commonService.error(error.message || Messages.AUTH.USER_NOT_FOUND);
         }
       });
   }
@@ -137,11 +139,11 @@ export class LoginComponent {
         /* Start OTP expiry timer */
         this.startOtpTimer();
         this.cd.detectChanges();
-        this.commonService.showToastSuccess(res.message || Messages.AUTH.OTP_SENT);
+        this.commonService.success(res.message || Messages.AUTH.OTP_SENT);
       },
       error: (error) => {
         //this.commonService.hideLoader();
-        this.commonService.showToastError(error.message || Messages.AUTH.OTP_FAILED);
+        this.commonService.error(error.message || Messages.AUTH.OTP_FAILED);
       }
 
     });
@@ -172,7 +174,7 @@ export class LoginComponent {
         // Remove temp session
         localStorage.removeItem('loginSession');
 
-        this.commonService.showToastSuccess(Messages.AUTH.LOGIN_SUCCESS);
+        this.commonService.success(Messages.AUTH.LOGIN_SUCCESS);
         // Navigate to dashboard
         this.router.navigate(['/dashboard']);
 
@@ -180,7 +182,7 @@ export class LoginComponent {
       },
       error: (error) => {
         this.commonService.hideLoader();
-        this.commonService.showToastError(error.message || Messages.AUTH.OTP_INVALID);
+        this.commonService.error(error.message || Messages.AUTH.OTP_INVALID);
       }
     });
   }
@@ -207,12 +209,12 @@ export class LoginComponent {
 
        localStorage.setItem('refresh_token', res.data.refreshToken);
        
-       this.commonService.showToastSuccess(res.message || Messages.AUTH.LOGIN_SUCCESS);
+       this.commonService.success(res.message || Messages.AUTH.LOGIN_SUCCESS);
        //this.router.navigate(['/dashboard']);
      },
      error: (error) => {
         this.commonService.hideLoader();
-        this.commonService.showToastError(error.message || Messages.PASSWORD_RULES.PASSWORD_INVALID);
+        this.commonService.error(error.message || Messages.PASSWORD_RULES.PASSWORD_INVALID);
      }
    });
 }

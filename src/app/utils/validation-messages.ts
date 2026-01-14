@@ -9,6 +9,8 @@ export const Messages = {
   AUTH: {
     USERNAME_REQUIRED: "Email or mobile number is required.",
     USERNAME_INVALID: "Enter a valid email or mobile number",
+    INVALID_EMAIL:"Please enter a valid email address.",
+    INVALID_MOBILE:"Please enter a valid mobile number.",
     USER_NOT_FOUND: 'User not found',
     USER_FOUND: "Account found",
     LOGIN_SUCCESS:"Login Successful.",

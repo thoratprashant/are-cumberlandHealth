@@ -7,13 +7,27 @@
       <div class="col-12 mb-4">
         <label for="exampleFormControlInput1" class="form-label">Enter email ID / Mobile number <span
             class="text-error">*</span></label>
-        <input type="email" class="form-control" id="first" formControlName="username"
-          placeholder="Enter email ID / Mobile number">
-        @if (loginForm.get('username')?.touched && loginForm.get('username')?.errors) {
-        <div class="font-13 mt-1 text-danger">
-          {{ loginForm.get('username')?.errors | showError }}
-        </div>
-        }
+
+            <div class="input-group">
+              <span class="input-group-text phone-prefix" *ngIf="isPhoneMode">+1</span>
+
+              <input
+                type="text"
+                class="form-control"
+                userNameIdentifier
+                formControlName="username"
+                id="first"
+                [attr.maxlength]="isPhoneMode ? 10 : null"
+                placeholder="Enter email ID / Mobile number"
+              />
+            </div>
+            
+
+            @if (loginForm.get('username')?.touched && loginForm.get('username')?.errors) {
+            <div class="font-13 mt-1 text-danger">
+              {{ loginForm.get('username')?.errors | showError }}
+            </div>
+            }
       </div>
       <div class="col-12">
         <button type="button" class="btn btn-primary w-100 mb-3" (click)="onLoginVia('otp')">Log in via Verification

@@ -1,23 +1,138 @@
 <div class="login--wrapper d-flex flex-column">
   <h2 class="fw-medium">Login </h2>
+  <!-- LOGIN STEP -->
+   @if (authStep === 'LOGIN') {
   <form [formGroup]="loginForm">
     <div class="row">
       <div class="col-12 mb-4">
         <label for="exampleFormControlInput1" class="form-label">Enter email ID / Mobile number <span
             class="text-error">*</span></label>
-        <input type="email" class="form-control" id="first" formControlName="username" placeholder="Enter email ID / Mobile number">
-        @if (loginForm.get('username')?.touched && loginForm.get('username')?.invalid) {
-        <div class="font-13 mt-1 text-danger">Enter valid Email Id or Mobile Number </div>
+        <input type="email" class="form-control" id="first" formControlName="username"
+          placeholder="Enter email ID / Mobile number">
+        @if (loginForm.get('username')?.touched && loginForm.get('username')?.errors) {
+        <div class="font-13 mt-1 text-danger">
+          {{ loginForm.get('username')?.errors | showError }}
+        </div>
         }
       </div>
       <div class="col-12">
-        <button type="button" class="btn btn-primary w-100 mb-3" (click)="onLoginViaOtp()">Log in via Verification Code</button>
-        <button type="button" class="btn btn-primary w-100 mb-3" routerLink="/auth/set-password">Log in via Password</button>
+        <button type="button" class="btn btn-primary w-100 mb-3" (click)="onLoginVia('otp')">Log in via Verification
+          Code</button>
+        <button type="button" class="btn btn-primary w-100 mb-3"  (click)="onLoginVia('password')">Log in via
+          Password</button>
       </div>
       <div class="col-12 d-flex justify-content-end mb-3">
         <a class="text-primary" routerLink="/auth/forgot-password">Forgot Password?</a>
       </div>
+    </div>
+  </form>
+   }
+  <!-- OTP STEP -->
+   @if (authStep === 'OTP') {
+  <form [formGroup]="otpForm">
+    <div class="row">
+      <div class="col-12 mb-1">
+        <label  class="form-label">Verification Code <span  class="text-error">*</span></label>
+        <input type="text" class="form-control" maxlength="6" numbersOnly formControlName="otp"  placeholder="Enter 6 digit Verification Code"> 
+        
+        @if (otpForm.get('otp')?.touched && otpForm.get('otp')?.errors) {
+        <div class="font-13 mt-1 text-danger">
+          @if (otpForm.get('otp')?.errors?.['required']) {
+            {{message.AUTH.OTP_REQUIRED}}
+          }
+          @if (otpForm.get('otp')?.errors?.['pattern']) {
+            {{message.AUTH.OTP_LENGTH}}
+          }
+        </div>
+        }
+      </div>
+      <div class="col-12 d-flex justify-content-end">
+         @if (!otpExpired) {
+            <p class="text-danger mb-3">{{validationMessages.otpExpire(otpTimer)}}</p>
+         }
+         @if (otpExpired) {
+            <p class="text-danger">
+               {{message.AUTH.OTP_EXPIRED}}
+            </p>
+          }
+      </div>
+       <div class="col-12 d-flex mb-4">
+        @if (canResend) {
+        <a class="text-primary"  (click)="resendOtp()">Resend Verification Code</a>
+        }
+      </div>
+      <div class="col-12">
+        <button type="button" class="btn btn-primary w-100 mb-4"  (click)="onVerifyOtp()">Submit</button> 
+      </div>
+     <div class="col-12 d-flex mb-3">
+        <a class="text-primary"  (click)="resetAuthFlow()">Back to login</a>  
+      </div>
     </div> 
   </form>
+   }
+   <!-- PASSWORD STEP -->
+  @if (authStep === 'PASSWORD') {
+    <form [formGroup]="passwordForm">
+    <div class="row">
+      <div class="col-12 mb-4">
+        <label  class="form-label">Enter Password <span  class="text-error">*</span></label>
+        <div class="position-relative">
+            <input [type]="showNewPassword ? 'text' : 'password'" class="form-control pe-5" formControlName="password" placeholder="Enter Password"> 
+           <button
+            type="button"
+            mat-icon-button
+            class="icon--password"
+            (click)="toggleNewPassword()" >
+            <mat-icon fontSet="material-icons-outlined">
+              {{ showNewPassword ? 'visibility_off' : 'visibility' }}
+            </mat-icon>
+          </button>
+          @if (passwordForm.get('password')?.touched && passwordForm.get('password')?.errors) {
+          <div class="font-13 mt-1 text-danger">
+            @if (passwordForm.get('password')?.errors?.['required']) {
+              {{validationMessages.required('Password')}}
+            }
+             @if (passwordForm.get('password')?.errors?.['pattern']) {
+                Password must contain:
+                <ul class="mb-0">
+                  <li [class.text-success]="passwordValue.length >= regexPattern.PASSWORD_RULES.MIN_LENGTH_PASSWORD" 
+                      [class.text-danger]="passwordValue.length < regexPattern.PASSWORD_RULES.MIN_LENGTH_PASSWORD">
+                    {{message.PASSWORD_RULES.PASSWORD_MIN_LENGTH}}
+                  </li>
 
+                  <li [class.text-success]="checkRule(regexPattern.PASSWORD_RULES.UPPERCASE_PASSWORD)"
+                      [class.text-danger]="!checkRule(regexPattern.PASSWORD_RULES.UPPERCASE_PASSWORD)">
+                      {{message.PASSWORD_RULES.UPPERCASE_PASSWORD}}
+                    </li>
+
+                  <li [class.text-success]="checkRule(regexPattern.PASSWORD_RULES.LOWERCASE_PASSWORD)"
+                      [class.text-danger]="!checkRule(regexPattern.PASSWORD_RULES.LOWERCASE_PASSWORD)">
+                      {{message.PASSWORD_RULES.LOWERCASE_PASSWORD}}
+                    </li>
+
+                  <li [class.text-success]="checkRule(regexPattern.PASSWORD_RULES.NUMBER_PASSWORD)"
+                      [class.text-danger]="!checkRule(regexPattern.PASSWORD_RULES.NUMBER_PASSWORD)">
+                      {{message.PASSWORD_RULES.NUMBER_PASSWORD}}
+                    </li>
+
+                  <li [class.text-success]="checkRule(regexPattern.PASSWORD_RULES.SPECIAL_PASSWORD)"
+                      [class.text-danger]="!checkRule(regexPattern.PASSWORD_RULES.SPECIAL_PASSWORD)">
+                      {{message.PASSWORD_RULES.SPECIAL_PASSWORD}}
+                    </li>
+                </ul>
+              }
+              
+          </div>
+          }
+        </div>
+      </div> 
+      <div class="col-12">
+        <button type="button" class="btn btn-primary w-100 mb-4" (click)="onLoginWithPassword()">Submit</button> 
+      </div>
+      <div class="col-12 d-flex mb-3">
+        <a class="text-primary"  (click)="resetAuthFlow()">Back to login</a>  
+      </div>
+    </div> 
+  </form>
+  }
 </div>

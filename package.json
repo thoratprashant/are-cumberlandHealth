@@ -9,7 +9,6 @@
     "test": "ng test",
     "serve:ssr:angular-21": "node dist/angular-21/server/server.mjs",
     "deploy": "ng build --configuration production && npx angular-cli-ghpages --dir=dist/are-cumberlandHealth/browser"
-    
   },
   "prettier": {
     "printWidth": 100,
@@ -26,6 +25,7 @@
   "private": true,
   "packageManager": "npm@10.8.2",
   "dependencies": {
+    "@angular/animations": "^21.0.6",
     "@angular/cdk": "^21.0.5",
     "@angular/common": "^21.0.0",
     "@angular/compiler": "^21.0.0",
@@ -38,6 +38,7 @@
     "@angular/ssr": "^21.0.4",
     "bootstrap": "^5.3.8",
     "express": "^5.1.0",
+    "ngx-toastr": "^19.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

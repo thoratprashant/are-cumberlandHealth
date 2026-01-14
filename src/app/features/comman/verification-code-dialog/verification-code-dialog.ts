@@ -3,28 +3,25 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/materia
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
-export interface AlertDialogData {
+export interface VerificationCodeDialogData {
   title?: string;
   message: string;
-  button1?: string;
-  button2?: string;
-  button3?: string;
+  button1?: string; 
 }
 
 @Component({
-  selector: 'app-alert-dialog',
+  selector: 'app-verification-code-dialog',
   imports: [MatDialogModule, MatButtonModule,MatIconModule],
-  templateUrl: './alert-dialog.html',
-  styleUrl: './alert-dialog.scss',
+  templateUrl: './verification-code-dialog.html',
+  styleUrl: './verification-code-dialog.scss',
 })
-export class AlertDialog {
+export class VerificationCodeDialog {
   constructor(
-    public dialogRef: MatDialogRef<AlertDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: AlertDialogData
+    public dialogRef: MatDialogRef<VerificationCodeDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: VerificationCodeDialogData
   ) {}
 
   close(): void {
     this.dialogRef.close(true);
   }
-  
 }

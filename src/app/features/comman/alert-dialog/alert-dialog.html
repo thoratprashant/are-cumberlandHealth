@@ -9,7 +9,15 @@
   <p>{{ data.message }}</p>
 </mat-dialog-content>
 
-<mat-dialog-actions align="end">
-    <button type="button" class="btn btn-light m-2" (click)="close()"> {{ data.button2 }}</button>
-    <button type="button" class="btn btn-primary m-1" (click)="close()"> {{ data.button1 }}</button> 
+<mat-dialog-actions align="end"> 
+    @if (data.button3) {
+       <button type="button" class="btn btn-light m-1" (click)="close()"> {{ data.button3 }}</button> 
+    }
+    @if (data.button2) {
+        <button type="button" class="btn btn-primary m-2" (click)="close()"> {{ data.button2 }}</button>
+    } 
+    @if (data.button1) {
+       <button type="button" class="btn btn-primary m-1" (click)="close()"> {{ data.button1 }}</button> 
+    } 
+    
 </mat-dialog-actions>

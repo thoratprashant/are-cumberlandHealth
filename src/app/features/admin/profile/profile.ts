@@ -43,7 +43,8 @@ export class Profile {
         title: 'Warning',
         message: 'Are you sure you would like to proceed with this?',
         button1: 'Yes',
-        button2: 'No'
+        button2: 'May be',
+        button3: 'No',
       }
     });
   }

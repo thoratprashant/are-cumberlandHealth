@@ -8,6 +8,7 @@ export interface AlertDialogData {
   message: string;
   button1?: string;
   button2?: string;
+  button3?: string;
 }
 
 @Component({

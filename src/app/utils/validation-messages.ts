@@ -30,6 +30,11 @@ export const Messages = {
 
     SESSION_EXPIRED: "Session has expired. Please login again.",
 
+    PASSWORD_REQUIRED: "Please set a password for your account.",
+    PASSWORD_MIN_LENGTH: `Password too small. Minimum ${regex.PASSWORD_RULES.MIN_LENGTH_PASSWORD} characters are required.`,
+    PASSWORD_CONFIRM: `Please confirm your password.`,
+    PASSWORD_MISMATCH: `The passwords do not match. Please try again.`,
+    PASSWORD_RESET_SUCCESS:"Password reset successful. Please log in with your new password.",
     
   },
   PASSWORD_RULES:{
@@ -38,7 +43,8 @@ export const Messages = {
     LOWERCASE_PASSWORD: "One lowercase letter",
     NUMBER_PASSWORD: "One number",
     SPECIAL_PASSWORD: "One special character",
-    PASSWORD_INVALID: "Incorrect password."
+    PASSWORD_INVALID: "Incorrect password.",
+    
   }
   
 };

@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, inject, NgZone } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Router, RouterLink } from '@angular/router';
-import { finalize, map, Subscription, takeWhile, timer } from 'rxjs';
-import { environment } from '../../../../environments/environment';
+import { finalize, Observable } from 'rxjs';
 import { AuthApi } from '../../../core/api-service/auth/auth.api';
 import { CommonService } from '../../../core/helper/common.service';
 import { UserNameIdentifierDirective } from '../../../shared/directives/identifier.directive';
 import { NumbersOnlyDirective } from '../../../shared/directives/numbers-only.directive';
 import { ShowErrorPipe } from '../../../shared/pipes/show-error.pipe';
+import { OtpFlowService } from '../../../shared/services/otp-flow.service';
 import { emailOrMobileValidator } from '../../../shared/validators/email-or-mobile.validator';
 import { regex } from '../../../utils/regex-patterns';
 import { Messages, validationMessages } from '../../../utils/validation-messages';
@@ -28,12 +28,10 @@ export class LoginComponent {
   message = Messages;
   regexPattern = regex;
   showNewPassword = false;
-  otpTimer = environment.otpExpirySeconds;
-  canResend = false;
-  otpExpired = false;
-  timerSub!: Subscription;
   isPhoneMode = false;
-
+  otpTimer$!: Observable<number>;
+  canResend$!: Observable<boolean>;
+  otpExpired$!: Observable<boolean>;
   /** Controls which screen is visible */
   authStep: 'LOGIN' | 'OTP' | 'PASSWORD' = 'LOGIN';
 
@@ -63,9 +61,18 @@ export class LoginComponent {
     private commonService: CommonService,
     private router: Router,
     private authApi: AuthApi,
-    private zone: NgZone,
-    private cd: ChangeDetectorRef
-  ) { }
+    private cd: ChangeDetectorRef,
+    private otpFlow: OtpFlowService,
+  ) {
+    this.otpTimer$ = this.otpFlow.otpTimer$;
+    this.canResend$ = this.otpFlow.canResend$;
+    this.otpExpired$ = this.otpFlow.otpExpired$;
+  }
+
+  // identify username is email or phone
+  onIdentifierModeChange(mode: 'phone' | 'email') {
+    this.isPhoneMode = mode === 'phone';
+  }
 
   /** Handle login via OTP or Password */
   onLoginVia(loginType: string): void {
@@ -80,7 +87,7 @@ export class LoginComponent {
     if (loginType === 'otp') {
 
       /* Call API to send OTP */
-      this.loginWithOtp();
+      this.sendOtp();
 
     } else if (loginType === 'password') {
 
@@ -93,59 +100,41 @@ export class LoginComponent {
   /**
    * check wheather user exist or not 
    */
-  private getUserProfile(): void{
-      const username = this.loginForm.value.username!;
-      this.commonService.showLoader();
-
-      /* call api to get user detail */
-      this.authApi.identify(username).pipe(
-        finalize(() => this.commonService.hideLoader())
-      ).subscribe({
-
-        next: (res: any) => {
-          
-
-          if(res.data.exists){
-            /* Move to OTP step on success */
-            this.authStep = 'PASSWORD';
-            this.cd.detectChanges();
-          }else{
-            this.commonService.error(res.message || Messages.AUTH.USER_NOT_FOUND);
-          }
-          
-        },
-        error: (error) => {
-          //this.commonService.hideLoader();
-          this.commonService.error(error.message || Messages.AUTH.USER_NOT_FOUND);
-        }
-      });
-  }
-
-  /** Login with OTP */
-  private loginWithOtp(): void {
+  private getUserProfile(): void {
     const username = this.loginForm.value.username!;
     this.commonService.showLoader();
-    /* Call API to send OTP */
-    this.authApi.loginOtp(username).pipe(
+
+    /* call api to get user detail */
+    this.authApi.identify(username).pipe(
       finalize(() => this.commonService.hideLoader())
     ).subscribe({
 
       next: (res: any) => {
-        /* Move to OTP step on success */
-        this.authStep = 'OTP';
 
-        localStorage.setItem('loginSession', res.data.sessionId);
 
-        /* Start OTP expiry timer */
-        this.startOtpTimer();
-        this.cd.detectChanges();
-        this.commonService.success(res.message || Messages.AUTH.OTP_SENT);
+        if (res.data.exists) {
+          /* Move to OTP step on success */
+          this.authStep = 'PASSWORD';
+          this.cd.detectChanges();
+        } else {
+          this.commonService.error(res.message || Messages.AUTH.USER_NOT_FOUND);
+        }
+
       },
       error: (error) => {
         //this.commonService.hideLoader();
-        this.commonService.error(error.message || Messages.AUTH.OTP_FAILED);
+        this.commonService.error(error.message || Messages.AUTH.USER_NOT_FOUND);
       }
+    });
+  }
 
+  /** Login with OTP */
+  private sendOtp(): void {
+    const username = this.loginForm.value.username!;
+
+    this.otpFlow.sendOtp(username, () => {
+      this.authStep = 'OTP';
+      this.cd.detectChanges();
     });
   }
 
@@ -155,112 +144,68 @@ export class LoginComponent {
       this.otpForm.markAllAsTouched();
       return;
     }
-    this.commonService.showLoader();
-    this.authApi.verifyOtp(
+
+    this.otpFlow.verifyOtp(
       this.otpForm.value.otp!,
-      localStorage.getItem('loginSession')!
-    ).pipe(
-      finalize(() => this.commonService.hideLoader())
-    ).subscribe({
-      next: (res: any) => {
-
-        this.cd.detectChanges();
-
-        // Store JWT
-        localStorage.setItem('auth_token', res.data.accessToken);
-
-       localStorage.setItem('refresh_token', res.data.refreshToken);
-
-        // Remove temp session
-        localStorage.removeItem('loginSession');
+      localStorage.getItem('currentSession')!,
+      (res) => {
+        // LOGIN behavior
+        localStorage.setItem('auth_token', res.data.token.accessToken);
+        localStorage.setItem('refresh_token', res.data.token.refreshToken);
+        localStorage.removeItem('currentSession');
 
         this.commonService.success(Messages.AUTH.LOGIN_SUCCESS);
-        // Navigate to dashboard
         this.router.navigate(['/dashboard']);
-
-        
-      },
-      error: (error) => {
-        this.commonService.hideLoader();
-        this.commonService.error(error.message || Messages.AUTH.OTP_INVALID);
       }
-    });
+    );
+
   }
 
   onLoginWithPassword() {
-  
-  if (this.passwordForm.invalid) {
+
+    if (this.passwordForm.invalid) {
       this.passwordForm.markAllAsTouched();
       return;
     }
 
-  this.commonService.showLoader();
+    this.commonService.showLoader();
 
-  this.authApi.loginPassword(
-    this.loginForm.value.username!,
-    this.passwordForm.value.password!
-  ).pipe(finalize(() => this.commonService.hideLoader()))
-   .subscribe({
-     next: (res: any) => {
+    this.authApi.loginPassword(
+      this.loginForm.value.username!,
+      this.passwordForm.value.password!
+    ).pipe(finalize(() => this.commonService.hideLoader()))
+      .subscribe({
+        next: (res: any) => {
 
-       this.cd.detectChanges();
+          this.cd.detectChanges();
 
-       localStorage.setItem('auth_token', res.data.accessToken);
+          localStorage.setItem('auth_token', res.data.accessToken);
 
-       localStorage.setItem('refresh_token', res.data.refreshToken);
-       
-       this.commonService.success(res.message || Messages.AUTH.LOGIN_SUCCESS);
-       //this.router.navigate(['/dashboard']);
-     },
-     error: (error) => {
-        this.commonService.hideLoader();
-        this.commonService.error(error.message || Messages.PASSWORD_RULES.PASSWORD_INVALID);
-     }
-   });
-}
+          localStorage.setItem('refresh_token', res.data.refreshToken);
+          localStorage.removeItem('currentSession');
 
-  // OTP expiry countdown
-  startOtpTimer() {
-    // Stop old timer
-    this.timerSub?.unsubscribe();
-
-    this.canResend = false;
-    this.otpExpired = false;
-
-    const total = environment.otpExpirySeconds;
-
-    this.timerSub = timer(0, 1000)
-      .pipe(
-        map(t => total - t),
-        takeWhile(v => v >= 0)
-      )
-      .subscribe(v => {
-        this.otpTimer = v;
-        if (v === 0) {
-          this.otpExpired = true;
-          this.canResend = true;
+          this.commonService.success(res.message || Messages.AUTH.LOGIN_SUCCESS);
+          //this.router.navigate(['/dashboard']);
+        },
+        error: (error) => {
+          this.commonService.hideLoader();
+          this.commonService.error(error.message || Messages.PASSWORD_RULES.PASSWORD_INVALID);
         }
-        this.cd.detectChanges();
       });
   }
+
 
   toggleNewPassword(): void {
     this.showNewPassword = !this.showNewPassword;
   }
 
   resendOtp() {
-    this.loginWithOtp()
+    this.sendOtp()
   }
 
   resetAuthFlow() {
 
-    // Stop OTP timer
-    this.timerSub?.unsubscribe();
-
-    // Clear OTP state
-    this.otpTimer = 0;
-    this.canResend = false;
-    this.otpExpired = false;
+    this.otpFlow.reset();
 
     // Reset forms
     //this.loginForm.reset();
@@ -271,7 +216,7 @@ export class LoginComponent {
     this.authStep = 'LOGIN';
 
     // Remove backend session
-    localStorage.removeItem('loginSession');
+    localStorage.removeItem('currentSession');
   }
 
   get passwordValue() {
@@ -281,9 +226,9 @@ export class LoginComponent {
   checkRule(regex: RegExp): boolean {
     return regex.test(this.passwordValue);
   }
-  
+
 
   ngOnDestroy() {
-    this.timerSub?.unsubscribe();
+    this.otpFlow.stop();
   }
 }

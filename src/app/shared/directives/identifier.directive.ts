@@ -1,6 +1,5 @@
-import { Directive, HostListener, Optional } from '@angular/core';
+import { Directive, EventEmitter, HostListener, Optional, Output } from '@angular/core';
 import { NgControl } from '@angular/forms';
-import { LoginComponent } from '../../features/auth/login/login.component';
 import { IdentifierEngineService } from '../services/identifier-engine.service';
 
 @Directive({
@@ -9,10 +8,11 @@ import { IdentifierEngineService } from '../services/identifier-engine.service';
 })
 export class UserNameIdentifierDirective {
 
+  @Output() modeChange = new EventEmitter<'phone' | 'email'>();
+
   constructor(
     private engine: IdentifierEngineService,
-    @Optional() private ngControl: NgControl,
-    private login: LoginComponent
+    @Optional() private ngControl: NgControl
   ) {}
 
   @HostListener('input', ['$event'])
@@ -23,8 +23,9 @@ export class UserNameIdentifierDirective {
     const mode = this.engine.getMode(raw);
     const clean = this.engine.normalize(raw, mode);
 
-    this.login.isPhoneMode = mode === 'phone';
-
+    // 🔥 Emit mode to parent component
+    this.modeChange.emit(mode);
+    
     // Prevent infinite +1 loop
     if (input.value !== clean) {
         input.value = clean;

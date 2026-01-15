@@ -6,8 +6,9 @@
 
   <div class="nav-desktop menus-desktop">
     <ul class="m-0 p-0 d-flex ">
-        <li class="active"><a>Dashboard</a></li>
-        <li><a>History</a></li>
+        <li routerLinkActive="active"><a routerLink="/admin/user-managment">User Management</a></li>
+        <li routerLinkActive="active"><a routerLink="/admin/user-managment2">Analytics</a></li>
+        <li><a>Patients</a></li>
     </ul>
   </div>
 
@@ -18,7 +19,7 @@
            <span class="status available"></span> Available
         </button>
         <ul class="dropdown-menu w-100 p-0">
-            <li ><button class="dropdown-item" type="button"> <span class="status available"></span> Available</button></li> 
+            <li><button class="dropdown-item" type="button"> <span class="status available"></span> Available</button></li> 
             <li><button class="dropdown-item" type="button"> <span class="status unavailable"></span> Unavailable</button></li>  
             <li><button class="dropdown-item" type="button"> <span class="status away"></span> Away</button></li>  
             <li><button class="dropdown-item" type="button"> <span class="status grey"></span> Offline</button></li>
@@ -39,7 +40,7 @@
         </div>
         <ul class="dropdown-menu dropdown-menu-lg-end p-0"> 
             <li>
-                <button class="dropdown-item d-flex align-items-center" type="button">
+                <button class="dropdown-item d-flex align-items-center" type="button" routerLink="/admin/profile">
                     <mat-icon>account_circle</mat-icon>
                     Profile
                 </button>
@@ -72,8 +73,12 @@
     <img src="images/admin-logo.svg" alt="img" class="">
   </div>
   <nav>
-    <a routerLink="/admin/dashboard" (click)="closeMenu()">Dashboard</a>
-    <a routerLink="/admin/users" (click)="closeMenu()">History</a> 
+    <a routerLink="/admin/dashboard" (click)="closeMenu()">User Management</a>
+    <a routerLink="/admin/users" (click)="closeMenu()">Analytics</a> 
+    <a routerLink="/admin/users" (click)="closeMenu()">Patients</a>
+    <a routerLink="/admin/users" (click)="closeMenu()">Profile</a>
+    <a routerLink="/admin/users" (click)="closeMenu()">Settings</a>
+    <a routerLink="/admin/users" (click)="closeMenu()">Logout</a>
   </nav>
 </aside>
 

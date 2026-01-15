@@ -1,18 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
+import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import {MatBadgeModule} from '@angular/material/badge';
 
 @Component({
-  selector: 'app-admin-layout',
+  selector: 'app-frontdesk-layout',
   standalone: true,
-  imports: [CommonModule,RouterOutlet,MatIconModule, MatButtonModule, MatBadgeModule,RouterModule],
-  templateUrl: './admin-layout.html',
-  styleUrl: './admin-layout.scss',
+  imports: [CommonModule, RouterOutlet, MatIconModule, MatButtonModule, MatBadgeModule, RouterModule],
+  templateUrl: './frontdesk-layout.html',
+  styleUrl: './frontdesk-layout.scss',
 })
-export class AdminLayout {
+export class FrontdeskLayout {
   mobileMenuOpen = signal(false);
 
   toggleMenu() {

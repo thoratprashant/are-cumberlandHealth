@@ -116,12 +116,11 @@
   left: -260px;
   width: 260px;
   height: 100vh;
-  background: #e1e3eb; 
+  background: #eff2fc; 
   transition: left 0.3s ease;
   z-index: 1000;
     .logo--sm{
-        padding: 15px;
-        box-shadow: 0 0 5px #c8c7c7;
+        padding: 10px 15px; 
     }
     nav {
         display: flex;
@@ -129,7 +128,7 @@
         a{
             padding: 10px 15px;
             font-size: 14px;
-            border-bottom: 1px solid #c8c7c7;
+            border-bottom: 1px solid #e6e2e2;
             color: #cbd5f5;
         }
     } 

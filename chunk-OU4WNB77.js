@@ -1,0 +1,1 @@
+import{Cb as s,Db as n,Yb as r,db as o}from"./chunk-A567I3Y4.js";import"./chunk-7CGTOI24.js";var i=class e{static \u0275fac=function(t){return new(t||e)};static \u0275cmp=o({type:e,selectors:[["app-frontdesk-history"]],decls:2,vars:0,template:function(t,d){t&1&&(s(0,"p"),r(1,"frontdesk-history works!"),n())},encapsulation:2})};export{i as FrontdeskHistory};

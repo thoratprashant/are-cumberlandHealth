@@ -5,7 +5,7 @@
         padding: 24px;
     }
     .material--table{
-          height: 400px;
-  overflow: auto;
+        max-height: 400px;
+        overflow: auto;
     }
 }

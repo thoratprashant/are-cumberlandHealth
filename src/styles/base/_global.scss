@@ -19,6 +19,18 @@ body{
   .wb-ba{word-break: break-all !important}
 
   // Angular Material 
+  .mat-mdc-select-panel{
+      padding: 0 !important;
+      .mat-mdc-option{
+        min-height: 40px;
+        &.mat-mdc-option-active{
+          background-color: #d9e5fc;
+        }
+      }
+  }
+  .mat-mdc-option{
+    font-family: v.$font-family-base !important; 
+  }
   .mat-internal-form-field>label{
     font-family: v.$font-family-base !important; 
     margin-top: 0.625rem;
@@ -181,6 +193,36 @@ body{
       border: 1px solid #E7E9EB;
       border-top: none;
       border-radius: 0 0 20px 20px;
+      font-family: v.$font-family-base !important;
+      .mat-mdc-paginator-container{
+        .mat-mdc-paginator-page-size{
+          .mat-mdc-paginator-page-size-label{
+            font-weight: 500;
+            font-size: 14px;
+          }
+          .mat-mdc-form-field{
+            width: 66px;
+            .mdc-text-field{
+              padding: 0 12px !important;
+              .mat-mdc-form-field-infix{
+                padding-top: 3px;
+                padding-bottom: 3px;
+                min-height: unset;
+              }
+               .mat-mdc-select { 
+                  font-family: v.$font-family-base !important;
+                  font-weight: 600;
+              }
+            } 
+          }
+        }
+        .mat-mdc-paginator-range-actions{
+          .mat-mdc-paginator-range-label{
+              margin: 0 15px;
+              font-weight: 600;
+          }
+        }
+      }
     }
   }
   

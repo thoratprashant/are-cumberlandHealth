@@ -5,7 +5,7 @@
   <form [formGroup]="loginForm">
     <div class="row">
       <div class="col-12 mb-4">
-        <label for="exampleFormControlInput1" class="form-label">Enter email ID / Mobile number <span
+        <label for="exampleFormControlInput1" for="username" class="form-label">Enter Email Id / Mobile number <span
             class="text-error">*</span></label>
 
             <div class="input-group">
@@ -15,10 +15,11 @@
                 type="text"
                 class="form-control"
                 userNameIdentifier
+                (modeChange)="onIdentifierModeChange($event)"
                 formControlName="username"
-                id="first"
+                id="username"
                 [attr.maxlength]="isPhoneMode ? 10 : null"
-                placeholder="Enter email ID / Mobile number"
+                placeholder="Enter Email Id / Mobile number"
               />
             </div>
             
@@ -61,17 +62,17 @@
         }
       </div>
       <div class="col-12 d-flex justify-content-end">
-         @if (!otpExpired) {
-            <p class="text-danger mb-3">{{validationMessages.otpExpire(otpTimer)}}</p>
+        @if (!(otpExpired$ | async)) {
+            <p class="text-danger mb-3">{{validationMessages.otpExpire(otpTimer$ | async)}}</p>
          }
-         @if (otpExpired) {
+         @if (otpExpired$ | async) {
             <p class="text-danger">
                {{message.AUTH.OTP_EXPIRED}}
             </p>
           }
       </div>
        <div class="col-12 d-flex mb-4">
-        @if (canResend) {
+        @if (canResend$ | async) {
         <a class="text-primary"  (click)="resendOtp()">Resend Verification Code</a>
         }
       </div>

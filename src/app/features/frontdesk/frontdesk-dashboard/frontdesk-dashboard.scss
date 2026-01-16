@@ -1,0 +1,57 @@
+.frontdesk--wrapper {
+
+    //CSS Added for Colors used in Frontdesk-user designs.
+    .clr-505050 {
+        color: #505050;
+    }
+
+    .clr-6C757D {
+        color: #6C757D;
+    }
+
+    .badge {
+        font-size: 0.75rem;
+        border-radius: 624.9375rem;
+        padding: 0.25rem 0.625rem;
+        font-weight: 400;
+        background-color: #f4f3f3;
+        color: #222;
+
+        &.requested {
+            color: #222;
+            background-color: #FFE5B1;
+        }
+
+        &.assigned {
+            color: #15803D;
+            background-color: #DCFCE7;
+        }
+    }
+
+    .appointment-requested-wrapper {
+        margin-top: 1.688rem;
+        gap: 0.875rem;
+
+        .appointment-requested-card {
+            padding: 1.063rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--Web-Line-Color, #E7E9EB);
+
+            &:hover {
+                background: #F5F8FF;
+            }
+
+            .profile-round {
+                min-width: 3rem;
+                height: 3rem;
+                overflow: hidden;
+                margin-right: 0.875rem;
+                border-radius: 624.9375rem;
+
+                img {
+                    max-height: 100%;
+                }
+            }
+        }
+    }
+}

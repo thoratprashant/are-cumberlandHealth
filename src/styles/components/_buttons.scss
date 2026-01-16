@@ -6,8 +6,16 @@ body{
         background-color: v.$primary;
         font-weight: 500;
         padding: 0.44rem 1.125rem;
+        &.btn-md{
+            padding: 0.35rem 1.125rem;
+        }
         &.btn-light{
             background-color: #F8F9FA;
+        }
+        &.btn-secondary{
+            color: v.$primary;
+            border-color: v.$primary;
+            background-color: v.$white;
         }
     }
 }

@@ -35,12 +35,17 @@ body{
   }
 
   // Form Controls
+  .form-select,
   .form-control {
     border-radius: 4rem;
     padding: 0.44rem 0.875rem;
     border-color: v.$grey !important ;
     &:focus{
       box-shadow: none;
+    }
+    &.form-select-md,
+    &.form-control-md{
+      padding: 0.35rem 0.875rem;
     }
   }
 
@@ -135,6 +140,47 @@ body{
       .mat-mdc-dialog-actions{
         padding:10px 24px ;
       }
+    }
+  }
+
+  //Material Table
+  .material--table{
+    table{
+      border: 1px solid #E7E9EB;
+      thead{
+        tr{
+          height: auto;
+          th{
+            padding-top: 8px;
+            padding-bottom: 8px;
+            font-size: 1rem !important;
+            background-color: #D9E5FC !important;
+            font-family: v.$font-family-base !important; 
+            font-weight: 500;
+            color: #222;
+          }
+        }
+      }
+      tbody{
+        tr{
+          height: auto;
+          font-family: v.$font-family-base !important; 
+          td{
+            font-size: 15px;
+            font-weight: 400;
+            color: #222;
+            border-bottom-color: #E7E9EB;
+          }
+          &:nth-child(even){
+             background-color: #FAFCFF !important;
+          }
+        }
+      }
+    }
+    mat-paginator{
+      border: 1px solid #E7E9EB;
+      border-top: none;
+      border-radius: 0 0 20px 20px;
     }
   }
   

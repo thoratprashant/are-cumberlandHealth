@@ -52,7 +52,7 @@
                 </button>
             </li>
             <li>
-                 <button class="dropdown-item d-flex align-items-center" type="button">
+                 <button class="dropdown-item d-flex align-items-center" type="button"  routerLink="/auth/login">
                     <mat-icon>logout</mat-icon>
                     Logout
                 </button>
@@ -78,7 +78,7 @@
     <a routerLink="/admin/users" (click)="closeMenu()">Patients</a>
     <a routerLink="/admin/users" (click)="closeMenu()">Profile</a>
     <a routerLink="/admin/users" (click)="closeMenu()">Settings</a>
-    <a routerLink="/admin/users" (click)="closeMenu()">Logout</a>
+    <a routerLink="/auth/login" (click)="closeMenu()">Logout</a>
   </nav>
 </aside>
 

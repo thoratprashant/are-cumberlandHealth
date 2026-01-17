@@ -133,7 +133,7 @@ body{
         align-items: center;
         justify-content: space-between;
         font-size: 20px;
-        color: #222;
+        color: v.$secondary;
         font-family: v.$font-family-base !important; 
         padding: 18px 55px 18px 24px;
         &::before{
@@ -159,6 +159,7 @@ body{
   .material--table{
     table{
       border: 1px solid #E7E9EB;
+      border-top: none;
       thead{
         tr{
           height: auto;
@@ -169,7 +170,7 @@ body{
             background-color: #D9E5FC !important;
             font-family: v.$font-family-base !important; 
             font-weight: 500;
-            color: #222;
+            color: v.$secondary;
           }
         }
       }
@@ -180,11 +181,32 @@ body{
           td{
             font-size: 15px;
             font-weight: 400;
-            color: #222;
+            color: v.$secondary;
             border-bottom-color: #E7E9EB;
+            padding-top: 13px;
+            padding-bottom: 13px;
+            .btn--action{
+              width: 30px;
+              height: 30px; 
+              padding: 0 !important;
+              display: flex;
+              align-items: center;
+              justify-content: center;  
+              background-color: #D9E5FC;
+              .mat-icon{
+                height: 18px;
+                width: 18px;
+                font-size: 18px;
+                color: v.$primary;
+              }
+            } 
           }
           &:nth-child(even){
              background-color: #FAFCFF !important;
+          }
+          &.not--record--found{
+            padding: 0;
+            background:#f1f5fff7
           }
         }
       }
@@ -225,12 +247,33 @@ body{
       }
     }
   }
+
+  .badge {
+      font-size: 15px;
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-weight: 400;
+      background-color: #f4f3f3;
+      color: v.$secondary; 
+      &.requested { 
+          background-color: #FFE5B1;
+      } 
+      &.active{ 
+          background-color: #B1F1A6;
+      }
+      &.in-active{ 
+          background-color: #FFC0AD;
+      }
+    }
   
 }  
 
  @media (max-width: 767px) {
+  body .material--table table tbody tr td,
+  body .material--table table thead tr th,
   body .mat-internal-form-field > label,
   ::placeholder,
+  .form-select,
   .form-control,
   .form-label{
     font-size: 0.875rem !important;
@@ -242,6 +285,14 @@ body{
   body .modal--wrapper .mat-mdc-dialog-surface .mat-mdc-dialog-title{
       font-size: 17px; 
       padding: 14px 45px 14px 15px;
+  }
+  body .badge{
+    font-size: 12px !important; 
+    padding: 4px 8px !important;
+  }
+  body .material--table mat-paginator{
+    padding-top: 15px;
+    margin-bottom: 20px;
   }
   
  }

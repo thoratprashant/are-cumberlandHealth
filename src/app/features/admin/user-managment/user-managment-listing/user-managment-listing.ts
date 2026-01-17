@@ -57,7 +57,7 @@ export class UserManagmentListing implements AfterViewInit {
 
 /* ---------- DUMMY DATA (50 RECORDS) ---------- */
 
-const STATUS = ['Pending', 'Approved', 'Rejected'];
+const STATUS = ['Active', 'In-Active'];
 
 const USER_DATA: UserData[] = Array.from({ length: 50 }).map((_, i) => ({
   id: i + 1,

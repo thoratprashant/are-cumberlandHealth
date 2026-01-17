@@ -22,6 +22,10 @@ body{
             border-color: v.$primary;
             background-color: v.$white;
         }
+        &.back--button{ 
+            padding: 4px 12px;
+            display: flex; 
+        }
     }
 }
  @media (max-width: 767px) {

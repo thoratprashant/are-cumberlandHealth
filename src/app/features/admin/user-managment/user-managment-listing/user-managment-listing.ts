@@ -8,6 +8,7 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 export interface UserData {
   id: number;
@@ -20,7 +21,7 @@ export interface UserData {
 @Component({
   selector: 'app-user-managment-listing',
   standalone: true,
-  imports: [CommonModule ,MatButtonModule, MatDialogModule,MatIconModule,MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule],
+  imports: [CommonModule,RouterLink ,MatButtonModule, MatDialogModule,MatIconModule,MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule],
   templateUrl: './user-managment-listing.html',
   styleUrl: './user-managment-listing.scss',
 })

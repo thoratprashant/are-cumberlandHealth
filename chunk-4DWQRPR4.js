@@ -1,0 +1,1 @@
+import"./chunk-7CGTOI24.js";var o=[{path:"dashboard",loadComponent:()=>import("./chunk-23LNOXOQ.js").then(t=>t.FrontdeskDashboard),data:{title:"dashboard"}},{path:"history",loadComponent:()=>import("./chunk-OU4WNB77.js").then(t=>t.FrontdeskHistory),data:{title:"history"}}];export{o as FRONTDESKLAYOUT_ROUTES};

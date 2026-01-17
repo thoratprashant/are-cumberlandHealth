@@ -76,11 +76,25 @@
     <a routerLink="/admin/dashboard" (click)="closeMenu()">User Management</a>
     <a routerLink="/admin/users" (click)="closeMenu()">Analytics</a> 
     <a routerLink="/admin/users" (click)="closeMenu()">Patients</a>
+    <a dropdown-toggle data-bs-toggle="dropdown" aria-expanded="false">
+       <div class="d-flex align-items-center">
+        <span class="status available"></span>  Online
+       </div>
+    </a>
+    <ul class="dropdown-menu w-100 p-0">
+        <li><button class="dropdown-item" type="button"> <span class="status available"></span> Available</button></li> 
+        <li><button class="dropdown-item" type="button"> <span class="status unavailable"></span> Unavailable</button></li>  
+        <li><button class="dropdown-item" type="button"> <span class="status away"></span> Away</button></li>  
+        <li><button class="dropdown-item" type="button"> <span class="status grey"></span> Offline</button></li>
+    </ul>
     <a routerLink="/admin/users" (click)="closeMenu()">Profile</a>
     <a routerLink="/admin/users" (click)="closeMenu()">Settings</a>
     <a routerLink="/auth/login" (click)="closeMenu()">Logout</a>
   </nav>
 </aside>
+
+ 
+
 
 <!-- BACKDROP -->
 <div class="backdrop" *ngIf="mobileMenuOpen()" (click)="closeMenu()"></div>

@@ -113,6 +113,18 @@
             border-bottom: 1px solid #e6e2e2;
             color: #cbd5f5;
         }
+        .dropdown-menu{
+            width: 162px !important;
+            margin-left: 10px !important;
+            margin-top: -2px !important;
+            li{
+                .dropdown-item{
+                    font-size: .8375rem !important;
+                    padding: 8px 20px !important;
+                    font-weight: 400 !important;
+                }
+            }
+        }
     } 
 }
 

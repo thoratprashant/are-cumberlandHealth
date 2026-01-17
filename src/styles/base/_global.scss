@@ -265,6 +265,25 @@ body{
           background-color: #FFC0AD;
       }
     } 
+    .status{
+        width: 8px;
+        height: 8px; 
+        border-radius: 20px;
+        display: inline-flex;
+        margin-right: 8px;
+        &.available{
+            background-color: #22C55E;
+        }
+        &.unavailable{
+            background-color: #FF181C;
+        }
+        &.away{
+            background-color: yellow;
+        }
+        &.grey{
+            background-color: grey;
+        }
+    }
   
 }  
 

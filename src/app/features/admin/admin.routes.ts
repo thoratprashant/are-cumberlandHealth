@@ -14,5 +14,9 @@ export const ADMINLAYOUT_ROUTES: Routes = [
     path: 'create-user',
     loadComponent: () => import('./user-managment/create-view-user/create-view-user').then(c => c.CreateViewUser), 
   },
+  {
+    path: 'patients',
+    loadComponent: () => import('./patients/patients').then(c => c.Patients), 
+  },
 ];
  

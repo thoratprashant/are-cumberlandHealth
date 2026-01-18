@@ -258,9 +258,11 @@ body{
       &.requested { 
           background-color: #FFE5B1;
       } 
+      &.completed,
       &.active{ 
           background-color: #B1F1A6;
       }
+      &.incomplete,
       &.in-active{ 
           background-color: #FFC0AD;
       }

@@ -1,0 +1,24 @@
+.notifications--wrapper {
+    .notifications--main-card {
+        margin-top: 1.688rem;
+        padding: 1.50rem;
+        border-radius: 1.25rem;
+        background: #EDF4FF;
+
+        .notifications-header {}
+
+        .notifications-body {
+            gap: 0.75rem;
+
+            .notifications-card {
+                padding: 1.50rem 1.563rem;
+                border-radius: 1.25rem;
+                background: #fff;
+
+                &.unread {
+                    background: #D9E5FC;
+                }
+            }
+        }
+    }
+}

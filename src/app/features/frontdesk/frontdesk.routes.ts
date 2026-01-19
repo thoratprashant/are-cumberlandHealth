@@ -11,4 +11,9 @@ export const FRONTDESKLAYOUT_ROUTES: Routes = [
     loadComponent: () => import('./frontdesk-history/frontdesk-history').then(c => c.FrontdeskHistory),
     data: { title: 'history' }
   },
+  {
+    path: 'notifications',
+    loadComponent: () => import('../comman/notifications/notifications').then(c => c.Notifications),
+    data: { title: 'notifications' }
+  },
 ];

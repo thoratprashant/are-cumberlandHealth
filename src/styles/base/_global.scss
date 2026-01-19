@@ -200,6 +200,11 @@ body{
                 color: v.$primary;
               }
             } 
+            .mdc-icon-button{
+              width: auto;
+              height: auto;
+              padding: 0;
+            }
           }
           &:nth-child(even){
              background-color: #FAFCFF !important;

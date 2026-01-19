@@ -1,6 +1,6 @@
 import { Directive, EventEmitter, HostListener, Optional, Output } from '@angular/core';
 import { NgControl } from '@angular/forms';
-import { IdentifierEngineService } from '../services/identifier-engine.service';
+import { IdentifierEngineService } from '../../core/utils/identifier-engine.service';
 
 @Directive({
   selector: '[userNameIdentifier]',

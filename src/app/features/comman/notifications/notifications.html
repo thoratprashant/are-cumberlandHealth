@@ -7,11 +7,64 @@
             <div class="notifications--main-card">
                 <div class="row">
                     <div class="col-12 notifications-header">
-
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-7 col-xl-8">
+                                <select aria-label="Default select example" name="ps"
+                                    class="form-select form-select-md w-100">
+                                    <option selected="">Notification Type</option>
+                                    <option value="1">Read</option>
+                                    <option value="2">Unread</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-5 col-xl-4 mt-md-0 mt-3">
+                                <div class="d-flex align-items-center gap-2">
+                                    <label class="font-16 fw-normal mb-0">Status:</label>
+                                    <ul class="status-list">
+                                        <li [class.active]="status === 'read'" (click)="status = 'read'">
+                                            Read
+                                        </li>
+                                        <li [class.active]="status === 'unread'" (click)="status = 'unread'">
+                                            Unread
+                                        </li>
+                                    </ul>
+                                    <!-- <button type="button" class="btn btn-md btn-secondary flex-shrink-0">Read</button>
+                                    <button type="button" class="btn btn-md btn-primary flex-shrink-0">Unread</button> -->
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-7 col-xl-7 mt-3">
+                                <div class="d-flex align-items-sm-center flex-sm-row flex-column gap-2">
+                                    <label class="font-16 fw-normal mb-0">Date:</label>
+                                    <div class="position-relative w-100">
+                                        <input class="form-control" placeholder="From" matInput [matDatepicker]="picker"
+                                            (click)="picker.open()">
+                                        <mat-datepicker-toggle class="icon--password" matIconSuffix [for]="picker">
+                                            <mat-icon matDatepickerToggleIcon>date_range</mat-icon>
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </div>
+                                    <div class="position-relative w-100">
+                                        <input class="form-control" placeholder="To" matInput [matDatepicker]="picker1"
+                                            (click)="picker1.open()">
+                                        <mat-datepicker-toggle class="icon--password" matIconSuffix [for]="picker1">
+                                            <mat-icon matDatepickerToggleIcon>date_range</mat-icon>
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #picker1></mat-datepicker>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-5 col-xl-5 mt-3">
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn btn-md btn-secondary flex-shrink-0">Reset
+                                        filter</button>
+                                    <button type="button" class="btn btn-md btn-secondary flex-shrink-0">Mark all as
+                                        Read</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-12 d-flex flex-column notifications-body">
                         <!-- For Read Notifications -->
-                        <div class="notifications-card">
+                        <div *ngIf="status === 'read'" class="notifications-card">
                             <div class="row">
                                 <div class="col-12 d-flex flex-column">
                                     <p class="font-16 fw-medium mb-2">E-Fax</p>
@@ -22,7 +75,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="notifications-card">
+                        <div *ngIf="status === 'read'" class="notifications-card">
                             <div class="row">
                                 <div class="col-12 d-flex flex-column">
                                     <p class="font-16 fw-medium mb-2">E-Fax</p>
@@ -33,7 +86,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="notifications-card">
+                        <div *ngIf="status === 'read'" class="notifications-card">
                             <div class="row">
                                 <div class="col-12 d-flex flex-column">
                                     <p class="font-16 fw-medium mb-2">E-Fax</p>
@@ -44,7 +97,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="notifications-card">
+                        <div *ngIf="status === 'read'" class="notifications-card">
                             <div class="row">
                                 <div class="col-12 d-flex flex-column">
                                     <p class="font-16 fw-medium mb-2">E-Fax</p>
@@ -56,7 +109,7 @@
                             </div>
                         </div>
                         <!-- For Unread Notifications -->
-                        <div class="notifications-card unread">
+                        <div *ngIf="status === 'unread'" class="notifications-card unread">
                             <div class="row">
                                 <div class="col-12 d-flex flex-column">
                                     <p class="font-16 fw-medium mb-2">E-Fax</p>
@@ -67,7 +120,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="notifications-card unread">
+                        <div *ngIf="status === 'unread'" class="notifications-card unread">
                             <div class="row">
                                 <div class="col-12 d-flex flex-column">
                                     <p class="font-16 fw-medium mb-2">E-Fax</p>
@@ -78,7 +131,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="notifications-card unread">
+                        <div *ngIf="status === 'unread'" class="notifications-card unread">
                             <div class="row">
                                 <div class="col-12 d-flex flex-column">
                                     <p class="font-16 fw-medium mb-2">E-Fax</p>
@@ -89,7 +142,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="notifications-card unread">
+                        <div *ngIf="status === 'unread'" class="notifications-card unread">
                             <div class="row">
                                 <div class="col-12 d-flex flex-column">
                                     <p class="font-16 fw-medium mb-2">E-Fax</p>

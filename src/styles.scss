@@ -1,5 +1,5 @@
 /* Abstracts */
-@use 'styles/abstracts/variables'; 
+@use 'styles/abstracts/variables';
 @use 'styles/abstracts/breakpoints';
 
 /* Base */
@@ -20,9 +20,18 @@
 
 /* Angulr Material */
 @use '@angular/material/prebuilt-themes/indigo-pink.css';
- 
+
 
 .skeleton-login {
   height: 100vh;
   background: #f4f4f4;
+}
+
+//CSS Added for Colors used in Frontdesk-user designs.
+.clr-505050 {
+  color: #505050;
+}
+
+.clr-6C757D {
+  color: #6C757D;
 }

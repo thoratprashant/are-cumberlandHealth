@@ -1,7 +1,7 @@
 <div class="auth-container d-flex flex-column flex-sm-row">
   <div class="auth-left d-flex flex-column min-vh-100 w-100 justify-content-center">
-    <h1 class="text-primary fw-medium">Welcome to Cumberland Health!</h1>
-    <p class="text-primary">Manage your health, appointments, and care—all in one place.</p>
+    <h1 class="text-primary fw-medium" runtimeTranslate>Welcome to Cumberland Health!</h1>
+    <p class="text-primary" runtimeTranslate>Manage your health, appointments, and care—all in one place.</p>
     <img src="images/auth-left.png" alt="img" class="img-fluid">
   </div>
   <div class="auth-right d-flex flex-column justify-content-center flex-shrink-0">
@@ -10,21 +10,48 @@
       <router-outlet></router-outlet>
     </div>
     <div class="lang--sec d-flex align-items-center">
-      <span class="me-2"> Language</span>
+      <span class="me-2" runtimeTranslate> Language</span>
       <div class="dropup">
         <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          English
+          {{ selectedLanguageLabel }}
         </a>
+
         <ul class="dropdown-menu">
-          <li><button class="dropdown-item" type="button">Spanish</button></li>
+          <li>
+            <button class="dropdown-item" type="button" (click)="changeLang('en')">
+              English
+            </button>
+          </li>
+
           <li>
             <hr class="dropdown-divider">
           </li>
-          <li><button class="dropdown-item" type="button">French</button></li>
+
+          <li>
+            <button class="dropdown-item" type="button" (click)="changeLang('es')">
+              Spanish
+            </button>
+          </li>
+
           <li>
             <hr class="dropdown-divider">
           </li>
-          <li><button class="dropdown-item" type="button">Chinese</button></li>
+
+          <li>
+            <button class="dropdown-item" type="button" (click)="changeLang('fr')">
+              French
+            </button>
+          </li>
+
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li>
+            <button class="dropdown-item" type="button" (click)="changeLang('zh')">
+              Chinese
+            </button>
+          </li>
         </ul>
       </div>
     </div>

@@ -4,12 +4,14 @@ import { provideRouter } from '@angular/router';
 
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { routes } from './app.routes';
+import { RuntimeTranslateManager } from './core/i18n/runtime-translate.manager';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideAnimations(),
     provideRouter(routes),
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes), provideClientHydration(withEventReplay())
+    provideRouter(routes), provideClientHydration(withEventReplay()),
+    RuntimeTranslateManager,
   ]
 };

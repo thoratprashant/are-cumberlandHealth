@@ -7,10 +7,12 @@ import { Router, RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthApi } from '../../../core/api-service/auth/auth.api';
 import { CommonService } from '../../../core/helper/common.service';
+import { RuntimeTranslatePlaceholderDirective } from '../../../core/i18n/runtime-translate-placeholder.directive';
+import { RuntimeTranslateDirective } from '../../../core/i18n/runtime-translate.directive';
+import { OtpFlowService } from '../../../core/services/otp-flow.service';
 import { UserNameIdentifierDirective } from '../../../shared/directives/identifier.directive';
 import { NumbersOnlyDirective } from '../../../shared/directives/numbers-only.directive';
 import { ShowErrorPipe } from '../../../shared/pipes/show-error.pipe';
-import { OtpFlowService } from '../../../shared/services/otp-flow.service';
 import { emailOrMobileValidator } from '../../../shared/validators/email-or-mobile.validator';
 import { passwordMatchValidator } from '../../../shared/validators/password-match.validator';
 import { regex } from '../../../utils/regex-patterns';
@@ -19,7 +21,7 @@ import { Messages, validationMessages } from '../../../utils/validation-messages
 @Component({
   selector: 'app-forgot-password',
   standalone: true,
-  imports: [CommonModule, RouterLink, ReactiveFormsModule, ShowErrorPipe, MatButtonModule, MatIconModule, NumbersOnlyDirective, UserNameIdentifierDirective],
+  imports: [CommonModule, RouterLink, ReactiveFormsModule, ShowErrorPipe, MatButtonModule, MatIconModule, NumbersOnlyDirective, UserNameIdentifierDirective,RuntimeTranslateDirective, RuntimeTranslatePlaceholderDirective],
   templateUrl: './forgot-password.html',
   styleUrl: './forgot-password.scss',
 })

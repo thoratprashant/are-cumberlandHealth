@@ -1,9 +1,9 @@
 import { Injectable, NgZone } from '@angular/core';
 import { BehaviorSubject, finalize, Subscription, timer } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { AuthApi } from '../../core/api-service/auth/auth.api';
-import { CommonService } from '../../core/helper/common.service';
 import { Messages } from '../../utils/validation-messages';
+import { AuthApi } from '../api-service/auth/auth.api';
+import { CommonService } from '../helper/common.service';
 
 @Injectable({ providedIn: 'root' })
 export class OtpFlowService {

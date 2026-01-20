@@ -13,7 +13,8 @@ export class ApiService {
 
   private request<T>(method: string, url: string, body?: any) {
     return this.http.request<T>(method, this.base + url, {
-      body
+      body,
+      withCredentials: true
     }).pipe(
       catchError(err => {
         return throwError(() => err.error); // <-- critical

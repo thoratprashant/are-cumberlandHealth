@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { LoaderComponent } from '../../features/comman/loader/loader';
+import { LoaderComponent } from '../../shared/components/comman/loader/loader';
 
 @Injectable({
   providedIn: 'root'

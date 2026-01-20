@@ -36,6 +36,9 @@ export const Messages = {
     PASSWORD_MISMATCH: `The passwords do not match. Please try again.`,
     PASSWORD_RESET_SUCCESS:"Password reset successful. Please log in with your new password.",
     
+    FETCH_USER_FAILED: "Failed to fetch user details. Please try again.",
+    LOGOUT_SUCCESS: "Logged out successfully.",
+    LOGOUT_ALL_SUCCESS: "Logged out from all devices successfully."
   },
   PASSWORD_RULES:{
     PASSWORD_MIN_LENGTH: `At least ${regex.PASSWORD_RULES.MIN_LENGTH_PASSWORD} characters`,
@@ -45,6 +48,10 @@ export const Messages = {
     SPECIAL_PASSWORD: "One special character",
     PASSWORD_INVALID: "Incorrect password.",
     
+  },
+  PROFILE: {
+    FETCH_FAILED: 'Unable to load profile',
+    FETCH_SUCCESS: 'Profile fetched successfully',
   }
   
 };

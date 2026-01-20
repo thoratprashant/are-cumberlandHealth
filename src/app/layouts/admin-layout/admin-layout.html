@@ -27,7 +27,7 @@
     </div> 
 
     <div class="notifications position-relative">
-        <button matIconButton aria-label="notification">
+        <button matIconButton aria-label="notification" routerLink="/frontdesk/notifications">
             <mat-icon fontSet="material-icons-outlined">notifications</mat-icon>  
             <div class="badge-indicator"></div>
         </button>
@@ -73,12 +73,12 @@
     <img src="images/admin-logo.svg" alt="img" class="">
   </div>
   <nav>
-    <a routerLink="/admin/dashboard" (click)="closeMenu()">User Management</a>
+    <a routerLink="/admin/user-managment" (click)="closeMenu()">User Management</a>
     <a routerLink="/admin/users" (click)="closeMenu()">Analytics</a> 
     <a routerLink="/admin/patients" (click)="closeMenu()">Patients</a>
     <a dropdown-toggle data-bs-toggle="dropdown" aria-expanded="false">
        <div class="d-flex align-items-center">
-        <span class="status available"></span>  Online
+        <span class="status available"></span>  Available
        </div>
     </a>
     <ul class="dropdown-menu w-100 p-0">
@@ -87,9 +87,12 @@
         <li><button class="dropdown-item" type="button"> <span class="status away"></span> Away</button></li>  
         <li><button class="dropdown-item" type="button"> <span class="status grey"></span> Offline</button></li>
     </ul>
-    <a routerLink="/admin/users" (click)="closeMenu()">Profile</a>
-    <a routerLink="/admin/users" (click)="closeMenu()">Settings</a>
-    <a (click)="logOut()">Logout</a>
+    <a routerLink="/frontdesk/notifications" (click)="closeMenu()" class="d-flex align-items-center"> 
+        <mat-icon class="me-2" fontSet="material-icons-outlined">notifications</mat-icon>   Notifications
+    </a>
+    <a routerLink="/admin/profile" (click)="closeMenu()" class="d-flex align-items-center"><mat-icon class="me-2">account_circle</mat-icon> Profile</a>
+    <a routerLink="/admin/users" (click)="closeMenu()" class="d-flex align-items-center"><mat-icon class="me-2">settings</mat-icon> Settings</a>
+    <a  (click)="logOut()" class="d-flex align-items-center"><mat-icon class="me-2">logout</mat-icon>Logout</a>
   </nav>
 </aside>
 

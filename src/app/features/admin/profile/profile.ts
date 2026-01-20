@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ChangeEmail } from '../../../shared/components/comman/change-email/change-email';
 import { ChangePassword } from '../../../shared/components/comman/change-password/change-password';
 import { ChangePhoneNumber } from '../../../shared/components/comman/change-phone-number/change-phone-number';
+import { EditFacilityAndAddress } from './edit-facility-and-address/edit-facility-and-address';
 import { EditPersonalInfo } from './edit-personal-info/edit-personal-info';
 
 @Component({
@@ -59,6 +60,14 @@ export class Profile {
   changePhoneNumber() {
     this.dialog.open(ChangePhoneNumber, {
       width: '510px',
+      panelClass: 'modal--wrapper',
+      autoFocus: false, 
+    });
+  }
+
+  editFacilityOrAddress() { 
+    this.dialog.open(EditFacilityAndAddress, {
+      width: '610px',
       panelClass: 'modal--wrapper',
       autoFocus: false, 
     });

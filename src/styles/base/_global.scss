@@ -1,55 +1,77 @@
-@use '../abstracts/variables' as v;  
+@use '../abstracts/variables' as v;
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
 
-a { 
+a {
   text-decoration: none !important;
   cursor: pointer;
   color: v.$primary !important;
-} 
+}
 
-body{
+body {
 
-  .text-primary { color: v.$primary !important; }
-  .text-secondary{ color: v.$secondary !important;}
-  .text-danger, .text-error { color: v.$error !important;}
-  .wb-ba{word-break: break-all !important}
+  .text-primary {
+    color: v.$primary !important;
+  }
+
+  .text-secondary {
+    color: v.$secondary !important;
+  }
+
+  .text-danger,
+  .text-error {
+    color: v.$error !important;
+  }
+
+  .wb-ba {
+    word-break: break-all !important
+  }
 
   input[type="text"],
   textarea {
     text-transform: capitalize;
   }
-  .text-transform-none{text-transform: none !important;}
+
+  .text-transform-none {
+    text-transform: none !important;
+  }
 
   // Angular Material 
-  .mat-mdc-select-panel{
-      padding: 0 !important;
-      .mat-mdc-option{
-        min-height: 40px;
-        &.mat-mdc-option-active{
-          background-color: #d9e5fc;
-        }
+  .mat-mdc-select-panel {
+    padding: 0 !important;
+
+    .mat-mdc-option {
+      min-height: 40px;
+
+      &.mat-mdc-option-active {
+        background-color: #d9e5fc;
       }
+    }
   }
-  .mat-mdc-option{
-    font-family: v.$font-family-base !important; 
+
+  .mat-mdc-option {
+    font-family: v.$font-family-base !important;
   }
-  .mat-internal-form-field>label{
-    font-family: v.$font-family-base !important; 
+
+  .mat-internal-form-field>label {
+    font-family: v.$font-family-base !important;
     margin-top: 0.625rem;
-    font-size: 1rem; 
+    font-size: 1rem;
     color: v.$secondary;
   }
-  .mdc-checkbox__background{
+
+  .mdc-checkbox__background {
     border: 1px solid #909090 !important;
   }
-  .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, 
-  .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background{
-      border-color:v.$primary !important;
-      background-color: v.$primary!important;
+
+  .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background,
+  .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background {
+    border-color: v.$primary !important;
+    background-color: v.$primary !important;
   }
 
   // Form Controls
@@ -57,202 +79,232 @@ body{
   .form-control {
     border-radius: 4rem;
     padding: 0.44rem 0.875rem;
-    border-color: v.$grey !important ;
-    &:focus{
+    border-color: v.$grey !important;
+
+    &:focus {
       box-shadow: none;
     }
+
     &.form-select-md,
-    &.form-control-md{
+    &.form-control-md {
       padding: 0.35rem 0.875rem;
     }
   }
 
-  .dropdown-menu{ 
-      li{
-          border-bottom: 1px solid #E7E9EB;
-          &:first-child{
-            .dropdown-item{
-              border-top-left-radius: .375rem;
-              border-top-right-radius: .375rem;
-            }
-          }
-          &:last-child{
-              border: none;
-              .dropdown-item{
-                border-bottom-left-radius: .375rem;
-                border-bottom-right-radius: .375rem;
-              } 
-          }
-          .dropdown-item{
-              font-size:  0.9375rem;
-              padding: 11px 20px;
-              font-weight: 500; 
-              .mat-icon{
-                  font-size: 1.3rem;
-                  height: 1.3rem;
-                  width: 1.3rem;
-                  margin-right: 0.81rem;
-                  color: #0032A0;
-              }
-          }
-      } 
+  .dropdown-menu {
+    li {
+      border-bottom: 1px solid #E7E9EB;
+
+      &:first-child {
+        .dropdown-item {
+          border-top-left-radius: .375rem;
+          border-top-right-radius: .375rem;
+        }
+      }
+
+      &:last-child {
+        border: none;
+
+        .dropdown-item {
+          border-bottom-left-radius: .375rem;
+          border-bottom-right-radius: .375rem;
+        }
+      }
+
+      .dropdown-item {
+        font-size: 0.9375rem;
+        padding: 11px 20px;
+        font-weight: 500;
+
+        .mat-icon {
+          font-size: 1.3rem;
+          height: 1.3rem;
+          width: 1.3rem;
+          margin-right: 0.81rem;
+          color: #0032A0;
+        }
+      }
+    }
   }
 
   // Loader
-  .loader-dialog{
-    .mat-mdc-dialog-surface{
+  .loader-dialog {
+    .mat-mdc-dialog-surface {
       box-shadow: none;
       background-color: transparent;
     }
   }
 
-  .mat-mdc-checkbox{
-    .mat-internal-form-field{
+  .mat-mdc-checkbox {
+    .mat-internal-form-field {
       align-items: flex-start;
     }
   }
 
-  .card{
+  .card {
     border-radius: 0.75rem;
     border: 1px solid v.$bg-light;
     padding: 1.5625rem 1.5rem;
     margin-bottom: 1.5rem;
   }
+
   .icon--password {
-      position: absolute;
-      right: 3px;
-      top: -3px;
-      .mat-icon{
-          color: #505050;
-          font-size: 21px;
-          height: 21px;
-          width: 21px;
-      }
+    position: absolute;
+    right: 3px;
+    top: -3px;
+
+    .mat-icon {
+      color: #505050;
+      font-size: 21px;
+      height: 21px;
+      width: 21px;
+    }
   }
 
   // Modal
-  .modal--wrapper{
-    .mat-mdc-dialog-surface{
-      border-radius: 20px; 
-      .mat-mdc-dialog-title{
+  .modal--wrapper {
+    .mat-mdc-dialog-surface {
+      border-radius: 20px;
+
+      .mat-mdc-dialog-title {
         display: flex;
         align-items: center;
         justify-content: space-between;
         font-size: 20px;
         color: v.$secondary;
-        font-family: v.$font-family-base !important; 
+        font-family: v.$font-family-base !important;
         padding: 18px 55px 18px 24px;
-        &::before{
+
+        &::before {
           content: unset;
         }
-        .close--btn{
+
+        .close--btn {
           position: absolute;
           right: 7px;
           top: 7px;
         }
       }
-      .mat-mdc-dialog-content{
-        font-family: v.$font-family-base !important; 
+
+      .mat-mdc-dialog-content {
+        font-family: v.$font-family-base !important;
         color: v.$secondary !important;
       }
-      .mat-mdc-dialog-actions{
-        padding:10px 24px ;
+
+      .mat-mdc-dialog-actions {
+        padding: 10px 24px;
       }
     }
   }
 
   //Material Table
-  .material--table{
-    table{
+  .material--table {
+    table {
       border: 1px solid #E7E9EB;
       border-top: none;
-      thead{
-        tr{
+
+      thead {
+        tr {
           height: auto;
-          th{
+
+          th {
             padding-top: 8px;
             padding-bottom: 8px;
             font-size: 1rem !important;
             background-color: #D9E5FC !important;
-            font-family: v.$font-family-base !important; 
+            font-family: v.$font-family-base !important;
             font-weight: 500;
             color: v.$secondary;
           }
         }
       }
-      tbody{
-        tr{
+
+      tbody {
+        tr {
           height: auto;
-          font-family: v.$font-family-base !important; 
-          td{
+          font-family: v.$font-family-base !important;
+
+          td {
             font-size: 15px;
             font-weight: 400;
             color: v.$secondary;
             border-bottom-color: #E7E9EB;
             padding-top: 13px;
             padding-bottom: 13px;
-            .btn--action{
+
+            .btn--action {
               width: 30px;
-              height: 30px; 
+              height: 30px;
               padding: 0 !important;
               display: flex;
               align-items: center;
-              justify-content: center;  
+              justify-content: center;
               background-color: #D9E5FC;
-              .mat-icon{
+
+              .mat-icon {
                 height: 18px;
                 width: 18px;
                 font-size: 18px;
                 color: v.$primary;
               }
-            } 
-            .mdc-icon-button{
+            }
+
+            .mdc-icon-button {
               width: auto;
               height: auto;
               padding: 0;
             }
           }
-          &:nth-child(even){
-             background-color: #FAFCFF !important;
+
+          &:nth-child(even) {
+            background-color: #FAFCFF !important;
           }
-          &.not--record--found{
+
+          &.not--record--found {
             padding: 0;
-            background:#f1f5fff7
+            background: #f1f5fff7
           }
         }
       }
     }
-    mat-paginator{
+
+    mat-paginator {
       border: 1px solid #E7E9EB;
       border-top: none;
       border-radius: 0 0 20px 20px;
       font-family: v.$font-family-base !important;
-      .mat-mdc-paginator-container{
-        .mat-mdc-paginator-page-size{
-          .mat-mdc-paginator-page-size-label{
+
+      .mat-mdc-paginator-container {
+        .mat-mdc-paginator-page-size {
+          .mat-mdc-paginator-page-size-label {
             font-weight: 500;
             font-size: 14px;
           }
-          .mat-mdc-form-field{
+
+          .mat-mdc-form-field {
             width: 66px;
-            .mdc-text-field{
+
+            .mdc-text-field {
               padding: 0 12px !important;
-              .mat-mdc-form-field-infix{
+
+              .mat-mdc-form-field-infix {
                 padding-top: 3px;
                 padding-bottom: 3px;
                 min-height: unset;
               }
-               .mat-mdc-select { 
-                  font-family: v.$font-family-base !important;
-                  font-weight: 600;
+
+              .mat-mdc-select {
+                font-family: v.$font-family-base !important;
+                font-weight: 600;
               }
-            } 
+            }
           }
         }
-        .mat-mdc-paginator-range-actions{
-          .mat-mdc-paginator-range-label{
-              margin: 0 15px;
-              font-weight: 600;
+
+        .mat-mdc-paginator-range-actions {
+          .mat-mdc-paginator-range-label {
+            margin: 0 15px;
+            font-weight: 600;
           }
         }
       }
@@ -260,118 +312,141 @@ body{
   }
 
   .badge {
-      font-size: 15px;
-      border-radius: 100px;
-      padding: 6px 14px;
-      font-weight: 400;
-      background-color: #f4f3f3;
-      color: v.$secondary; 
-      &.requested { 
-          background-color: #FFE5B1;
-      } 
-      &.completed,
-      &.active{ 
-          background-color: #B1F1A6;
-      }
-      &.incomplete,
-      &.in-active{ 
-          background-color: #FFC0AD;
-      }
-    } 
-  .status{
-      width: 8px;
-      height: 8px; 
-      border-radius: 20px;
-      display: inline-flex;
-      margin-right: 8px;
-      &.available{
-          background-color: #22C55E;
-      }
-      &.unavailable{
-          background-color: #FF181C;
-      }
-      &.away{
-          background-color: yellow;
-      }
-      &.grey{
-          background-color: grey;
-      }
+    font-size: 15px;
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-weight: 400;
+    background-color: #f4f3f3;
+    color: v.$secondary;
+
+    &.requested {
+      background-color: #FFE5B1;
+    }
+
+    &.completed,
+    &.active {
+      background-color: #B1F1A6;
+    }
+
+    &.incomplete,
+    &.in-active,
+    &.cancel,
+    &.rejected {
+      background-color: #FFC0AD;
+    }
+  }
+
+  .status {
+    width: 8px;
+    height: 8px;
+    border-radius: 20px;
+    display: inline-flex;
+    margin-right: 8px;
+
+    &.available {
+      background-color: #22C55E;
+    }
+
+    &.unavailable {
+      background-color: #FF181C;
+    }
+
+    &.away {
+      background-color: yellow;
+    }
+
+    &.grey {
+      background-color: grey;
+    }
   }
 
   .upload--files {
-      border-radius: 20px;
-      border: 2px dashed #E7E9EB;
-      background: #fff;
-      padding: 30px 15px 20px;
-      margin-bottom: 25px;
-      position: relative;
-      .input--file {
-        opacity: 0;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
+    border-radius: 20px;
+    border: 2px dashed #E7E9EB;
+    background: #fff;
+    padding: 30px 15px 20px;
+    margin-bottom: 25px;
+    position: relative;
+
+    .input--file {
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
     }
+
     mat-icon {
-       color: #505050;
+      color: #505050;
     }
+
     h6 {
       color: #505050;
       margin: 10px 0 3px 0;
     }
+
     p {
-        color: #9ba6b7;
+      color: #9ba6b7;
     }
   }
-  .doc--name--sec{
+
+  .doc--name--sec {
     border: .5px dashed #E7E9EB;
     background: #EDF4FF;
     margin-bottom: 14px;
     border-radius: 3px;
     padding: 14px;
-    .file--icon{
+
+    .file--icon {
       color: #0032A0;
     }
-    small{
+
+    small {
       color: #909090;
     }
-    .action--btn{
-      .mdc-icon-button{
+
+    .action--btn {
+      .mdc-icon-button {
         height: 30px;
         width: 30px;
       }
     }
   }
-  
-}  
 
- @media (max-width: 767px) {
+}
+
+@media (max-width: 767px) {
+
   body .material--table table tbody tr td,
   body .material--table table thead tr th,
-  body .mat-internal-form-field > label,
+  body .mat-internal-form-field>label,
   ::placeholder,
   .form-select,
   .form-control,
-  .form-label{
+  .form-label {
     font-size: 0.875rem !important;
-  } 
-  body .card{
+  }
+
+  body .card {
     padding: 1rem;
     margin-bottom: 1rem;
   }
-  body .modal--wrapper .mat-mdc-dialog-surface .mat-mdc-dialog-title{
-      font-size: 17px; 
-      padding: 14px 45px 14px 15px;
+
+  body .modal--wrapper .mat-mdc-dialog-surface .mat-mdc-dialog-title {
+    font-size: 17px;
+    padding: 14px 45px 14px 15px;
   }
-  body .badge{
-    font-size: 12px !important; 
+
+  body .badge {
+    font-size: 12px !important;
     padding: 4px 8px !important;
   }
-  body .material--table mat-paginator{
+
+  body .material--table mat-paginator {
     padding-top: 15px;
     margin-bottom: 20px;
   }
-  
- }
+
+}

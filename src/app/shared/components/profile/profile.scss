@@ -1,0 +1,83 @@
+.profile--wrapper{
+    .pp--sec{
+        .pp--round{
+            width: 12.5rem;
+            height: 12.5rem; 
+            overflow: hidden;
+            margin-bottom: 1.25rem;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;   
+                object-position: center;
+            }
+        }
+        h2{
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        p{
+            font-size: 0.9375rem;
+            margin-bottom: 1.25rem;
+        }
+    } 
+    .upload--btn{
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 18px;
+        top: 10px;
+        border: 1px solid #0032a0;
+        width: 30px;
+        height: 30px; 
+        border-radius: 20px;
+        background: #fff;
+        .mat-icon{
+            font-size: 18px;
+            height: 18px;
+            width: 18px;
+            color: #0032a0;
+        }
+        .file-input{
+            opacity:0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 28px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .profile--wrapper{
+        .pp--sec{
+            .pp--round{
+                width: 9rem;
+                height: 9rem; 
+                overflow: hidden;
+                margin-bottom: 1rem; 
+            }
+            h2{
+                font-size: 1rem;
+                margin-bottom: 0.45rem;
+            }
+            p{
+                font-size: 0.8rem;
+                margin-bottom: 1rem;
+            }
+        } 
+        .upload--btn{
+            right: 6px;
+            top: 5px;
+            width: 26px;
+            height: 25px;
+            .mat-icon  {
+                font-size: 16px;
+                height: 16px;
+                width: 16px; 
+            }
+        }
+    } 
+}

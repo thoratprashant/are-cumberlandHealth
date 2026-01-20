@@ -18,6 +18,12 @@ body{
   .text-danger, .text-error { color: v.$error !important;}
   .wb-ba{word-break: break-all !important}
 
+  input[type="text"],
+  textarea {
+    text-transform: capitalize;
+  }
+  .text-transform-none{text-transform: none !important;}
+
   // Angular Material 
   .mat-mdc-select-panel{
       padding: 0 !important;

@@ -4,7 +4,7 @@
  */
 export interface AuthUser {
   id: string;
-  name: string;
+  //name: string;
   role: UserRole;
 }
 

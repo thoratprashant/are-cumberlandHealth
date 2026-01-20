@@ -34,5 +34,13 @@ export class AuthApi {
   identify(username: string) {
     return this.api.post<{ success: boolean; message: string; data: any }>('/auth/identify', { username });
   }
+
+  userMe() {
+    return this.api.get<{ success: boolean; message: string; data: any }>('/users/me');
+  }
   
+  // logout from device
+  logOut() {
+    return this.api.post<{ success: boolean; message: string; data: any }>('/auth/logout', {});
+  }
 }

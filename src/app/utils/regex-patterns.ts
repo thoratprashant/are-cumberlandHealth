@@ -1,12 +1,12 @@
 export const regex = {
     userName: /^(\d{10}|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/,
     EMAIL: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-    MOBILE: /^\d{10}$/,
+    MOBILE: /^\d+$/,
     OTP:/^\d{6}$/,
 
     // this is username - login with email or mobile validation
     PHONE_ALLOWED: /^[0-9+ ]+$/,
-    EMAIL_TRIGGER: /[a-zA-Z@._-]/,
+    EMAIL_TRIGGER: /[a-zA-Z@]/,
 
     PASSWORD_RULES:{
         MIN_LENGTH_PASSWORD: 8,

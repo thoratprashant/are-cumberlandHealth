@@ -21,31 +21,6 @@
         overflow: auto;
         position: relative;
 
-        .badge {
-            font-size: 15px;
-            border-radius: 100px;
-            padding: 6px 14px;
-            font-weight: 400;
-            background-color: #f4f3f3;
-            color: v.$secondary;
-
-            &.requested {
-                background-color: #FFE5B1;
-            }
-
-            &.completed,
-            &.active {
-                background-color: #B1F1A6;
-            }
-
-            &.incomplete,
-            &.in-active,
-            &.cancel,
-            &.rejected {
-                background-color: #FFC0AD;
-            }
-        }
-
         ::ng-deep {
             table {
                 thead {

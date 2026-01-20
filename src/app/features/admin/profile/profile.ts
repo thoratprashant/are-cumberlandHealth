@@ -9,6 +9,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AlertDialog } from '../../comman/alert-dialog/alert-dialog';
 import { ChangeEmail } from '../../comman/change-email/change-email';
 import { ChangePhoneNumber } from '../../comman/change-phone-number/change-phone-number';
+import { EditFacilityAndAddress } from './edit-facility-and-address/edit-facility-and-address';
 
 @Component({
   selector: 'app-profile',
@@ -60,6 +61,14 @@ export class Profile {
   changePhoneNumber() {
     this.dialog.open(ChangePhoneNumber, {
       width: '510px',
+      panelClass: 'modal--wrapper',
+      autoFocus: false, 
+    });
+  }
+
+  editFacilityOrAddress() { 
+    this.dialog.open(EditFacilityAndAddress, {
+      width: '610px',
       panelClass: 'modal--wrapper',
       autoFocus: false, 
     });

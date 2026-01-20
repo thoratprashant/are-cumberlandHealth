@@ -226,7 +226,7 @@
                     <p class="font-16 text-secondary fw-medium mb-0 wb-ba">william.smith@loremipsum.com</p>
                   </div>
                 </div>
-                <button   matIconButton class="flex-shrink-0 edit--icon" (click)="changeEmail()">
+                <button matIconButton class="flex-shrink-0 edit--icon" (click)="changeEmail()">
                   <img src="images/edit.svg" alt="user img" class="img-fluid">
                 </button>
               </div>
@@ -266,40 +266,87 @@
             <div class="row">
               <div class="col-12 d-flex align-items-center justify-content-between mb-2 mb-sm-3">
                 <h3 class="font-16 fw-semibold text-primary m-0">Facility (s)</h3>
-                <button class="edit--icon" matIconButton (click)="editPersonalInfo()">
+                <button class="edit--icon" matIconButton (click)="editFacilityOrAddress()">
                   <img src="images/edit.svg" alt="user img" class="img-fluid">
                 </button>
               </div>
               <div class="col-12">
-                <h3 class="font-16 fw-semibold text-secondary mb-3 mt-2">Facility 1</h3>
+                <div class="row">
+                  <div class="col-12">
+                    <h3 class="font-16 fw-semibold text-secondary mb-3 mt-2">Facility 1</h3>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4 mb-3">
+                    <label class="font-14 text-primary fw-medium">Facility Name (Mandatory)</label>
+                    <p class="font-16 text-secondary fw-medium mb-0">Sunrise Medical Center </p>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4 mb-3">
+                    <label class="font-14 text-primary fw-medium">Apartment / Suite No (Mandatory)</label>
+                    <p class="font-16 text-secondary fw-medium mb-0">2450 Elm Street</p>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4 mb-3">
+                    <label class="font-14 text-primary fw-medium">Street (Mandatory)</label>
+                    <p class="font-16 text-secondary fw-medium mb-0">2450 Elm Street</p>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4 mb-3">
+                    <label class="font-14 text-primary fw-medium">Locality (Mandatory)</label>
+                    <p class="font-16 text-secondary fw-medium mb-0">2450 Elm Street</p>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4 mb-3">
+                    <label class="font-14 text-primary fw-medium">State (Mandatory)</label>
+                    <p class="font-16 text-secondary fw-medium mb-0">TX</p>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4 mb-3">
+                    <label class="font-14 text-primary fw-medium">City (Mandatory)</label>
+                    <p class="font-16 text-secondary fw-medium mb-0">Dallas</p>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4 mb-3">
+                    <label class="font-14 text-primary fw-medium">Zip (Mandatory)</label>
+                    <p class="font-16 text-secondary fw-medium mb-0">75201</p>
+                  </div>
+                </div>
               </div>
-              <div class="col-12 col-md-6 col-xl-4 mb-3">
-                <label class="font-14 text-primary fw-medium">Facility Name (Mandatory)</label>
-                <p class="font-16 text-secondary fw-medium mb-0">Sunrise Medical Center </p>
-              </div>
-              <div class="col-12 col-md-6 col-xl-4 mb-3">
-                <label class="font-14 text-primary fw-medium">Apartment / Suite No (Mandatory)</label>
-                <p class="font-16 text-secondary fw-medium mb-0">2450 Elm Street</p>
-              </div>
-              <div class="col-12 col-md-6 col-xl-4 mb-3">
-                <label class="font-14 text-primary fw-medium">Street (Mandatory)</label>
-                <p class="font-16 text-secondary fw-medium mb-0">2450 Elm Street</p>
-              </div>
-              <div class="col-12 col-md-6 col-xl-4 mb-3">
-                <label class="font-14 text-primary fw-medium">Locality (Mandatory)</label>
-                <p class="font-16 text-secondary fw-medium mb-0">2450 Elm Street</p>
-              </div>
-              <div class="col-12 col-md-6 col-xl-4 mb-3">
-                <label class="font-14 text-primary fw-medium">State (Mandatory)</label>
-                <p class="font-16 text-secondary fw-medium mb-0">TX</p>
-              </div>
-              <div class="col-12 col-md-6 col-xl-4 mb-3">
-                <label class="font-14 text-primary fw-medium">City (Mandatory)</label>
-                <p class="font-16 text-secondary fw-medium mb-0">Dallas</p>
-              </div>
-              <div class="col-12 col-md-6 col-xl-4 mb-3">
-                <label class="font-14 text-primary fw-medium">Zip (Mandatory)</label>
-                <p class="font-16 text-secondary fw-medium mb-0">75201</p>
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-12 d-flex align-items-center justify-content-between">
+                    <h3 class="font-16 fw-semibold text-secondary mb-3 mt-2">Facility 2</h3>
+                    <div class="d-flex align-items-center">
+                      <button class="edit--icon" matIconButton>
+                        <mat-icon class="text-danger">delete</mat-icon>
+                      </button>
+                      <!-- <button class="edit--icon" matIconButton (click)="editFacilityOrAddress()">
+                        <img src="images/edit.svg" alt="user img" class="img-fluid">
+                      </button> -->
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4 mb-3">
+                    <label class="font-14 text-primary fw-medium">Facility Name (Mandatory)</label>
+                    <p class="font-16 text-secondary fw-medium mb-0">Sunrise Medical Center </p>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4 mb-3">
+                    <label class="font-14 text-primary fw-medium">Apartment / Suite No (Mandatory)</label>
+                    <p class="font-16 text-secondary fw-medium mb-0">2450 Elm Street</p>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4 mb-3">
+                    <label class="font-14 text-primary fw-medium">Street (Mandatory)</label>
+                    <p class="font-16 text-secondary fw-medium mb-0">2450 Elm Street</p>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4 mb-3">
+                    <label class="font-14 text-primary fw-medium">Locality (Mandatory)</label>
+                    <p class="font-16 text-secondary fw-medium mb-0">2450 Elm Street</p>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4 mb-3">
+                    <label class="font-14 text-primary fw-medium">State (Mandatory)</label>
+                    <p class="font-16 text-secondary fw-medium mb-0">TX</p>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4 mb-3">
+                    <label class="font-14 text-primary fw-medium">City (Mandatory)</label>
+                    <p class="font-16 text-secondary fw-medium mb-0">Dallas</p>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4 mb-3">
+                    <label class="font-14 text-primary fw-medium">Zip (Mandatory)</label>
+                    <p class="font-16 text-secondary fw-medium mb-0">75201</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -309,10 +356,10 @@
             <div class="row">
               <div class="col-12 d-flex align-items-center justify-content-between mb-2 mb-sm-3">
                 <h3 class="font-16 fw-semibold text-primary m-0">Address</h3>
-                <button class="edit--icon" matIconButton (click)="editPersonalInfo()">
+                <button class="edit--icon" matIconButton (click)="editFacilityOrAddress()">
                   <img src="images/edit.svg" alt="user img" class="img-fluid">
                 </button>
-              </div> 
+              </div>
               <div class="col-12 col-md-6 col-xl-4 mb-3">
                 <label class="font-14 text-primary fw-medium">Appartment/Suite No. (Mandatory)</label>
                 <p class="font-16 text-secondary fw-medium mb-0">Jelite Apartment 14 floor</p>
@@ -336,7 +383,7 @@
               <div class="col-12 col-md-6 col-xl-4 mb-3">
                 <label class="font-14 text-primary fw-medium">ZIP (Mandatory)</label>
                 <p class="font-16 text-secondary fw-medium mb-0">75201</p>
-              </div> 
+              </div>
             </div>
           </div>
         </div>

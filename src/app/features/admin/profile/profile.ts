@@ -1,14 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { ChangePassword } from '../../comman/change-password/change-password';
+import { ChangeEmail } from '../../../shared/components/comman/change-email/change-email';
+import { ChangePassword } from '../../../shared/components/comman/change-password/change-password';
+import { ChangePhoneNumber } from '../../../shared/components/comman/change-phone-number/change-phone-number';
 import { EditPersonalInfo } from './edit-personal-info/edit-personal-info';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { AlertDialog } from '../../comman/alert-dialog/alert-dialog';
-import { ChangeEmail } from '../../comman/change-email/change-email';
-import { ChangePhoneNumber } from '../../comman/change-phone-number/change-phone-number';
 
 @Component({
   selector: 'app-profile',

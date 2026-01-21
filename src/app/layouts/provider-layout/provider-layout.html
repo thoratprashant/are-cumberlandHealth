@@ -7,7 +7,7 @@
   <div class="nav-desktop menus-desktop">
     <ul class="m-0 p-0 d-flex ">
         <li routerLinkActive="active"><a routerLink="/admin/user-managment">Dashboard</a></li>
-        <li routerLinkActive="active"><a routerLink="/admin/analytics">History</a></li> 
+        <li routerLinkActive="active"><a routerLink="/provider/history">History</a></li> 
     </ul>
   </div>
 
@@ -73,8 +73,7 @@
   </div>
   <nav>
     <a routerLink="/admin/user-managment" (click)="closeMenu()">User Management</a>
-    <a routerLink="/admin/users" (click)="closeMenu()">Analytics</a> 
-    <a routerLink="/admin/patients" (click)="closeMenu()">Patients</a>
+    <a routerLink="/provider/history" (click)="closeMenu()">History</a>  
     <a dropdown-toggle data-bs-toggle="dropdown" aria-expanded="false">
        <div class="d-flex align-items-center">
         <span class="status available"></span>  Available

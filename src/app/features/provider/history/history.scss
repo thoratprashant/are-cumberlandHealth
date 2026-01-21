@@ -1,0 +1,92 @@
+.listing--wrapper {
+    .sorting--head {
+        border-radius: 20px 20px 0 0;
+        background-color: #fff;
+        padding: 24px;
+
+        ::ng-deep {
+            .mat-mdc-icon-button {
+                padding: 0px !important;
+                height: 1.875rem !important;
+            }
+        }
+
+        .icon--password {
+            top: 3px;
+        }
+    }
+
+    .material--table {
+        max-height: calc(100vh - 200px);
+        overflow: auto;
+        position: relative;
+
+        ::ng-deep {
+            table {
+                thead {
+                    tr {
+                        th {
+                            &:first-child { width: 160px;
+                            }
+
+                            &:nth-child(2) { width: auto;
+                            }
+
+                            &:nth-child(3) { width: 25%;
+                            }
+
+                            &:nth-child(4) { width: 20%;
+                            }
+
+                            &:nth-child(5) { width: 15%;
+                            }
+
+                            &:last-child { width: 10%;
+                            }
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        td {
+                            &:first-child {   width: 160px;
+                            }
+
+                            &:nth-child(2) { width: auto;
+                            }
+
+                            &:nth-child(3) {  width: 25%;
+                            }
+
+                            &:nth-child(4) {  width: 20%;
+                            }
+
+                            &:nth-child(5) { width: 15%;
+                            }
+
+                            &:last-child {  width: 10%
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 820px) {
+    ::ng-deep {
+        .material--table table {
+            width: 900px !important;
+        }
+
+        .listing--wrapper .material--table {
+            max-height: unset !important;
+        }
+
+        .listing--wrapper .sorting--head {
+            padding: 10px 10px 20px 10px !important;
+        }
+    }
+}

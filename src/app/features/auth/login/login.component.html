@@ -12,7 +12,7 @@
               <span class="input-group-text phone-prefix" *ngIf="isPhoneMode">+1</span>
 
               <input
-                type="text"
+                type="email"
                 class="form-control"
                 userNameIdentifier
                 usPhoneOrEmail
@@ -50,7 +50,7 @@
     <div class="row">
       <div class="col-12 mb-1">
         <label  class="form-label" runtimeTranslate>Verification Code <span  class="text-error">*</span></label>
-        <input type="text" class="form-control" maxlength="6" numbersOnly formControlName="otp" runtimeTranslatePlaceholder placeholder="Enter 6 digit Verification Code"> 
+        <input type="number" class="form-control" maxlength="6" numbersOnly formControlName="otp" runtimeTranslatePlaceholder placeholder="Enter 6 digit Verification Code"> 
         
         @if (otpForm.get('otp')?.touched && otpForm.get('otp')?.errors) {
         <div class="font-13 mt-1 text-danger" runtimeTranslate>

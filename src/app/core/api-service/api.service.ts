@@ -23,10 +23,23 @@ export class ApiService {
   }
 
   post<T>(url: string, body: any) {
-    return this.request('POST', url, body);
+    return this.request<T>('POST', url, body);
   }
 
   get<T>(url: string) {
-    return this.request('GET', url);
+    return this.request<T>('GET', url);
+  }
+
+  patch<T>(url: string, body: any) {
+    return this.request<T>('PATCH', url, body);
+  }
+
+  /** (optional but recommended) */
+  put<T>(url: string, body: any) {
+    return this.request<T>('PUT', url, body);
+  }
+
+  delete<T>(url: string) {
+    return this.request<T>('DELETE', url);
   }
 }

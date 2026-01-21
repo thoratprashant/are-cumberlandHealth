@@ -85,6 +85,8 @@ export class AuthService {
             .subscribe({
                 next: (res) => onSuccess(res),
                 error: (err) => {
+                    localStorage.clear();
+                    this.clearUser();
                     this.commonService.error(err.message || Messages.AUTH.FETCH_USER_FAILED);
                 },
                 complete: () => this.commonService.hideLoader()

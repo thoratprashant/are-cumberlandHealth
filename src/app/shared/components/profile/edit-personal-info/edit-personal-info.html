@@ -10,20 +10,34 @@
      <div class="row">
        <div class="col-12 mb-4">
          <label class="form-label">First Name<span class="text-error">*</span></label>
-         <input type="text" class="form-control" formControlName="firstName" placeholder="Ente first name">
+         <input type="text" lettersOnly [attr.maxlength]="RULES.MAX_LENGTH" class="form-control" formControlName="firstName" placeholder="Ente first name">
+         @if (form.get('firstName')?.touched && form.get('firstName')?.errors) {
+            @if (form.get('firstName')?.errors?.['required']) {
+              <div class="font-13 mt-1 text-danger">
+                {{message.PROFILE.FIRST_NAME_REQUIRED}}
+              </div>
+             }
+         }
        </div>
        <div class="col-12 mb-4">
          <label class="form-label">Middle Name</label>
-         <input type="text" class="form-control"  formControlName="middleName" placeholder="Ente middle name">
+         <input type="text" lettersOnly [attr.maxlength]="RULES.MAX_LENGTH" class="form-control"  formControlName="middleName" placeholder="Ente middle name">
        </div>
        <div class="col-12">
          <label class="form-label">Last Name<span class="text-error">*</span></label>
-         <input type="text" class="form-control" formControlName="lastName" placeholder="Ente last name">
-       </div>
+         <input type="text" [attr.maxlength]="RULES.MAX_LENGTH" class="form-control" formControlName="lastName" placeholder="Ente last name">
+          @if (form.get('lastName')?.touched && form.get('lastName')?.errors) {
+            @if (form.get('lastName')?.errors?.['required']) {
+              <div class="font-13 mt-1 text-danger">
+                {{message.PROFILE.LAST_NAME_REQUIRED}}
+              </div>
+             }
+         }
+        </div>
      </div>
    </form>
  </mat-dialog-content>
 
  <mat-dialog-actions align="end">
-   <button type="button" class="btn btn-primary" mat-dialog-close>Save</button>
+   <button type="button" class="btn btn-primary"  (click)="save()" [disabled]="form.invalid">Save</button>
  </mat-dialog-actions>

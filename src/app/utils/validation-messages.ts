@@ -1,7 +1,7 @@
 import { regex } from "./regex-patterns";
 
 export const validationMessages = {
-  required: (fieldName: string) => `Please enter ${fieldName}.`,
+  required: (fieldName: string) => `Please enter your ${fieldName}.`,
   otpExpire:(time: any) => `Expires in ${time} seconds.`,
 };
 
@@ -38,9 +38,19 @@ export const Messages = {
     
     FETCH_USER_FAILED: "Failed to fetch user details. Please try again.",
     LOGOUT_SUCCESS: "Logged out successfully.",
-    LOGOUT_ALL_SUCCESS: "Logged out from all devices successfully."
+    LOGOUT_ALL_SUCCESS: "Logged out from all devices successfully.",
+
+    OLD_PASSWORD_REQUIRED: "Please enter your old password.",
+    INVALID_OLD_PASSWORD: "Old password is incorrect.",
+    PASSWORD_CHANGED: "Password changed successfully.",
+    PASSWORD_CHANGE_FAILED: "Unable to change password. Please try again.",
+    NEW_PASSWORD_REQUIRED: "Please enter your new password.",
+    PASSWORD_PATTERN: "Password must contain one numeric, one special character, one uppercase and one lowercase.",
+    CONFIRM_PASSWORD_REQUIRED: "Please confirm your new password."
+
   },
   PASSWORD_RULES:{
+    SAME_AS_OLD: 'New password must be different from old password',
     PASSWORD_MIN_LENGTH: `At least ${regex.PASSWORD_RULES.MIN_LENGTH_PASSWORD} characters`,
     UPPERCASE_PASSWORD: "One uppercase letter",
     LOWERCASE_PASSWORD: "One lowercase letter",
@@ -52,6 +62,14 @@ export const Messages = {
   PROFILE: {
     FETCH_FAILED: 'Unable to load profile',
     FETCH_SUCCESS: 'Profile fetched successfully',
+
+    FIRST_NAME_REQUIRED: 'Please enter your first name.',
+    LAST_NAME_REQUIRED: 'Please enter your last name.',
+    ONLY_LETTERS: 'This field can contain only letters.',
+    NO_LEADING_TRAILING_SPACE: 'Leading or trailing spaces are not allowed.',
+    MAX_LENGTH: 'The user should not be able to enter more than allocated characters.',
+    UPDATE_SUCCESS: "Profile updated successfully"
+
   }
   
 };

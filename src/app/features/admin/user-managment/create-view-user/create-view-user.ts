@@ -6,7 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { RouterLink } from '@angular/router';
-import { AlertDialog } from '../../../comman/alert-dialog/alert-dialog';
+import { AlertDialog } from '../../../../shared/components/comman/alert-dialog/alert-dialog';
 
 @Component({
   selector: 'app-create-view-user',

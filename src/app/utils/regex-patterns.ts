@@ -8,6 +8,8 @@ export const regex = {
     PHONE_ALLOWED: /^[0-9+ ]+$/,
     EMAIL_TRIGGER: /[a-zA-Z@]/,
 
+    ALLOW_CHARS: /^[a-zA-Z ]$/,
+
     PASSWORD_RULES:{
         MIN_LENGTH_PASSWORD: 8,
         UPPERCASE_PASSWORD: /(?=.*[A-Z])/,

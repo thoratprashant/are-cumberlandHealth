@@ -40,6 +40,10 @@ body {
     text-transform: none !important;
   }
 
+  .text-transform-capitalize {
+    text-transform: capitalize !important;
+  }
+
   // Angular Material 
   .mat-mdc-select-panel {
     padding: 0 !important;

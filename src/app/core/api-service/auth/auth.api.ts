@@ -43,4 +43,9 @@ export class AuthApi {
   logOut() {
     return this.api.post<{ success: boolean; message: string; data: any }>('/auth/logout', {});
   }
+
+  // change password
+  changePassword(payload: {oldPassword: string; newPassword: string;}) {
+    return this.api.patch<{ success: boolean; message: string; data: any }>('/auth/change-password',payload);
+  }
 }

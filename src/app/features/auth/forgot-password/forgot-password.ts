@@ -12,6 +12,7 @@ import { RuntimeTranslateDirective } from '../../../core/i18n/runtime-translate.
 import { OtpFlowService } from '../../../core/services/otp-flow.service';
 import { UserNameIdentifierDirective } from '../../../shared/directives/identifier.directive';
 import { NumbersOnlyDirective } from '../../../shared/directives/numbers-only.directive';
+import { UsPhoneOrEmailDirective } from '../../../shared/directives/us-phone-or-email.directive';
 import { ShowErrorPipe } from '../../../shared/pipes/show-error.pipe';
 import { emailOrMobileValidator } from '../../../shared/validators/email-or-mobile.validator';
 import { passwordMatchValidator } from '../../../shared/validators/password-match.validator';
@@ -21,7 +22,7 @@ import { Messages, validationMessages } from '../../../utils/validation-messages
 @Component({
   selector: 'app-forgot-password',
   standalone: true,
-  imports: [CommonModule, RouterLink, ReactiveFormsModule, ShowErrorPipe, MatButtonModule, MatIconModule, NumbersOnlyDirective, UserNameIdentifierDirective,RuntimeTranslateDirective, RuntimeTranslatePlaceholderDirective],
+  imports: [CommonModule, RouterLink, ReactiveFormsModule, ShowErrorPipe, MatButtonModule, MatIconModule, NumbersOnlyDirective, UserNameIdentifierDirective,RuntimeTranslateDirective, RuntimeTranslatePlaceholderDirective, UsPhoneOrEmailDirective],
   templateUrl: './forgot-password.html',
   styleUrl: './forgot-password.scss',
 })

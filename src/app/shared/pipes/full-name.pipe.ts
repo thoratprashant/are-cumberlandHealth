@@ -15,7 +15,7 @@ export class FullNamePipe implements PipeTransform {
     middleName?: string,
     lastName?: string
   ): string {
-    return [firstName, middleName, lastName]
+    return [lastName, middleName, firstName]
       .filter(Boolean)
       .join(' ');
   }

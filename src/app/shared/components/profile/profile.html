@@ -12,7 +12,7 @@
               <input class="file-input" type="file">
             </label>
           </div>
-          <h2 class="fw-medium text-secondary d-flex align-items-center"> <span class="status available"></span> 
+          <h2 class="fw-medium text-secondary d-flex align-items-center text-transform-capitalize"> <span class="status available"></span> 
             {{ profile?.firstName | fullName:profile?.middleName:profile?.lastName }}
           </h2>
           <!-- <p class="text-secondary">(MD , Cardiology)</p> -->
@@ -34,15 +34,15 @@
               </div>
               <div class="col-12 col-md-6 col-xl-4 mb-3">
                 <label class="font-14 text-primary fw-medium">First Name (Mandatory)</label>
-                <p class="font-16 text-secondary fw-medium mb-0">{{profile?.firstName}}</p>
+                <p class="font-16 text-secondary fw-medium mb-0 text-transform-capitalize">{{profile?.firstName}}</p>
               </div>
               <div class="col-12 col-md-6 col-xl-4 mb-3">
                 <label class="font-14 text-primary fw-medium">Middle Name (Optional)</label>
-                <p class="font-16 text-secondary fw-medium mb-0">{{profile?.middleName}}</p>
+                <p class="font-16 text-secondary fw-medium mb-0 text-transform-capitalize">{{profile?.middleName}}</p>
               </div>
               <div class="col-12 col-md-6 col-xl-4 mb-3">
                 <label class="font-14 text-primary fw-medium">Last Name (Mandatory)</label>
-                <p class="font-16 text-secondary fw-medium mb-0">{{profile?.lastName}}</p>
+                <p class="font-16 text-secondary fw-medium mb-0 text-transform-capitalize">{{profile?.lastName}}</p>
               </div>
             </div>
           </div>

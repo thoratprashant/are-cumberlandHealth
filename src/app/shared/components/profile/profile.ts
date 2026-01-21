@@ -43,7 +43,9 @@ export class Profile implements OnInit {
         this.profile = res.data
         this.cd.detectChanges();
       },
-      error: () => alert(Messages.PROFILE.FETCH_FAILED)
+      error: (error) => {
+          this.commonService.error(Messages.PROFILE.FETCH_FAILED);
+        }
     });
   }
 

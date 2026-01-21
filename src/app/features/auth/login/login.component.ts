@@ -13,6 +13,7 @@ import { AuthService } from '../../../core/services/auth.service';
 import { OtpFlowService } from '../../../core/services/otp-flow.service';
 import { UserNameIdentifierDirective } from '../../../shared/directives/identifier.directive';
 import { NumbersOnlyDirective } from '../../../shared/directives/numbers-only.directive';
+import { UsPhoneOrEmailDirective } from '../../../shared/directives/us-phone-or-email.directive';
 import { ShowErrorPipe } from '../../../shared/pipes/show-error.pipe';
 import { emailOrMobileValidator } from '../../../shared/validators/email-or-mobile.validator';
 import { regex } from '../../../utils/regex-patterns';
@@ -21,7 +22,7 @@ import { Messages, validationMessages } from '../../../utils/validation-messages
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterLink, ShowErrorPipe, MatButtonModule, MatIconModule, NumbersOnlyDirective, UserNameIdentifierDirective,RuntimeTranslateDirective, RuntimeTranslatePlaceholderDirective],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink, ShowErrorPipe, MatButtonModule, MatIconModule, NumbersOnlyDirective, UserNameIdentifierDirective,RuntimeTranslateDirective, RuntimeTranslatePlaceholderDirective, UsPhoneOrEmailDirective],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
@@ -153,10 +154,22 @@ export class LoginComponent {
       this.otpForm.value.otp!,
       localStorage.getItem('currentSession')!,
       (res) => {
-        this.auth.saveToken(res.data.token.accessToken);
+        this.cd.detectChanges();
+
+        this.redirectToDashboard(res.data);
+        
+      }
+    );
+
+  }
+
+  /* login successfull and redirect to dashboard */
+  redirectToDashboard(data: any) {
+    
+    this.auth.saveToken(data.token.accessToken);
 
         // Set ONLY minimal UI context (memory preferred)
-        this.auth.setUser(res.user.data);
+        this.auth.setUser(data.user);
 
         localStorage.removeItem('currentSession');
 
@@ -164,11 +177,23 @@ export class LoginComponent {
 
          // Delay redirect
         setTimeout(() => {
-          this.router.navigate(['/dashboard']);
+          switch (data.user.role) {
+            case 'system_admin':
+              
+              this.router.navigate(['/system-admin/profile']);
+              break;
+            case 'admin':
+              this.router.navigate(['/admin']);
+              break;
+            case 'front_desk':
+              this.router.navigate(['/front-desk']);
+              break;
+            case 'provider':
+              this.router.navigate(['/provider']);
+              break;
+          }
         }, 2000);
         
-      }
-    );
 
   }
 
@@ -190,13 +215,7 @@ export class LoginComponent {
 
           this.cd.detectChanges();
 
-          localStorage.setItem('auth_token', res.data.accessToken);
-
-          localStorage.setItem('refresh_token', res.data.refreshToken);
-          localStorage.removeItem('currentSession');
-
-          this.commonService.success(res.message || Messages.AUTH.LOGIN_SUCCESS);
-          //this.router.navigate(['/dashboard']);
+          this.redirectToDashboard(res.data);
         },
         error: (error) => {
           this.commonService.hideLoader();

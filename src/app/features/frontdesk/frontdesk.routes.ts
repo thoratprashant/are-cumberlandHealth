@@ -13,7 +13,7 @@ export const FRONTDESKLAYOUT_ROUTES: Routes = [
   },
   {
     path: 'notifications',
-    loadComponent: () => import('../comman/notifications/notifications').then(c => c.Notifications),
+    loadComponent: () => import('../../shared/components/comman/notifications/notifications').then(c => c.Notifications),
     data: { title: 'notifications' }
   },
 ];

@@ -21,4 +21,9 @@ export const routes: Routes = [
     loadComponent: () => import('./layouts/frontdesk-layout/frontdesk-layout').then(c => c.FrontdeskLayout),
     loadChildren: () => import('./features/frontdesk/frontdesk.routes').then(r => r.FRONTDESKLAYOUT_ROUTES),
   },
+  {
+    path: 'provider',
+    loadComponent: () => import('./layouts/provider-layout/provider-layout').then(c => c.ProviderLayout),
+    loadChildren: () => import('./features/provider/provider.routes').then(r => r.PROVIDERLAYOUT_ROUTES),
+  },
 ];

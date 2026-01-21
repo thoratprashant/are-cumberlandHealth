@@ -91,6 +91,7 @@ export class Profile implements OnInit {
       width: '510px',
       panelClass: 'modal--wrapper',
       autoFocus: false,
+      data: this.profile
     });
   }
   changePhoneNumber() {

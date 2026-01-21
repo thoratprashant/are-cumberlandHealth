@@ -34,6 +34,7 @@ export function authInitializerFactory(auth: AuthService) {
 
         if (res?.success && res.data) {
           auth.setUser(res.data);
+          auth.onLoginSuccess(); // 🔥 restart idle after refresh
         } else {
           localStorage.clear();
           auth.clearUser();

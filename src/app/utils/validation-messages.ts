@@ -9,6 +9,7 @@ export const Messages = {
   AUTH: {
     USERNAME_REQUIRED: "Email or mobile number is required.",
     USERNAME_INVALID: "Enter a valid email or mobile number",
+    EMAIL_REQUIRED: 'Email address is required',
     INVALID_EMAIL:"Please enter a valid email address.",
     INVALID_MOBILE:"Please enter a valid mobile number.",
     USER_NOT_FOUND: 'User not found',
@@ -46,8 +47,9 @@ export const Messages = {
     PASSWORD_CHANGE_FAILED: "Unable to change password. Please try again.",
     NEW_PASSWORD_REQUIRED: "Please enter your new password.",
     PASSWORD_PATTERN: "Password must contain one numeric, one special character, one uppercase and one lowercase.",
-    CONFIRM_PASSWORD_REQUIRED: "Please confirm your new password."
-
+    CONFIRM_PASSWORD_REQUIRED: "Please confirm your new password.",
+    PASSWORD_CHANGED_LOGOUT: "Your password has been changed successfully. For security reasons, you have been logged out. Please log in again with your new password.",
+    ACCOUNT_IDLE_LOGOUT: "You have been logged out due to inactivity."
   },
   PASSWORD_RULES:{
     SAME_AS_OLD: 'New password must be different from old password',

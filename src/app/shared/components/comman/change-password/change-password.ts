@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { finalize } from 'rxjs';
 import { AuthApi } from '../../../../core/api-service/auth/auth.api';
 import { CommonService } from '../../../../core/helper/common.service';
+import { AuthService } from '../../../../core/services/auth.service';
 import { OtpFlowService } from '../../../../core/services/otp-flow.service';
 import { regex } from '../../../../utils/regex-patterns';
 import { Messages, validationMessages } from '../../../../utils/validation-messages';
@@ -58,6 +59,7 @@ export class ChangePassword {
     private cd: ChangeDetectorRef,
     private otpFlow: OtpFlowService,
     private router: Router,
+    private auth: AuthService
   ) {
     
   }
@@ -91,7 +93,16 @@ export class ChangePassword {
         )
       .subscribe({
         next: (res: any) => {
-          this.commonService.success(this.message.AUTH.PASSWORD_CHANGED);
+          this.commonService.success(this.message.AUTH.PASSWORD_CHANGED_LOGOUT);
+          
+            this.auth.logout(() => {
+                this.commonService.hideLoader();
+                setTimeout(() => {
+                    this.router.navigate(['/auth/login']);
+                  }, 2000);
+                
+              });
+              
           this.dialog.closeAll();
         },
         error: (error) => {

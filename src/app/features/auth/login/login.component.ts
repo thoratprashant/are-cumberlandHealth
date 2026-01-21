@@ -175,6 +175,8 @@ export class LoginComponent {
 
         this.commonService.success(Messages.AUTH.LOGIN_SUCCESS);
 
+        this.auth.onLoginSuccess(); // 🔥 START IDLE TIMER
+
          // Delay redirect
         setTimeout(() => {
           switch (data.user.role) {

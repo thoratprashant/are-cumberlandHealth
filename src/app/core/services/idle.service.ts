@@ -1,37 +1,61 @@
-import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
-import { environment } from "../../../environments/environment";
-import { CommonService } from "../helper/common.service";
-import { AuthService } from "./auth.service";
+import { Injectable, NgZone } from '@angular/core';
+import { fromEvent, merge, Subscription, timer } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class IdleService {
-  private timeout: any;
-  private readonly IDLE_TIME = environment.screenIdleTimeoutMinutes * 60 * 1000; // 10 min
 
-  constructor(private auth: AuthService, private router: Router,private commonService: CommonService,
-      ) {
-    ['mousemove', 'keydown', 'click'].forEach(event =>
-      window.addEventListener(event, () => this.resetTimer())
-    );
-    this.resetTimer();
-  }
+  private activitySub?: Subscription;
+  private timeoutSub?: Subscription;
 
-  resetTimer() {
-    clearTimeout(this.timeout);
-    this.timeout = setTimeout(() => this.logout(), this.IDLE_TIME);
-  }
+  // Example: 10 or 15 minutes from environment
+  private readonly IDLE_TIME =
+    environment.screenIdleTimeoutMinutes * 60 * 1000;
 
-  logout() {
+  constructor(private zone: NgZone) {}
 
-     this.commonService.showLoader();
-    this.auth.logout(() => {
-      this.commonService.hideLoader();
+  /**
+   * Start idle tracking
+   * Called ONLY after login
+   */
+  start(onTimeout: () => void): void {
+    this.stop(); // prevent duplicate timers
 
-      setTimeout(() => {
-          this.router.navigate(['/auth/login']);
-        }, 2000);
-      
+    this.zone.runOutsideAngular(() => {
+      const activity$ = merge(
+        fromEvent(document, 'mousemove'),
+        fromEvent(document, 'keydown'),
+        fromEvent(document, 'click'),
+        fromEvent(document, 'scroll'),
+        fromEvent(document, 'touchstart')
+      );
+
+      this.activitySub = activity$.subscribe(() => {
+        this.resetTimer(onTimeout);
+      });
+
+      this.resetTimer(onTimeout);
     });
+  }
+
+  /**
+   * Reset idle timer
+   */
+  private resetTimer(onTimeout: () => void): void {
+    this.timeoutSub?.unsubscribe();
+
+    this.timeoutSub = timer(this.IDLE_TIME).subscribe(() => {
+      onTimeout(); // 🔥 IDLE LOGOUT TRIGGER
+    });
+  }
+
+  /**
+   * Stop idle tracking (on logout)
+   */
+  stop(): void {
+    this.activitySub?.unsubscribe();
+    this.timeoutSub?.unsubscribe();
+    this.activitySub = undefined;
+    this.timeoutSub = undefined;
   }
 }

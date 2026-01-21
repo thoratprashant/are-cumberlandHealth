@@ -32,7 +32,7 @@ export class CommonService {
 
   success(message: string) {
     this.snack.open(message, 'OK', {
-      duration: 3000,
+      duration: 5000,
       panelClass: ['snack-success'],
       horizontalPosition: 'center',
       verticalPosition: 'bottom'
@@ -52,6 +52,14 @@ export class CommonService {
     this.snack.open(message, 'OK', {
       duration: 4000,
       panelClass: ['snack-info'],
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    });
+  }
+  warning(message: string) {
+    this.snack.open(message, 'OK', {
+      duration: 5000,
+      panelClass: ['snack-warning'],
       horizontalPosition: 'center',
       verticalPosition: 'bottom'
     });

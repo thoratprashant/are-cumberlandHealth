@@ -6,16 +6,27 @@
 </h2>
 
 <mat-dialog-content>
-  <form>
+  <form [formGroup]="form">
     <div class="row">
       <div class="col-12 mb-1">
         <label class="form-label">Email Address</label>
-        <input type="email" class="form-control" value="william.smith@loremipsum.com" placeholder="Enter email id"> 
+        <input type="email" class="form-control"  formControlName="email" placeholder="Enter email id"> 
+        @if (form.get('email')?.touched && form.get('email')?.errors) {
+            <div class="font-13 mt-1 text-danger">
+              @if (form.get('email')?.errors?.['required']) {
+                {{message.AUTH.EMAIL_REQUIRED}}
+              }
+              @if (form.get('email')?.errors?.['pattern']) {
+                {{message.AUTH.INVALID_EMAIL}}
+              }
+              
+            </div>
+          }
       </div>
     </div>
   </form>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button type="button" class="btn btn-primary m-1" (click)="verificationCode()" mat-dialog-close> Update</button>
+  <button type="button" class="btn btn-primary m-1" (click)="verificationCode()" [disabled]="form.invalid"> Update</button>
 </mat-dialog-actions>

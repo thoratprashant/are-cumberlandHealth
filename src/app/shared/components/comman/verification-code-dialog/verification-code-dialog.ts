@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 
 export interface VerificationCodeDialogData {
@@ -18,8 +18,10 @@ export interface VerificationCodeDialogData {
 export class VerificationCodeDialog {
   constructor(
     public dialogRef: MatDialogRef<VerificationCodeDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: VerificationCodeDialogData
-  ) {}
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+    console.log('VerificationCodeDialog data:', data);
+  }
 
   close(): void {
     this.dialogRef.close(true);

@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { CommonService } from '../../core/helper/common.service';
 import { AuthService } from '../../core/services/auth.service';
+import { Messages } from '../../utils/validation-messages';
 
 @Component({
   selector: 'app-admin-layout',
@@ -38,7 +39,7 @@ export class AdminLayout {
     this.commonService.showLoader();
     this.auth.logout(() => {
       this.commonService.hideLoader();
-
+      this.commonService.success(Messages.AUTH.LOGOUT_SUCCESS);
       setTimeout(() => {
           this.router.navigate(['/auth/login']);
         }, 2000);

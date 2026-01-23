@@ -13,6 +13,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
 
 export interface UserData {
   id: number;
@@ -25,7 +26,9 @@ export interface UserData {
 @Component({
   selector: 'app-history',
   providers: [provideNativeDateAdapter()],
-  imports: [CommonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatDatepickerModule, MatNativeDateModule, ReactiveFormsModule, MatTableModule, MatSortModule, MatPaginatorModule],
+  imports: [
+    OwlDateTimeModule, OwlNativeDateTimeModule,
+    CommonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatDatepickerModule, MatNativeDateModule, ReactiveFormsModule, MatTableModule, MatSortModule, MatPaginatorModule],
   templateUrl: './history.html',
   styleUrl: './history.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

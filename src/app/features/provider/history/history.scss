@@ -5,9 +5,10 @@
         padding: 24px;
 
         ::ng-deep {
-            .mat-mdc-icon-button {
-                padding: 0px !important;
-                height: 1.875rem !important;
+            .mat-mdc-icon-button { 
+                padding: 0;
+                height: 38px;
+                width: 44px;    
             }
         }
 

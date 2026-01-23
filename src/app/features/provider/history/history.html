@@ -6,14 +6,14 @@
                     <div class="col-12 col-md-12 col-lg-8 ">
                         <div class="d-flex align-items-start flex-sm-row flex-column gap-3">
                             <div class="position-relative w-100">
-                                <input class="form-control" [owlDateTime]="dtPicker" [owlDateTimeTrigger]="dtPicker" placeholder="Requested Time To"/>
+                                <input class="form-control" [owlDateTime]="dtPicker" [owlDateTimeTrigger]="dtPicker" placeholder="Requested From"/>
                                 <owl-date-time #dtPicker></owl-date-time>
                                  <button type="button"  mat-icon-button class="icon--password"  (click)="dtPicker.open()" >
                                         <mat-icon fontSet="material-icons-outlined">schedule</mat-icon>
                                 </button>  
                             </div>
                              <div class="position-relative w-100">
-                                <input class="form-control" [owlDateTime]="dtPicker2" [owlDateTimeTrigger]="dtPicker2" placeholder="Requested Time To"/>
+                                <input class="form-control" [owlDateTime]="dtPicker2" [owlDateTimeTrigger]="dtPicker2" placeholder="Requested To"/>
                                 <owl-date-time #dtPicker2></owl-date-time>
                                  <button type="button"  mat-icon-button class="icon--password"  (click)="dtPicker2.open()" >
                                         <mat-icon fontSet="material-icons-outlined">schedule</mat-icon>

@@ -8,6 +8,7 @@
         .card{
             h2{
                 font-size: 36px;
+                margin-top: auto;
             }
             &.next--app{
                 background-color: #0032A0;
@@ -32,9 +33,7 @@
                     border-radius: 8px;
                     min-height: 42px;
                 }
-            }
-            &.resume--cons{ 
-            }
+            } 
         }
     }
 
@@ -61,6 +60,7 @@
             padding: 17px;
         }
         &.app--booked{
+            background-color: #F5F8FF;
             .card--inside{
                 padding-bottom: 0;
             }
@@ -75,9 +75,29 @@
             width: 48px;
             height: 48px;
         }
-    }
-
-
-    .dash--right{ 
+    } 
+}
+@media (max-width: 950px) {
+    .pro--dashboard--wrapper{ 
+        .gap-24{
+            gap: 12px;
+        } 
+        .btn{
+            min-height: unset;
+        } 
+        .font-15 {
+            font-size: .8rem;
+        }
+        .dash--left{ 
+            .card{
+                h1{
+                    font-size: 17px !important;
+                    margin: 8px 0 !important;
+                }
+                h2{
+                    font-size: 24px; 
+                }
+            }
+        }
     }
 }

@@ -51,5 +51,34 @@ export class Dashboard {
     }
   ];
 
+  messages = [
+    {
+      name: 'James Patterson',
+      message:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor...',
+      time: '8:45 AM',
+      avatar: 'images/users/avatar-1.jpg'
+    },
+    {
+      name: 'Sarah Mitchell',
+      message: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque...',
+      time: '9:10 AM',
+      avatar: 'images/users/avatar-2.jpg'
+    },
+    {
+      name: 'David Chen',
+      message: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque...',
+      time: '9:10 AM',
+      avatar: 'images/users/avatar-2.jpg'
+    },
+    {
+      name: 'Emma Rodriguez',
+      message: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor...',
+      time: '9:10 AM',
+      avatar: 'images/users/avatar-2.jpg'
+    }
+  ];
+
+
 
 }

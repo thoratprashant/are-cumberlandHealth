@@ -26,6 +26,12 @@ body {
   .text-error {
     color: v.$error !important;
   }
+  .clr-505050 {
+      color: #505050 !important;
+  }
+  .clr-6C757D {
+    color: #6C757D !important;
+  }
 
   .wb-ba {
     word-break: break-all !important
@@ -323,6 +329,7 @@ body {
       background-color: #FFE5B1;
     }
 
+    &.ready,
     &.completed,
     &.active {
       background-color: #B1F1A6;

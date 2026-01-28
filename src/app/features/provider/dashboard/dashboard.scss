@@ -1,3 +1,83 @@
-.pro--dashboard--wrapper{
-    
+.pro--dashboard--wrapper{ 
+    .gap-24{
+        gap: 24px;
+    }
+    .clr--505050{color: #505050;}
+
+    .dash--left{ 
+        .card{
+            h2{
+                font-size: 36px;
+            }
+            &.next--app{
+                background-color: #0032A0;
+                color: #fff;
+                .arrow--btn{
+                    height: 20px;
+                    width: 20px;
+                    line-height: 0;
+                    mat-icon{
+                        height: 20px;
+                        font-size: 20px;
+                        width: 20px;
+                    }
+                }
+                h1{
+                    font-size: 20px;
+                    margin: 15px 0;
+                }
+                .btn-primary{
+                    background: #fff;
+                    color: #0032A0;
+                    border-radius: 8px;
+                    min-height: 42px;
+                }
+            }
+            &.resume--cons{ 
+            }
+        }
+    }
+
+    .profile-round{
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        margin-right:14px;
+        border-radius: 624.9375rem;
+        img{
+            max-height: 100%;
+        }
+    }
+    .btn{ 
+        border-radius: 8px;
+        min-height: 42px;
+    }
+    .sub--card {
+        border-radius: 8px;
+        border: 1px solid #E7E9EB;
+        background: rgba(0, 0, 0, 0.00); 
+        margin-bottom: 14px;
+        .card--inside{
+            padding: 17px;
+        }
+        &.app--booked{
+            .card--inside{
+                padding-bottom: 0;
+            }
+            .ab--strip{
+                padding: 2px;
+                border-top: 1px solid #E7E9EB;
+                background-color: #edf4ff;
+                margin-top: 10px;
+            }
+        }
+        .profile-round{
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+
+    .dash--right{ 
+    }
 }

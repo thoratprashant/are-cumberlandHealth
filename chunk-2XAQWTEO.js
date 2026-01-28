@@ -1,1 +1,0 @@
-import{$a as n,hb as r,wa as i}from"./chunk-OFQK7654.js";var a=class t{constructor(e){this.el=e}ngAfterViewInit(){let e=this.el.nativeElement.innerText.trim();e&&this.el.nativeElement.setAttribute("data-original",e)}static \u0275fac=function(c){return new(c||t)(n(i))};static \u0275dir=r({type:t,selectors:[["","runtimeTranslate",""]]})};export{a};

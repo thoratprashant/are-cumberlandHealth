@@ -1,6 +1,7 @@
 .vc--wrapper{
     .back--to{
         font-size: 14px;
+        margin-bottom: 24px;
         .mat-icon{
             width: 15px;
             height: 15px;
@@ -8,4 +9,72 @@
             margin-right: 8px;
         }
     }
+    .header--box{
+        .profile--sec{
+            .profile-round{
+                width: 80px;
+                height: 80px;
+                overflow: hidden;
+                margin-right:14px;
+                border-radius: 624.9375rem;
+                img{
+                    max-height: 100%;
+                }
+            }
+            .font-24{
+                font-size: 24px;
+            } 
+            .ostatus{
+                .current--status{
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 8px;
+                    border-radius: 20px;
+                    &.online{
+                        background-color: #22C55E;
+                    }
+                }
+            }
+            .online{
+                color: #22C55E;
+            }
+        }
+        .wait--time{
+            border-left: 1px solid #E5E7EB;
+            margin-left: 30px;
+            padding:10px 5px 10px 30px;
+            
+        }
+        .call--stat{
+            border-radius: 8px;
+            border: 0 solid #E5E7EB;
+            background: #EFF6FF;
+            padding: 9px 16px;
+            color: #3498DB;
+        }
+    }
+    .aactions{
+        .btn{
+            border-radius: 8px;
+            background-color: #F3F4F6;
+            min-height: 44px;
+            font-size: 12px;
+            font-weight: 500;
+            .mat-icon{
+                font-size: 20px;
+                height: 20px;
+                width: 20px;
+                margin-right: 8px;
+            }
+            &.mac--btn{
+                background-color: #27AE60;
+            }
+        }
+         .arequired{
+            border: 1px solid #D9E5FC;
+            background-color: #EDF4FF;
+            padding: 17px 19px;
+        }
+    }
+   
 }

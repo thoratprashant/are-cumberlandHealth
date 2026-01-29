@@ -32,9 +32,7 @@
                     "input": "public"
                   }
                 ],
-                "styles": [
-                  "node_modules/owl.carousel/dist/assets/owl.carousel.css",
-                  "node_modules/owl.carousel/dist/assets/owl.theme.default.css",
+                "styles": [ 
                   "src/styles.scss"
                 ],
                 "scripts": [

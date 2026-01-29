@@ -43,8 +43,7 @@ export class VideochatLayout {
           this.router.navigate(['/auth/login']);
         }, 2000);
       
-    });
-    
+    }); 
     
   }
   

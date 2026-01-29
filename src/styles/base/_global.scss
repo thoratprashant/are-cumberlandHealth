@@ -26,9 +26,11 @@ body {
   .text-error {
     color: v.$error !important;
   }
+
   .clr-505050 {
-      color: #505050 !important;
+    color: #505050 !important;
   }
+
   .clr-6C757D {
     color: #6C757D !important;
   }
@@ -95,6 +97,19 @@ body {
     &.form-control-md {
       padding: 0.35rem 0.875rem;
     }
+  }
+
+  textarea.form-control {
+    width: 100%;
+    min-height: 140px;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0 !important;
+    resize: none;
+    overflow: hidden;
+    field-sizing: content;
+    max-height: 700px;
+    overflow-y: auto;
+    white-space: wrap;
   }
 
   .dropdown-menu {
@@ -422,18 +437,20 @@ body {
     }
   }
 
-  .owl-dt-container-buttons{
-    .owl-dt-control{ 
-      &:first-child{
-         font-weight: 400;
+  .owl-dt-container-buttons {
+    .owl-dt-control {
+      &:first-child {
+        font-weight: 400;
       }
-      &:nth-child(2){
+
+      &:nth-child(2) {
         font-weight: 600;
         background: #214192;
         color: #fff;
       }
     }
   }
+
 
 }
 

@@ -16,4 +16,9 @@ export const FRONTDESKLAYOUT_ROUTES: Routes = [
     loadComponent: () => import('../comman/notifications/notifications').then(c => c.Notifications),
     data: { title: 'notifications' }
   },
+  {
+    path: 'appointment-details',
+    loadComponent: () => import('./appointment-details-notes/appointment-details-notes').then(c => c.AppointmentDetailsNotes),
+    data: { title: 'appointment-details' }
+  },
 ];

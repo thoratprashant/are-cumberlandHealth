@@ -1,1 +1,0 @@
-import"./chunk-7CGTOI24.js";var o=[{path:"history",loadComponent:()=>import("./chunk-UTC3X4ER.js").then(t=>t.History),data:{title:"history"}},{path:"dashboard",loadComponent:()=>import("./chunk-GKGUHSHP.js").then(t=>t.Dashboard),data:{title:"history"}}];export{o as PROVIDERLAYOUT_ROUTES};

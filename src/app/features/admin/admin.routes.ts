@@ -18,5 +18,9 @@ export const ADMINLAYOUT_ROUTES: Routes = [
     path: 'patients',
     loadComponent: () => import('./patients/patients').then(c => c.Patients), 
   },
+  {
+    path: 'analytics',
+    loadComponent: () => import('./analytics/analytics').then(c => c.Analytics), 
+  },
 ];
  

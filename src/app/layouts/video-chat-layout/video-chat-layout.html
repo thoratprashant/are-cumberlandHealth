@@ -6,8 +6,8 @@
 
   <div class="nav-desktop menus-desktop">
     <ul class="m-0 p-0 d-flex ">
-      <li routerLinkActive="active"><a routerLink="/provider/dashboard">Sarah Mitchell, F, 34 Yrs</a></li>
-      <li routerLinkActive="active"><a routerLink="/provider/history">History</a></li>
+      <li routerLinkActive="active"><a>Sarah Mitchell, F, 34 Yrs</a></li>
+      <li routerLinkActive="active"><a>Jolly Moe, M, 20 Yrs</a></li>
     </ul>
   </div>
 
@@ -74,8 +74,8 @@
     <img src="images/admin-logo.svg" alt="img" class="">
   </div>
   <nav>
-    <a routerLink="/provider/dashboard" (click)="closeMenu()">Dashboard</a>
-    <a routerLink="/provider/history" (click)="closeMenu()">History</a>
+    <a (click)="closeMenu()">Sarah Mitchell, F, 34 Yrs</a>
+    <a (click)="closeMenu()">Jolly Moe, M, 20 Yrs</a>
     <a dropdown-toggle data-bs-toggle="dropdown" aria-expanded="false">
       <div class="d-flex align-items-center">
         <span class="status available"></span> Available
@@ -110,6 +110,6 @@
 <div class="backdrop" *ngIf="mobileMenuOpen()" (click)="closeMenu()"></div>
 
 <!-- PAGE CONTENT -->
-<main class="content">
+<main class="content route--wrapper">
   <router-outlet></router-outlet>
 </main>

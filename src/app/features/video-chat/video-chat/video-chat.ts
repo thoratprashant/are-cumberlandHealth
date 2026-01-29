@@ -4,11 +4,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { CarouselModule } from 'ngx-owl-carousel-o';
+import { RouterLink } from '@angular/router'; 
 
 @Component({
   selector: 'app-video-chat',
-  imports: [CarouselModule,MatIconModule,CommonModule,MatButtonModule,MatDialogModule,MatCheckboxModule],
+  imports: [ MatIconModule,CommonModule,MatButtonModule,MatDialogModule,MatCheckboxModule,RouterLink],
   templateUrl: './video-chat.html',
   styleUrl: './video-chat.scss',
 })

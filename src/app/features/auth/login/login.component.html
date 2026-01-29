@@ -32,9 +32,9 @@
             }
       </div>
       <div class="col-12">
-        <button type="button" class="btn btn-primary w-100 mb-3" (click)="onLoginVia('otp')" runtimeTranslate>Log in via Verification
+        <button type="button" class="btn btn-primary w-100 mb-3" routerLink="/auth/verification-code" >Log in via Verification
           Code</button>
-        <button type="button" class="btn btn-primary w-100 mb-3"  (click)="onLoginVia('password')" runtimeTranslate>Log in via
+        <button type="button" class="btn btn-primary w-100 mb-3" routerLink="/auth/set-password" >Log in via
           Password</button>
       </div>
       <div class="col-12 d-flex justify-content-end mb-3">

@@ -26,6 +26,14 @@ body{
             padding: 4px 12px;
             display: flex; 
         }
+        &:disabled{
+            background-color: v.$primary;
+            opacity: 0.4;
+        }
+        &:hover{
+            background-color: #012b89;
+            color:  v.$white;
+        }
     }
 }
  @media (max-width: 767px) {

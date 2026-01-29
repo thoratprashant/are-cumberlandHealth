@@ -38,7 +38,6 @@
     "@angular/ssr": "^21.0.4",
     "@danielmoncada/angular-datetime-picker": "^20.0.1",
     "bootstrap": "^5.3.8",
-    "ngx-owl-carousel-o": "^21.0.0",
     "owl.carousel": "^2.3.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"

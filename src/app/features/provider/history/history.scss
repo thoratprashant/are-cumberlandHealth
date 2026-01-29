@@ -91,3 +91,10 @@
         }
     }
 }
+
+@media (orientation: landscape) {
+  .owl-dt-container {
+    width: 100vw !important;
+    max-width: none !important;
+  }
+}

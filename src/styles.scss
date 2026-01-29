@@ -31,3 +31,17 @@
   background: #f4f4f4;
 }
  
+.route--wrapper > * {
+  animation: authFadeSlide 1000ms ease-out;
+}
+
+@keyframes authFadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -5,9 +5,11 @@
     <img src="images/auth-left.png" alt="img" class="img-fluid">
   </div>
   <div class="auth-right d-flex flex-column justify-content-center flex-shrink-0">
-    <div class="ar--inner">
+    <div class="ar--inner route-wrapper">
       <img src="images/logo.svg" alt="img" class="logo">
-      <router-outlet></router-outlet>
+      <div class="route--wrapper">
+          <router-outlet></router-outlet>
+        </div>
     </div>
     <div class="lang--sec d-flex align-items-center">
       <span class="me-2" runtimeTranslate> Language</span>

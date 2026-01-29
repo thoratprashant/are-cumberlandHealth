@@ -1,6 +1,5 @@
 .vc--wrapper{
-    .back--to{
-        font-size: 14px;
+    .back--to{ 
         margin-bottom: 24px;
         .mat-icon{
             width: 15px;
@@ -76,5 +75,51 @@
             padding: 17px 19px;
         }
     }
+    .ccomplaint{
+        border-radius: 8px;
+        border: 1px solid #FDE68A;
+        background: #FFFBEB;
+        .accordion{
+            .accordion-item{
+                border: none;
+                background-color: transparent;
+                .accordion-header{
+                    .accordion-button{
+                        padding: 0;
+                        background-color: transparent !important;
+                        box-shadow: none;
+                        font-weight: 500;
+                        font-size: 14px;
+                        color: #854D0E;
+                        &::after{
+                            background-image: url('/images/accordion-arrow.svg');
+                            width: 13px;
+                            height: 8px;
+                            background-size: unset;
+                        }
+                    }
+                }
+                .accordion-body{
+                    padding: 12px 0 0 0 ;
+                    font-size: 12px;
+                    color: #A16207;
+                }
+            }
+        }
+    }
    
+}
+
+@media (max-width: 767px) { 
+    .vc--wrapper .header--box .wait--time{
+        border: none; 
+        margin: 0;
+        padding: 0;
+    }
+    .vc--wrapper .header--box .profile--sec{
+        margin-bottom: 20px;
+    }
+    .vc--wrapper .header--box .profile--sec .font-24 {
+        font-size: 18px;
+    }
 }

@@ -6,6 +6,22 @@
                     <div class="col-12 col-md-12 col-lg-8 ">
                         <div class="d-flex align-items-start flex-sm-row flex-column gap-3">
                             <div class="position-relative w-100">
+                                <input class="form-control" [owlDateTime]="dtPicker" [owlDateTimeTrigger]="dtPicker"
+                                    placeholder="Requested Time From" />
+                                <owl-date-time #dtPicker></owl-date-time>
+                                <button type="button" mat-icon-button class="icon--password" (click)="dtPicker.open()">
+                                    <mat-icon fontSet="material-icons-outlined">schedule</mat-icon>
+                                </button>
+                            </div>
+                            <div class="position-relative w-100">
+                                <input class="form-control" [owlDateTime]="dtPicker2" [owlDateTimeTrigger]="dtPicker2"
+                                    placeholder="Requested Time To" />
+                                <owl-date-time #dtPicker2></owl-date-time>
+                                <button type="button" mat-icon-button class="icon--password" (click)="dtPicker2.open()">
+                                    <mat-icon fontSet="material-icons-outlined">schedule</mat-icon>
+                                </button>
+                            </div>
+                            <!-- <div class="position-relative w-100">
                                 <input class="form-control" placeholder="Requested Time From" matInput
                                     [matDatepicker]="picker" (click)="picker.open()">
                                 <mat-datepicker-toggle class="icon--password" matIconSuffix [for]="picker">
@@ -20,7 +36,7 @@
                                     <mat-icon matDatepickerToggleIcon>schedule</mat-icon>
                                 </mat-datepicker-toggle>
                                 <mat-datepicker #picker1></mat-datepicker>
-                            </div>
+                            </div> -->
                             <button type="button" class="btn btn-md btn-secondary flex-shrink-0">Reset filter</button>
                         </div>
                     </div>
@@ -63,7 +79,7 @@
 
                     <!-- Status -->
                     <ng-container matColumnDef="status">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Profile Status </th>
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
                         <td mat-cell *matCellDef="let row">
                             <span class="badge" [ngClass]="row.status.toLowerCase()">
                                 {{ row.status }}

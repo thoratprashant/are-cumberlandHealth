@@ -26,4 +26,9 @@ export const routes: Routes = [
     loadComponent: () => import('./layouts/provider-layout/provider-layout').then(c => c.ProviderLayout),
     loadChildren: () => import('./features/provider/provider.routes').then(r => r.PROVIDERLAYOUT_ROUTES),
   },
+  {
+    path: 'video-chat',
+    loadComponent: () => import('./layouts/video-chat-layout/video-chat-layout').then(c => c.VideochatLayout),
+    loadChildren: () => import('./features/video-chat/video-chat.routes').then(r => r.VIDEOCHATLAYOUT_ROUTES),
+  },
 ];

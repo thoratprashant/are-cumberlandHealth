@@ -1,0 +1,261 @@
+.vc--wrapper {
+    .back--to {
+        font-size: 14px;
+        margin-bottom: 24px;
+
+        .mat-icon {
+            width: 15px;
+            height: 15px;
+            font-size: 15px;
+            margin-right: 8px;
+        }
+    }
+
+    .header--box {
+        .profile--sec {
+            .profile-round {
+                width: 80px;
+                height: 80px;
+                overflow: hidden;
+                margin-right: 14px;
+                border-radius: 624.9375rem;
+
+                img {
+                    max-height: 100%;
+                }
+            }
+
+            .font-24 {
+                font-size: 24px;
+            }
+
+            .ostatus {
+                .current--status {
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 8px;
+                    border-radius: 20px;
+
+                    &.online {
+                        background-color: #22C55E;
+                    }
+                }
+            }
+
+            .online {
+                color: #22C55E;
+            }
+        }
+
+        .wait--time {
+            border-left: 1px solid #E5E7EB;
+            margin-left: 30px;
+            padding: 10px 5px 10px 30px;
+
+        }
+
+        .call--stat {
+            border-radius: 8px;
+            border: 0 solid #E5E7EB;
+            background: #EFF6FF;
+            padding: 9px 16px;
+            color: #3498DB;
+        }
+    }
+
+    .aactions {
+        .btn {
+            border-radius: 8px;
+            background-color: #F3F4F6;
+            min-height: 44px;
+            font-size: 12px;
+            font-weight: 500;
+
+            .mat-icon {
+                font-size: 20px;
+                height: 20px;
+                width: 20px;
+                margin-right: 8px;
+            }
+
+            &.mac--btn {
+                background-color: #27AE60;
+            }
+        }
+
+        .arequired {
+            border: 1px solid #D9E5FC;
+            background-color: #EDF4FF;
+            padding: 17px 19px;
+        }
+    }
+
+    .details-tab-section {
+        .medical-tabs {
+            height: auto;
+            background: #fff;
+
+            ::ng-deep {
+                .mat-mdc-tab-header {
+                    background: #fff;
+                    border-bottom: 1px solid #e1e5e9;
+
+                    .mat-mdc-tab-label {
+                        display: flex !important;
+                        align-items: center;
+                        gap: 8px;
+                        padding: 12px 20px;
+                        border-radius: 12px 12px 0 0;
+                        margin: 0 4px;
+                        font-weight: 500;
+
+                        .tab-icon {
+                            font-size: 14px;
+                            width: 14px;
+                            height: 14px;
+                            padding-right: 10px !important;
+                        }
+                    }
+
+                    // Active tab styling (blue filled)
+                    .mdc-tab--active .mat-mdc-tab-label {
+                        background: linear-gradient(135deg, #0032A0, #0032A0) !important;
+                        color: #fff !important;
+
+                        .tab-icon {
+                            color: #fff;
+                        }
+                    }
+
+                    // Focus indicator
+                    .mat-mdc-focus-indicator {
+                        background: #0032A0 !important;
+                        border-radius: 20px;
+                        height: 4px;
+                        bottom: -1px;
+                    }
+                }
+            }
+
+            .notes-content {
+                padding: 36px 0px 0px 0px;
+
+                .notes-label-wrapper {
+                    gap: 12px;
+                    margin-bottom: 12px;
+
+                    .vertical-bar {
+                        width: 4px;
+                        height: 20px;
+                        border: 0 solid #E5E7EB;
+                        background: #0032A0;
+                        border-radius: 9999px;
+                        flex-shrink: 0;
+                    }
+                }
+
+                .provider-notes-section {
+                    border-radius: 12px;
+                    border: 1px solid #E2E8F0;
+                    background: #EDF4FF;
+                    padding: 14px 18px;
+                    min-height: 96px;
+                }
+
+                .save-note-btn {
+                    border-radius: 8px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    padding: 10px 16px;
+                }
+
+                .quick-tips {
+                    border-radius: 8px;
+                    border: 1px solid #D9E5FC;
+                    background: #EDF4FF;
+                    padding: 24px 25px;
+                }
+            }
+
+            .chat-content {
+                .header-label {
+                    background: #EDF4FF;
+                    padding: 7px;
+                }
+
+                .chat-footer {
+                    padding: 24px;
+                    background: #EEE;
+                    border-radius: 0 0 8px 8px;
+
+                    .send-icon-btn {
+                        width: 40px;
+                        height: 40px;
+                        padding: 0 !important;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: #0032A0;
+                    }
+                }
+            }
+
+            .insurance-content {
+                padding: 36px 0px 0px 0px;
+
+                .insurance-panel {
+                    font-family: 'Montserrat', sans-serif !important;
+                    background: #FFF;
+                    border-radius: 12px;
+                    border: 1px solid #E7E9EB;
+                    overflow: hidden;
+
+                    .insurance-header {
+                        padding: 20px 24px !important;
+                        min-height: 56px !important;
+
+                        ::ng-deep {
+                            .mat-expansion-indicator {
+                                color: #0032A0 !important;
+                                right: 24px;
+                                width: 24px;
+                                height: 24px;
+
+                                .mat-icon {
+                                    font-size: 24px;
+                                    width: 24px;
+                                    height: 24px;
+                                    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+                                }
+
+                                &.mat-expanded {
+                                    transform: rotate(180deg);
+                                }
+                            }
+
+                            .mat-expansion-indicator::after {
+                                color: #0032A0;
+                            }
+                        }
+
+                        .panel-title {
+                            font-family: 'Montserrat', sans-serif !important;
+                            line-height: 18px;
+                            margin: 0;
+                        }
+                    }
+
+                    .panel-content {
+                        font-family: 'Montserrat', sans-serif !important;
+                    }
+                }
+
+                .mat-expansion-panel {
+                    box-shadow: none !important;
+                }
+            }
+        }
+
+
+    }
+}

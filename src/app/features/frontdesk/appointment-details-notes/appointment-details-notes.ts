@@ -9,7 +9,8 @@ import { MatAccordion, MatExpansionModule, MatExpansionPanel } from '@angular/ma
 
 @Component({
   selector: 'app-appointment-details-notes',
-  imports: [MatIconModule, CommonModule, MatButtonModule, MatDialogModule, MatCheckboxModule, MatTabsModule, MatAccordion, MatExpansionModule],
+  imports: [MatIconModule, CommonModule, MatButtonModule, MatDialogModule, MatCheckboxModule, 
+    MatTabsModule, MatAccordion, MatExpansionModule],
   templateUrl: './appointment-details-notes.html',
   styleUrl: './appointment-details-notes.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

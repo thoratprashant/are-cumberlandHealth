@@ -75,7 +75,9 @@
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takim...
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takim...
                   </div>
                 </div>
               </div>
@@ -83,28 +85,28 @@
             </div>
           </div>
           <div class="card d-flex flex-column w-100 aactions">
-            <h1 class="font-16 text-primary fw-semibold mb-3 mb-sm-4">Patient Information</h1> 
+            <h1 class="font-16 text-primary fw-semibold mb-3 mb-sm-4">Patient Information</h1>
             <div class="row">
-                <div class="col-12 mb-3">
-                     <label class="form-label font-12 clr-6C757D mb-1">Patient ID</label>
-                     <p class="font-14 text-secondary fw-medium mb-0">PAT-2847</p>
-                </div>
-                <div class="col-12 mb-3">
-                     <label class="form-label font-12 clr-6C757D mb-1">Date of Birth</label>
-                     <p class="font-14 text-secondary fw-medium mb-0">June 15, 1982</p>
-                </div>
-                <div class="col-12 mb-3">
-                     <label class="form-label font-12 clr-6C757D mb-1">Email</label>
-                     <p class="font-14 text-secondary fw-medium mb-0 wb-ba ">m.anderson@email.com</p>
-                </div>
-                <div class="col-12 mb-3">
-                     <label class="form-label font-12 clr-6C757D mb-1">Phone</label>
-                     <p class="font-14 text-secondary fw-medium mb-0">+1 (555) 234-5678</p>
-                </div>
-                <div class="col-12">
-                     <label class="form-label font-12 clr-6C757D mb-1">Language</label>
-                     <p class="font-14 text-secondary fw-medium mb-0">English</p>
-                </div>
+              <div class="col-12 mb-3">
+                <label class="form-label font-12 clr-6C757D mb-1">Patient ID</label>
+                <p class="font-14 text-secondary fw-medium mb-0">PAT-2847</p>
+              </div>
+              <div class="col-12 mb-3">
+                <label class="form-label font-12 clr-6C757D mb-1">Date of Birth</label>
+                <p class="font-14 text-secondary fw-medium mb-0">June 15, 1982</p>
+              </div>
+              <div class="col-12 mb-3">
+                <label class="form-label font-12 clr-6C757D mb-1">Email</label>
+                <p class="font-14 text-secondary fw-medium mb-0 wb-ba ">m.anderson@email.com</p>
+              </div>
+              <div class="col-12 mb-3">
+                <label class="form-label font-12 clr-6C757D mb-1">Phone</label>
+                <p class="font-14 text-secondary fw-medium mb-0">+1 (555) 234-5678</p>
+              </div>
+              <div class="col-12">
+                <label class="form-label font-12 clr-6C757D mb-1">Language</label>
+                <p class="font-14 text-secondary fw-medium mb-0">English</p>
+              </div>
             </div>
           </div>
         </div>
@@ -112,6 +114,242 @@
           <div class="row">
             <div class="col-12">
               <img src="images/video-call.jpg" alt="" class="img-fluid w-100">
+            </div>
+            <div class="col-12">
+              <div class="row">
+                <div class="card d-flex w-100 details-tab-section">
+                  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" animationDuration="1000ms"
+                    class="medical-tabs">
+                    <!-- Notes Tab -->
+                    <mat-tab>
+                      <ng-template mat-tab-label>
+                        <mat-icon class="tab-icon me-2">note</mat-icon>
+                        <span>Notes</span>
+                      </ng-template>
+                      <div class="notes-content">
+                        <div class="d-flex flex-column">
+                          <div class="col-12 mb-4">
+                            <div class="notes-label-wrapper d-flex align-items-center">
+                              <span class="vertical-bar"></span>
+                              <label class="form-label font-14 fw-medium text-secondary mb-0">Provider
+                                Notes</label>
+                            </div>
+                            <!-- <textarea type="text" class="form-control" placeholder="Enter provider notes" rows="4"></textarea> -->
+                            <div class="provider-notes-section">
+                              <p class="font-14 fw-normal clr-505050 mb-0">Patient reports
+                                persistent headaches for 2 weeks, worse in the morning.
+                                Describes pain as throbbing, rated 6/10. Associated
+                                symptoms include occasional dizziness and light sensitivity.
+                                Denies
+                                nausea or vomiting.</p>
+                            </div>
+                          </div>
+                          <div class="col-12 mb-4">
+                            <div class="notes-label-wrapper d-flex align-items-center">
+                              <span class="vertical-bar"></span>
+                              <label class="form-label font-14 fw-medium text-secondary mb-0">Front
+                                Desk
+                                Notes</label>
+                            </div>
+                            <textarea type="text" class="form-control" placeholder="Please type here..."
+                              rows="4"></textarea>
+                          </div>
+                          <div class="col-12 mb-4">
+                            <button type="button" class="btn btn-primary save-note-btn">
+                              <span class="d-flex align-items-center gap-2">
+                                <mat-icon>save</mat-icon>
+                                Save Note
+                              </span>
+                            </button>
+                          </div>
+                          <div class="card quick-tips d-flex flex-row gap-3 align-items-start mb-0">
+                            <img src="images/quick-tips.svg" alt="" class="flex-shrink-0 img-fluid mt-1">
+                            <div class="d-flex flex-column w-100">
+                              <p class="font-14 text-primary fw-medium mb-2">Quick Tip</p>
+                              <p class="font-14 text-primary mb-0">Your notes are automatically
+                                saved
+                                as
+                                drafts every 30 seconds. Click "Save Note" when you're ready to
+                                finalize
+                                your documentation.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </mat-tab>
+
+                    <!-- Chat Tab -->
+                    <mat-tab>
+                      <ng-template mat-tab-label>
+                        <mat-icon class="tab-icon me-2">chat</mat-icon>
+                        <span>Chat</span>
+                      </ng-template>
+                      <div class="chat-content">
+                        <div class="d-flex flex-column">
+                          <div class="col-12 header-label text-center">
+                            <p class="font-12 text-primary fw-medium mb-0">This appointment is
+                              booked
+                              for the minor</p>
+                          </div>
+                          <div class="col-12">
+                            <img src="images/chat-image.png" alt="" class="img-fluid w-100">
+                          </div>
+                          <div class="col-12 chat-footer d-flex flex-row align-items-center gap-2">
+                            <input type="text" class="form-control" placeholder="Type Message...">
+                            <button type="button" class="btn btn-primary send-icon-btn">
+                              <mat-icon>send</mat-icon>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </mat-tab>
+
+                    <!-- Insurance Tab -->
+                    <mat-tab>
+                      <ng-template mat-tab-label>
+                        <mat-icon class="tab-icon me-2">description</mat-icon>
+                        <span>Insurance</span>
+                      </ng-template>
+                      <div class="insurance-content">
+                        <div class="d-flex flex-column">
+                          <mat-accordion multi="true">
+                            <mat-expansion-panel class="insurance-panel mb-4" togglePosition="after">
+
+                              <mat-expansion-panel-header class="insurance-header">
+                                <mat-panel-title class="panel-title font-16 fw-semibold text-primary">
+                                  Insurance 1
+                                </mat-panel-title>
+                              </mat-expansion-panel-header>
+
+                              <div class="panel-content">
+                                <div class="d-flex flex-column">
+                                  <div class="col-12 d-flex align-items-center gap-3 mb-4">
+                                    <select class="form-select" aria-label="Default select example" name="ps">
+                                      <option selected>Dallas</option>
+                                      <option value="1">Dallas 1</option>
+                                      <option value="2">Dallas 2</option>
+                                    </select>
+                                    <button class="edit--icon" matIconButton>
+                                      <img src="images/edit.svg" alt="user img" class="img-fluid">
+                                    </button>
+                                  </div>
+                                  <h2 class="panel-title font-16 fw-semibold text-primary mb-4">
+                                    Coverage Summary</h2>
+                                  <div class="row mb-3">
+                                    <div class="col-12 col-md-6 mb-4">
+                                      <label class="font-14 text-primary fw-medium mb-2">Insurance
+                                        Payer</label>
+                                      <p class="font-16 text-secondary fw-semibold mb-0">
+                                        Blue
+                                        Cross Blue Shield</p>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-4">
+                                      <label class="font-14 text-primary fw-medium mb-2">Plan
+                                        Name</label>
+                                      <p class="font-16 text-secondary fw-semibold mb-0">
+                                        PPO
+                                        Gold Plus</p>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-4">
+                                      <label class="font-14 text-primary fw-medium mb-2">Policy
+                                        ID</label>
+                                      <p class="font-16 text-secondary fw-semibold mb-0">
+                                        ABC123456789</p>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-4">
+                                      <label class="font-14 text-primary fw-medium mb-2">Group
+                                        Number</label>
+                                      <p class="font-16 text-secondary fw-semibold mb-0">
+                                        GRP-8847-02</p>
+                                    </div>
+                                  </div>
+                                  <div class="col-12 d-flex align-items-center justify-content-between gap-3 mb-4">
+                                    <h2 class="panel-title font-16 fw-semibold text-primary mb-0">
+                                      Insurance Card Images</h2>
+                                    <!-- <a class="font-16 fw-medium text-primary mb-0 cursor-pointer">Expand
+                                      All</a> -->
+                                  </div>
+                                  <div class="col-12 insurance-card-wrapper">
+                                    <div class="accordion accordion-flush" id="cardAccordion">
+                                      <div class="accordion-item mb-3">
+                                        <div class="accordion-header">
+                                          <button
+                                            class="accordion-button collapsed fw-semibold text-secondary border-0 w-100"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#cardFrontCollapse"
+                                            aria-expanded="false" aria-controls="cardFrontCollapse">
+                                            <div class="edit--icon me-2">
+                                              <img src="images/card-front.svg" alt="user img" class="img-fluid">
+                                            </div>
+                                            Card Front
+                                          </button>
+                                        </div>
+                                        <div id="cardFrontCollapse" class="accordion-collapse collapse"
+                                          data-bs-parent="#cardAccordion">
+                                          <div class="accordion-body">
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="accordion-item mb-3">
+                                        <div class="accordion-header">
+                                          <button class="accordion-button collapsed fw-semibold text-secondary w-100"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#cardBackCollapse"
+                                            aria-expanded="false" aria-controls="cardBackCollapse">
+                                            <div class="edit--icon me-2">
+                                              <img src="images/card-back.svg" alt="user img" class="img-fluid">
+                                            </div>
+                                            Card Back
+                                          </button>
+                                        </div>
+                                        <div id="cardBackCollapse" class="accordion-collapse collapse"
+                                          data-bs-parent="#cardAccordion">
+                                          <div class="accordion-body">
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </mat-expansion-panel>
+                            <mat-expansion-panel class="insurance-panel mb-4" togglePosition="after">
+
+                              <mat-expansion-panel-header class="insurance-header">
+                                <mat-panel-title class="panel-title font-16 fw-semibold text-primary">
+                                  Other Insurance
+                                </mat-panel-title>
+                              </mat-expansion-panel-header>
+
+                              <div class="panel-content">
+                              </div>
+                            </mat-expansion-panel>
+                          </mat-accordion>
+                          <div class="card other-tips d-flex flex-row gap-3 align-items-start mb-0">
+                            <mat-icon class="flex-shrink-0">info</mat-icon>
+                            <div class="d-flex flex-column w-100">
+                              <p class="font-16 text-secondary fw-semibold mb-2">Provider
+                                Reference Only</p>
+                              <p class="font-14 text-secondary fw-medium mb-1 d-flex align-items-center">
+                                <mat-icon class="me-2">done</mat-icon> Insurance
+                                information is not editable during consultation
+                              </p>
+                              <p class="font-14 text-secondary fw-medium mb-1 d-flex align-items-center">
+                                <mat-icon class="me-2">done</mat-icon> No billing actions
+                                can be initiated from this screen
+                              </p>
+                              <p class="font-14 text-secondary fw-medium mb-1 d-flex align-items-center">
+                                <mat-icon class="me-2">done</mat-icon> For coverage
+                                questions, refer patient to front desk after appointment
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </mat-tab>
+                  </mat-tab-group>
+                </div>
+              </div>
             </div>
           </div>
         </div>

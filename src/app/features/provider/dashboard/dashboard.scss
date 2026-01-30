@@ -58,6 +58,9 @@
         margin-bottom: 14px;
         .card--inside{
             padding: 17px;
+            .badge{
+                min-width: 84px;
+            }
         }
         &.app--booked{
             background-color: #F5F8FF;

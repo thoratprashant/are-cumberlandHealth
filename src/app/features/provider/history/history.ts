@@ -18,7 +18,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angul
 export interface UserData {
   id: number;
   patient: string;
-  provider: string;
+  chiefComplaint: string;
   requestedOn: string;
   status: string;
 }
@@ -38,7 +38,7 @@ export class History implements AfterViewInit {
   displayedColumns: string[] = [
     'id',
     'patient',
-    'provider',
+    'chiefComplaint',
     'requestedOn',
     'status',
     'action'
@@ -78,7 +78,7 @@ const STATUS = ['Completed', 'Cancel', 'No Show', 'Rejected',];
 const USER_DATA: UserData[] = Array.from({ length: 50 }).map((_, i) => ({
   id: i + 1,
   patient: ['James D. Roger', 'Dan Mason', 'Emily Johnson', 'Michael Brown'][i % 4],
-  provider: ['James Carter', 'Emily Roberts', 'NA', 'Michael Thompson'][i % 4],
+  chiefComplaint: ['Headache and dizziness since yesterday.', 'Fever with chills for the past two days.', 'Persistent cough and sore throat.', 'Lower back pain after lifting heavy objects.'][i % 4],
   requestedOn: ['12/12/25 12:29AM', '12/13/25 12:29PM', '12/13/25 04:29AM', '12/14/25 10:29AM'][i % 4],
   status: STATUS[i % STATUS.length],
 }));

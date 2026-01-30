@@ -11,6 +11,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
+import { RouterLink } from '@angular/router';
 
 export interface UserData {
   id: number;
@@ -23,7 +24,7 @@ export interface UserData {
 @Component({
   selector: 'app-frontdesk-history',
   providers: [provideNativeDateAdapter()],
-  imports: [CommonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatDatepickerModule, MatNativeDateModule, ReactiveFormsModule, MatTableModule, MatSortModule, MatPaginatorModule, OwlDateTimeModule, OwlNativeDateTimeModule,],
+  imports: [CommonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatDatepickerModule, MatNativeDateModule, ReactiveFormsModule, MatTableModule, MatSortModule, MatPaginatorModule, OwlDateTimeModule, OwlNativeDateTimeModule, RouterLink],
   templateUrl: './frontdesk-history.html',
   styleUrl: './frontdesk-history.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

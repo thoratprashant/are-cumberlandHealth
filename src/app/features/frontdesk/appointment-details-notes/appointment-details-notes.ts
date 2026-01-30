@@ -8,11 +8,12 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatAccordion, MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
 import { EditInsuranceDetailsModal } from './edit-insurance-details-modal/edit-insurance-details-modal';
 import { RequestUpdateModal } from './request-update-modal/request-update-modal';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-appointment-details-notes',
   imports: [MatIconModule, CommonModule, MatButtonModule, MatDialogModule, MatCheckboxModule,
-    MatTabsModule, MatAccordion, MatExpansionModule],
+    MatTabsModule, MatAccordion, MatExpansionModule, RouterLink],
   templateUrl: './appointment-details-notes.html',
   styleUrl: './appointment-details-notes.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

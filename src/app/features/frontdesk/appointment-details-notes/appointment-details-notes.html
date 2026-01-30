@@ -115,7 +115,7 @@
                 <div class="col-12 col-md-8 col-lg-9">
                     <div class="row">
                         <div class="card d-flex w-100 details-tab-section">
-                            <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" animationDuration="0ms"
+                            <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" animationDuration="1000ms"
                                 class="medical-tabs">
                                 <!-- Notes Tab -->
                                 <mat-tab>
@@ -210,23 +210,169 @@
                                         <span>Insurance</span>
                                     </ng-template>
                                     <div class="insurance-content">
-                                        <mat-accordion multi="true">
-                                            <mat-expansion-panel class="insurance-panel" togglePosition="after">
+                                        <div class="d-flex flex-column">
+                                            <mat-accordion multi="true">
+                                                <mat-expansion-panel class="insurance-panel mb-4"
+                                                    togglePosition="after">
 
-                                                <mat-expansion-panel-header class="insurance-header">
-                                                    <mat-panel-title
-                                                        class="panel-title font-16 fw-semibold text-primary">
-                                                        Insurance 1
-                                                    </mat-panel-title>
-                                                </mat-expansion-panel-header>
+                                                    <mat-expansion-panel-header class="insurance-header">
+                                                        <mat-panel-title
+                                                            class="panel-title font-16 fw-semibold text-primary">
+                                                            Insurance 1
+                                                        </mat-panel-title>
+                                                    </mat-expansion-panel-header>
 
-                                                <div class="panel-content">
-                                                    <p>Insurance details content goes here. Add form fields, policy
-                                                        info, or
-                                                        other insurance data.</p>
+                                                    <div class="panel-content">
+                                                        <div class="d-flex flex-column">
+                                                            <div class="col-12 d-flex align-items-center gap-3 mb-4">
+                                                                <select class="form-select"
+                                                                    aria-label="Default select example" name="ps">
+                                                                    <option selected>Dallas</option>
+                                                                    <option value="1">Dallas 1</option>
+                                                                    <option value="2">Dallas 2</option>
+                                                                </select>
+                                                                <button class="edit--icon" matIconButton>
+                                                                    <img src="images/edit.svg" alt="user img"
+                                                                        class="img-fluid">
+                                                                </button>
+                                                            </div>
+                                                            <h2
+                                                                class="panel-title font-16 fw-semibold text-primary mb-4">
+                                                                Coverage Summary</h2>
+                                                            <div class="row mb-3">
+                                                                <div class="col-12 col-md-6 mb-4">
+                                                                    <label
+                                                                        class="font-14 text-primary fw-medium mb-2">Insurance
+                                                                        Payer</label>
+                                                                    <p class="font-16 text-secondary fw-semibold mb-0">
+                                                                        Blue
+                                                                        Cross Blue Shield</p>
+                                                                </div>
+                                                                <div class="col-12 col-md-6 mb-4">
+                                                                    <label
+                                                                        class="font-14 text-primary fw-medium mb-2">Plan
+                                                                        Name</label>
+                                                                    <p class="font-16 text-secondary fw-semibold mb-0">
+                                                                        PPO
+                                                                        Gold Plus</p>
+                                                                </div>
+                                                                <div class="col-12 col-md-6 mb-4">
+                                                                    <label
+                                                                        class="font-14 text-primary fw-medium mb-2">Policy
+                                                                        ID</label>
+                                                                    <p class="font-16 text-secondary fw-semibold mb-0">
+                                                                        ABC123456789</p>
+                                                                </div>
+                                                                <div class="col-12 col-md-6 mb-4">
+                                                                    <label
+                                                                        class="font-14 text-primary fw-medium mb-2">Group
+                                                                        Number</label>
+                                                                    <p class="font-16 text-secondary fw-semibold mb-0">
+                                                                        GRP-8847-02</p>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="col-12 d-flex align-items-center justify-content-between gap-3 mb-4">
+                                                                <h2
+                                                                    class="panel-title font-16 fw-semibold text-primary mb-0">
+                                                                    Insurance Card Images</h2>
+                                                                <a
+                                                                    class="font-16 fw-medium text-primary mb-0 cursor-pointer">Expand
+                                                                    All</a>
+                                                            </div>
+                                                            <div class="col-12 insurance-card-wrapper">
+                                                                <div class="accordion accordion-flush"
+                                                                    id="cardAccordion">
+                                                                    <div class="accordion-item mb-3">
+                                                                        <div class="accordion-header">
+                                                                            <button
+                                                                                class="accordion-button collapsed fw-semibold text-secondary border-0 w-100"
+                                                                                type="button" data-bs-toggle="collapse"
+                                                                                data-bs-target="#cardFrontCollapse"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="cardFrontCollapse">
+                                                                                <div class="edit--icon me-2">
+                                                                                    <img src="images/card-front.svg"
+                                                                                        alt="user img"
+                                                                                        class="img-fluid">
+                                                                                </div>
+                                                                                Card Front
+                                                                            </button>
+                                                                        </div>
+                                                                        <div id="cardFrontCollapse"
+                                                                            class="accordion-collapse collapse"
+                                                                            data-bs-parent="#cardAccordion">
+                                                                            <div class="accordion-body">
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="accordion-item mb-3">
+                                                                        <div class="accordion-header">
+                                                                            <button
+                                                                                class="accordion-button collapsed fw-semibold text-secondary w-100"
+                                                                                type="button" data-bs-toggle="collapse"
+                                                                                data-bs-target="#cardBackCollapse"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="cardBackCollapse">
+                                                                                <div class="edit--icon me-2">
+                                                                                    <img src="images/card-back.svg"
+                                                                                        alt="user img"
+                                                                                        class="img-fluid">
+                                                                                </div>
+                                                                                Card Back
+                                                                            </button>
+                                                                        </div>
+                                                                        <div id="cardBackCollapse"
+                                                                            class="accordion-collapse collapse"
+                                                                            data-bs-parent="#cardAccordion">
+                                                                            <div class="accordion-body">
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </mat-expansion-panel>
+                                                <mat-expansion-panel class="insurance-panel mb-4"
+                                                    togglePosition="after">
+
+                                                    <mat-expansion-panel-header class="insurance-header">
+                                                        <mat-panel-title
+                                                            class="panel-title font-16 fw-semibold text-primary">
+                                                            Other Insurance
+                                                        </mat-panel-title>
+                                                    </mat-expansion-panel-header>
+
+                                                    <div class="panel-content">
+                                                    </div>
+                                                </mat-expansion-panel>
+                                            </mat-accordion>
+                                            <div class="card other-tips d-flex flex-row gap-3 align-items-start mb-0">
+                                                <mat-icon class="flex-shrink-0">info</mat-icon>
+                                                <div class="d-flex flex-column w-100">
+                                                    <p class="font-16 text-secondary fw-semibold mb-2">Provider
+                                                        Reference Only</p>
+                                                    <p
+                                                        class="font-14 text-secondary fw-medium mb-1 d-flex align-items-center">
+                                                        <mat-icon class="me-2">done</mat-icon> Insurance
+                                                        information is not editable during consultation
+                                                    </p>
+                                                    <p
+                                                        class="font-14 text-secondary fw-medium mb-1 d-flex align-items-center">
+                                                        <mat-icon class="me-2">done</mat-icon> No billing actions
+                                                        can be initiated from this screen
+                                                    </p>
+                                                    <p
+                                                        class="font-14 text-secondary fw-medium mb-1 d-flex align-items-center">
+                                                        <mat-icon class="me-2">done</mat-icon> For coverage
+                                                        questions, refer patient to front desk after appointment
+                                                    </p>
                                                 </div>
-                                            </mat-expansion-panel>
-                                        </mat-accordion>
+                                            </div>
+                                        </div>
                                     </div>
                                 </mat-tab>
                             </mat-tab-group>

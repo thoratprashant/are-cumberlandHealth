@@ -1,4 +1,4 @@
-<div class="container-fluid p-0">
+<!-- <div class="container-fluid p-0">
   <div class="row">
     <div class="col-12 col-md-6">
       <div class="card">
@@ -12,7 +12,7 @@
               </select>
         </div>
         <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
-        [plotOptions]="chartOptions.plotOptions" [dataLabels]="chartOptions.dataLabels">
+        [plotOptions]="chartOptions.plotOptions" [dataLabels]="chartOptions.dataLabels"  [colors]="chartOptions.colors">
       </apx-chart> 
       </div>
     </div> 
@@ -33,4 +33,41 @@
       </div>
     </div>
   </div>
+</div> -->
+
+<div class="container-fluid p-0">
+  <div class="row">
+
+    @for (chart of charts; track chart) {
+      <div class="col-12 col-md-6">
+        <div class="card">
+
+          <div class="d-flex flex-column flex-sm-row justify-content-between mb-2">
+            <h3 class="mb-2 mb-sm-0 text-primary fw-semibold font-16">
+              {{ chart.series[0].name }}
+            </h3>
+
+            <select class="form-select form-select-md w-100">
+              <option selected>Jan 2025</option>
+              <option>Feb 2025</option>
+              <option>March 2025</option>
+            </select>
+          </div>
+
+          <apx-chart
+            [series]="chart.series"
+            [chart]="chart.chart"
+            [xaxis]="chart.xaxis"
+            [yaxis]="chart.yaxis"
+            [plotOptions]="chart.plotOptions"
+            [dataLabels]="chart.dataLabels"
+            [colors]="chart.colors">
+          </apx-chart>
+
+        </div>
+      </div>
+    }
+
+  </div>
 </div>
+

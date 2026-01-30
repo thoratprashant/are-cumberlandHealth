@@ -132,7 +132,8 @@
                             </div>
                         </div>
                         <button type="button"
-                            class="btn btn-light clr-505050 mb-3 d-flex align-items-center justify-content-center">
+                            class="btn btn-light clr-505050 mb-3 d-flex align-items-center justify-content-center"
+                            (click)="requestUpdate()">
                             Request Update
                         </button>
                     </div>
@@ -262,7 +263,8 @@
                                                                 <h2
                                                                     class="panel-title font-16 fw-semibold text-primary mb-0">
                                                                     Coverage Summary</h2>
-                                                                <button class="edit--icon" matIconButton>
+                                                                <button class="edit--icon" matIconButton
+                                                                    (click)="editInsuranceOrCoverage()">
                                                                     <img src="images/edit.svg" alt="user img"
                                                                         class="img-fluid">
                                                                 </button>

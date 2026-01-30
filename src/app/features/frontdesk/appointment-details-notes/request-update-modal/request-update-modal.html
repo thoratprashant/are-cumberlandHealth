@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>
+    Request Update
+    <button matIconButton class="close--btn" mat-dialog-close>
+        <mat-icon>close_small</mat-icon>
+    </button>
+</h2>
+
+<mat-dialog-content>
+    <form>
+        <div class="row">
+            <label class="form-label">Update Type</label>
+            <div class="col-12 mb-2 d-flex gap-3">
+                <mat-checkbox class="mb-1">Demographics </mat-checkbox>
+                <mat-checkbox class="mb-1">Insurance </mat-checkbox>
+            </div>
+            <div class="col-12 mb-2">
+                <textarea type="text" class="form-control" placeholder="Please add..." rows="3"></textarea>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button type="button" class="btn btn-primary" mat-dialog-close>Submit</button>
+</mat-dialog-actions>

@@ -1,0 +1,45 @@
+<h2 mat-dialog-title>
+    Insurance Details
+    <button matIconButton class="close--btn" mat-dialog-close>
+        <mat-icon>close_small</mat-icon>
+    </button>
+</h2>
+
+<mat-dialog-content>
+    <form>
+        <div class="row">
+            <div class="col-12 mb-3">
+                <h3 class="font-16 fw-semibold text-primary m-0">Coverage Summary</h3>
+            </div>
+            <div class="col-12 mb-4">
+                <label class="form-label">Select Insurance</label>
+                <select class="form-select w-100 " aria-label="Default select example" name="ps">
+                    <option selected>United Healthcare</option>
+                    <option value="1">General Insurances</option>
+                    <option value="2">Niva</option>
+                </select>
+            </div>
+            <div class="col-12 mb-4">
+                <label class="form-label">Insurance Payer</label>
+                <input type="text" class="form-control" value="Blue Cross Blue Shield "
+                    placeholder="Enter insurance payer name">
+            </div>
+            <div class="col-12 mb-4">
+                <label class="form-label">Plan Name</label>
+                <input type="text" class="form-control" value="PPO Gold Plus" placeholder="Enter plan name">
+            </div>
+            <div class="col-12 mb-4">
+                <label class="form-label">Policy ID</label>
+                <input type="text" class="form-control" value="ABC123456789" placeholder="Enter policy id">
+            </div>
+            <div class="col-12 mb-4">
+                <label class="form-label">Group Number</label>
+                <input type="text" class="form-control" value="GRP-8847-02" placeholder="Enter group number">
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button type="button" class="btn btn-primary" mat-dialog-close>Save</button>
+</mat-dialog-actions>

@@ -46,19 +46,48 @@
             }
         }
 
+        .assigned-provider-section {
+            border-radius: 12px;
+            background: #EDF4FF;
+            padding: 12px 24px;
+
+            .provider-status {
+                border-left: 1px solid #E5E7EB;
+                min-height: 48px;
+                margin-left: 20px;
+                padding-left: 24px;
+
+                .ostatus {
+                    .current--status {
+                        width: 10px;
+                        height: 10px;
+                        margin-right: 8px;
+                        border-radius: 20px;
+
+                        &.online {
+                            background-color: #22C55E;
+                        }
+                    }
+                }
+
+                .online {
+                    color: #22C55E;
+                }
+            }
+        }
+
         .wait--time {
             border-left: 1px solid #E5E7EB;
             margin-left: 30px;
             padding: 10px 5px 10px 30px;
 
-        }
-
-        .call--stat {
-            border-radius: 8px;
-            border: 0 solid #E5E7EB;
-            background: #EFF6FF;
-            padding: 9px 16px;
-            color: #3498DB;
+            .call--stat {
+                border-radius: 8px;
+                border: 0 solid #E5E7EB;
+                background: #EFF6FF;
+                padding: 9px 16px;
+                color: #3498DB;
+            }
         }
     }
 
@@ -86,6 +115,10 @@
             border: 1px solid #D9E5FC;
             background-color: #EDF4FF;
             padding: 17px 19px;
+
+            .mat-icon {
+                color: #0032A0;
+            }
         }
     }
 
@@ -132,125 +165,102 @@
             background: #fff;
 
             ::ng-deep {
+                .mat-mdc-tab {
+                    font-family: 'Montserrat', sans-serif !important;
+
+                    .mdc-tab__text-label {
+                        color: #6C757D;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                }
+
+                .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+                    color: #0032A0;
+                }
+
                 .mat-mdc-tab-header {
                     background: #fff;
                     border-bottom: 1px solid #e1e5e9;
+                }
 
-                    .mat-mdc-tab-label {
-                        display: flex !important;
-                        align-items: center;
-                        gap: 8px;
-                        padding: 12px 20px;
-                        border-radius: 12px 12px 0 0;
-                        margin: 0 4px;
+                .notes-content {
+                    padding: 36px 0px 0px 0px;
+
+                    .notes-label-wrapper {
+                        gap: 12px;
+                        margin-bottom: 12px;
+
+                        .vertical-bar {
+                            width: 4px;
+                            height: 20px;
+                            border: 0 solid #E5E7EB;
+                            background: #0032A0;
+                            border-radius: 9999px;
+                            flex-shrink: 0;
+                        }
+                    }
+
+                    .provider-notes-section {
+                        border-radius: 12px;
+                        border: 1px solid #E2E8F0;
+                        background: #EDF4FF;
+                        padding: 14px 18px;
+                        min-height: 96px;
+                    }
+
+                    .save-note-btn {
+                        border-radius: 8px;
+                        font-size: 14px;
                         font-weight: 500;
+                        padding: 10px 16px;
+                    }
 
-                        .tab-icon {
-                            font-size: 14px;
-                            width: 14px;
-                            height: 14px;
-                            padding-right: 10px !important;
+                    .quick-tips {
+                        border-radius: 8px;
+                        border: 1px solid #D9E5FC;
+                        background: #EDF4FF;
+                        padding: 24px 25px;
+                    }
+                }
+
+                .chat-content {
+                    .header-label {
+                        background: #EDF4FF;
+                        padding: 7px;
+                    }
+
+                    .chat-footer {
+                        padding: 24px;
+                        background: #EEE;
+                        border-radius: 0 0 8px 8px;
+
+                        .send-icon-btn {
+                            width: 40px;
+                            height: 40px;
+                            padding: 0 !important;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: #0032A0;
                         }
                     }
-
-                    // Active tab styling (blue filled)
-                    .mdc-tab--active .mat-mdc-tab-label {
-                        background: linear-gradient(135deg, #0032A0, #0032A0) !important;
-                        color: #fff !important;
-
-                        .tab-icon {
-                            color: #fff;
-                        }
-                    }
-
-                    // Focus indicator
-                    .mat-mdc-focus-indicator {
-                        background: #0032A0 !important;
-                        border-radius: 20px;
-                        height: 4px;
-                        bottom: -1px;
-                    }
-                }
-            }
-
-            .notes-content {
-                padding: 36px 0px 0px 0px;
-
-                .notes-label-wrapper {
-                    gap: 12px;
-                    margin-bottom: 12px;
-
-                    .vertical-bar {
-                        width: 4px;
-                        height: 20px;
-                        border: 0 solid #E5E7EB;
-                        background: #0032A0;
-                        border-radius: 9999px;
-                        flex-shrink: 0;
-                    }
                 }
 
-                .provider-notes-section {
-                    border-radius: 12px;
-                    border: 1px solid #E2E8F0;
-                    background: #EDF4FF;
-                    padding: 14px 18px;
-                    min-height: 96px;
-                }
+                .insurance-content {
+                    padding: 36px 0px 0px 0px;
 
-                .save-note-btn {
-                    border-radius: 8px;
-                    font-size: 14px;
-                    font-weight: 500;
-                    padding: 10px 16px;
-                }
+                    .insurance-panel {
+                        font-family: 'Montserrat', sans-serif !important;
+                        background: #FFF;
+                        border-radius: 12px;
+                        border: 1px solid #E7E9EB;
+                        overflow: hidden;
 
-                .quick-tips {
-                    border-radius: 8px;
-                    border: 1px solid #D9E5FC;
-                    background: #EDF4FF;
-                    padding: 24px 25px;
-                }
-            }
+                        .insurance-header {
+                            padding: 20px 24px !important;
+                            min-height: 56px !important;
 
-            .chat-content {
-                .header-label {
-                    background: #EDF4FF;
-                    padding: 7px;
-                }
-
-                .chat-footer {
-                    padding: 24px;
-                    background: #EEE;
-                    border-radius: 0 0 8px 8px;
-
-                    .send-icon-btn {
-                        width: 40px;
-                        height: 40px;
-                        padding: 0 !important;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background-color: #0032A0;
-                    }
-                }
-            }
-
-            .insurance-content {
-                padding: 36px 0px 0px 0px;
-
-                .insurance-panel {
-                    font-family: 'Montserrat', sans-serif !important;
-                    background: #FFF;
-                    border-radius: 12px;
-                    border: 1px solid #E7E9EB;
-                    overflow: hidden;
-
-                    .insurance-header {
-                        padding: 20px 24px !important;
-                        min-height: 56px !important;
-
-                        ::ng-deep {
                             .mat-expansion-indicator {
                                 color: #0032A0 !important;
                                 right: 24px;
@@ -272,90 +282,101 @@
                             .mat-expansion-indicator::after {
                                 color: #0032A0;
                             }
+
+                            .panel-title {
+                                font-family: 'Montserrat', sans-serif !important;
+                                line-height: 18px;
+                                margin: 0;
+                            }
                         }
 
-                        .panel-title {
+                        .panel-content {
                             font-family: 'Montserrat', sans-serif !important;
-                            line-height: 18px;
-                            margin: 0;
-                        }
-                    }
 
-                    .panel-content {
-                        font-family: 'Montserrat', sans-serif !important;
+                            .edit--icon {
+                                width: 24px;
+                                height: 24px;
+                                padding: 0;
+                            }
 
-                        .edit--icon {
-                            width: 24px;
-                            height: 24px;
-                            padding: 0;
-                        }
+                            .insurance-card-wrapper {
+                                background: #FFF;
 
-                        .insurance-card-wrapper {
-                            background: #FFF;
+                                .accordion {
+                                    .accordion-item {
+                                        border-radius: 8px;
+                                        border: 1px solid #E5E7EB;
+                                        background-color: transparent;
+                                        padding: 20px 24px;
 
-                            .accordion {
-                                .accordion-item {
-                                    border-radius: 8px;
-                                    border: 1px solid #E5E7EB;
-                                    background-color: transparent;
-                                    padding: 20px 24px;
+                                        .accordion-header {
+                                            .accordion-button {
+                                                padding: 0;
+                                                background-color: transparent !important;
+                                                box-shadow: none;
+                                                font-weight: 600;
+                                                font-size: 16px;
+                                                color: #222;
+                                                line-height: 18px;
 
-                                    .accordion-header {
-                                        .accordion-button {
-                                            padding: 0;
-                                            background-color: transparent !important;
-                                            box-shadow: none;
-                                            font-weight: 600;
-                                            font-size: 16px;
-                                            color: #222;
-                                            line-height: 18px;
-
-                                            &::after {
-                                                // background-image: url('/images/accordion-arrow.svg');
-                                                // width: 13px;
-                                                // height: 8px;
-                                                background-size: unset;
+                                                &::after {
+                                                    background-image: url('/images/accordion-arrow-blue.svg');
+                                                    background-size: unset;
+                                                }
                                             }
                                         }
-                                    }
 
-                                    .accordion-body {
-                                        padding: 12px 0 0 0;
+                                        .accordion-body {
+                                            padding: 12px 0 0 0;
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                }
 
-                .mat-expansion-panel {
-                    box-shadow: none !important;
-                }
+                    .mat-expansion-panel {
+                        box-shadow: none !important;
+                    }
 
-                .other-tips {
-                    border-radius: 8px;
-                    border: 1px solid #D9E5FC;
-                    background: #EDF4FF;
-                    padding: 24px 25px;
+                    .other-tips {
+                        border-radius: 8px;
+                        border: 1px solid #D9E5FC;
+                        background: #EDF4FF;
+                        padding: 24px 25px;
 
-                    .mat-icon {
-                        color: #0032A0;
+                        .mat-icon {
+                            color: #0032A0;
+                        }
                     }
                 }
             }
-        } 
+        }
+    }
+
+}
+
+@media (max-width: 575px) {
+    .vc--wrapper .header--box .wait--time {
+        border: none;
+        margin-left: 0px;
+        padding: 10px 0px;
+    }
+
+    .vc--wrapper .header--box .assigned-provider-section {
+        .provider-status {
+            border: none;
+            margin-left: 0px;
+            padding-left: 0px;
+        }
     }
 }
 
 @media (max-width: 767px) {
     .vc--wrapper .header--box .wait--time {
         border: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .vc--wrapper .header--box .profile--sec {
-        margin-bottom: 20px;
+        margin-left: 10px;
+        padding: 10px 5px 10px 10px;
     }
 
     .vc--wrapper .header--box .profile--sec .font-24 {

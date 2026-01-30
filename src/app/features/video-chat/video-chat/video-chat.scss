@@ -1,50 +1,59 @@
-.vc--wrapper{
-    .back--to{ 
+.vc--wrapper {
+    .back--to {
         margin-bottom: 24px;
-        .mat-icon{
+
+        .mat-icon {
             width: 15px;
             height: 15px;
             font-size: 15px;
             margin-right: 8px;
         }
     }
-    .header--box{
-        .profile--sec{
-            .profile-round{
+
+    .header--box {
+        .profile--sec {
+            .profile-round {
                 width: 80px;
                 height: 80px;
                 overflow: hidden;
-                margin-right:14px;
+                margin-right: 14px;
                 border-radius: 624.9375rem;
-                img{
+
+                img {
                     max-height: 100%;
                 }
             }
-            .font-24{
+
+            .font-24 {
                 font-size: 24px;
-            } 
-            .ostatus{
-                .current--status{
+            }
+
+            .ostatus {
+                .current--status {
                     width: 10px;
                     height: 10px;
                     margin-right: 8px;
                     border-radius: 20px;
-                    &.online{
+
+                    &.online {
                         background-color: #22C55E;
                     }
                 }
             }
-            .online{
+
+            .online {
                 color: #22C55E;
             }
         }
-        .wait--time{
+
+        .wait--time {
             border-left: 1px solid #E5E7EB;
             margin-left: 30px;
-            padding:10px 5px 10px 30px;
-            
+            padding: 10px 5px 10px 30px;
+
         }
-        .call--stat{
+
+        .call--stat {
             border-radius: 8px;
             border: 0 solid #E5E7EB;
             background: #EFF6FF;
@@ -52,46 +61,58 @@
             color: #3498DB;
         }
     }
-    .aactions{
-        .btn{
+
+    .aactions {
+        .btn {
             border-radius: 8px;
             background-color: #F3F4F6;
             min-height: 44px;
             font-size: 12px;
             font-weight: 500;
-            .mat-icon{
+
+            .mat-icon {
                 font-size: 20px;
                 height: 20px;
                 width: 20px;
                 margin-right: 8px;
             }
-            &.mac--btn{
+
+            &.mac--btn {
                 background-color: #27AE60;
             }
         }
-         .arequired{
+
+        .arequired {
             border: 1px solid #D9E5FC;
             background-color: #EDF4FF;
             padding: 17px 19px;
+
+            .mat-icon {
+                color: #0032A0;
+            }
         }
     }
-    .ccomplaint{
+
+    .ccomplaint {
         border-radius: 8px;
         border: 1px solid #FDE68A;
         background: #FFFBEB;
-        .accordion{
-            .accordion-item{
+
+        .accordion {
+            .accordion-item {
                 border: none;
                 background-color: transparent;
-                .accordion-header{
-                    .accordion-button{
+
+                .accordion-header {
+                    .accordion-button {
                         padding: 0;
                         background-color: transparent !important;
                         box-shadow: none;
                         font-weight: 500;
                         font-size: 14px;
                         color: #854D0E;
-                        &::after{
+
+                        &::after {
                             background-image: url('/images/accordion-arrow.svg');
                             width: 13px;
                             height: 8px;
@@ -99,54 +120,41 @@
                         }
                     }
                 }
-                .accordion-body{
-                    padding: 12px 0 0 0 ;
+
+                .accordion-body {
+                    padding: 12px 0 0 0;
                     font-size: 12px;
                     color: #A16207;
                 }
             }
         }
     }
+
     .details-tab-section {
         .medical-tabs {
             height: auto;
-            background: #fff; 
+            background: #fff;
+
             ::ng-deep {
+                .mat-mdc-tab {
+                    font-family: 'Montserrat', sans-serif !important;
+
+                    .mdc-tab__text-label {
+                        color: #6C757D;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                }
+
+                .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+                    color: #0032A0;
+                }
+
                 .mat-mdc-tab-header {
                     background: #fff;
-                    border-bottom: 1px solid #e1e5e9; 
-                    .mat-mdc-tab-label {
-                        display: flex !important;
-                        align-items: center;
-                        gap: 8px;
-                        padding: 12px 20px;
-                        border-radius: 12px 12px 0 0;
-                        margin: 0 4px;
-                        font-weight: 500;
+                    border-bottom: 1px solid #e1e5e9;
+                }
 
-                        .tab-icon {
-                            font-size: 14px;
-                            width: 14px;
-                            height: 14px;
-                            padding-right: 10px !important;
-                        }
-                    } 
-
-                    .mdc-tab--active .mat-mdc-tab-label {
-                        background: linear-gradient(135deg, #0032A0, #0032A0) !important;
-                        color: #fff !important; 
-                        .tab-icon {
-                            color: #fff;
-                        }
-                    }
- 
-                    .mat-mdc-focus-indicator {
-                        background: #0032A0 !important;
-                        border-radius: 20px;
-                        height: 4px;
-                        bottom: -1px;
-                    }
-                }  
                 .notes-content {
                     padding: 36px 0px 0px 0px;
 
@@ -208,7 +216,8 @@
                             background-color: #0032A0;
                         }
                     }
-                } 
+                }
+
                 .insurance-content {
                     padding: 36px 0px 0px 0px;
 
@@ -222,28 +231,28 @@
                         .insurance-header {
                             padding: 20px 24px !important;
                             min-height: 56px !important;
-    
-                                .mat-expansion-indicator {
-                                    color: #0032A0 !important;
-                                    right: 24px;
+
+                            .mat-expansion-indicator {
+                                color: #0032A0 !important;
+                                right: 24px;
+                                width: 24px;
+                                height: 24px;
+
+                                .mat-icon {
+                                    font-size: 24px;
                                     width: 24px;
                                     height: 24px;
-
-                                    .mat-icon {
-                                        font-size: 24px;
-                                        width: 24px;
-                                        height: 24px;
-                                        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-                                    }
-
-                                    &.mat-expanded {
-                                        transform: rotate(180deg);
-                                    }
+                                    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
                                 }
 
-                                .mat-expansion-indicator::after {
-                                    color: #0032A0;
-                                } 
+                                &.mat-expanded {
+                                    transform: rotate(180deg);
+                                }
+                            }
+
+                            .mat-expansion-indicator::after {
+                                color: #0032A0;
+                            }
 
                             .panel-title {
                                 font-family: 'Montserrat', sans-serif !important;
@@ -281,7 +290,8 @@
                                                 color: #222;
                                                 line-height: 18px;
 
-                                                &::after { 
+                                                &::after {
+                                                    background-image: url('/images/accordion-arrow-blue.svg');
                                                     background-size: unset;
                                                 }
                                             }
@@ -312,20 +322,22 @@
                     }
                 }
             }
-        } 
+        }
     }
-   
+
 }
 
-@media (max-width: 767px) { 
-    .vc--wrapper .header--box .wait--time{
-        border: none; 
+@media (max-width: 767px) {
+    .vc--wrapper .header--box .wait--time {
+        border: none;
         margin: 0;
         padding: 0;
     }
-    .vc--wrapper .header--box .profile--sec{
+
+    .vc--wrapper .header--box .profile--sec {
         margin-bottom: 20px;
     }
+
     .vc--wrapper .header--box .profile--sec .font-24 {
         font-size: 18px;
     }

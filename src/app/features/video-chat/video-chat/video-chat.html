@@ -156,10 +156,8 @@
                           </div>
                           <div class="col-12 mb-4">
                             <button type="button" class="btn btn-primary save-note-btn">
-                              <span class="d-flex align-items-center gap-2">
-                                <mat-icon>save</mat-icon>
-                                Save Note
-                              </span>
+                              <span class="d-flex align-items-center gap-2"><mat-icon>save</mat-icon>
+                                Save Note</span>
                             </button>
                           </div>
                           <div class="card quick-tips d-flex flex-row gap-3 align-items-start mb-0">
@@ -213,11 +211,11 @@
                       <div class="insurance-content">
                         <div class="d-flex flex-column">
                           <mat-accordion multi="true">
-                            <mat-expansion-panel class="insurance-panel mb-4" togglePosition="after">
+                            <mat-expansion-panel [expanded]="true" class="insurance-panel mb-4" togglePosition="after">
 
                               <mat-expansion-panel-header class="insurance-header">
                                 <mat-panel-title class="panel-title font-16 fw-semibold text-primary">
-                                  Insurance 1
+                                  Insurance Details
                                 </mat-panel-title>
                               </mat-expansion-panel-header>
 
@@ -229,13 +227,15 @@
                                       <option value="1">Dallas 1</option>
                                       <option value="2">Dallas 2</option>
                                     </select>
+                                  </div>
+                                  <div class="d-flex align-items-center justify-content-between mb-4">
+                                    <h2 class="panel-title font-16 fw-semibold text-primary mb-0">
+                                      Coverage Summary</h2>
                                     <button class="edit--icon" matIconButton>
                                       <img src="images/edit.svg" alt="user img" class="img-fluid">
                                     </button>
                                   </div>
-                                  <h2 class="panel-title font-16 fw-semibold text-primary mb-4">
-                                    Coverage Summary</h2>
-                                  <div class="row mb-3">
+                                  <div class="row mb-2">
                                     <div class="col-12 col-md-6 mb-4">
                                       <label class="font-14 text-primary fw-medium mb-2">Insurance
                                         Payer</label>
@@ -263,11 +263,14 @@
                                         GRP-8847-02</p>
                                     </div>
                                   </div>
-                                  <div class="col-12 d-flex align-items-center justify-content-between gap-3 mb-4">
+                                  <div class="col-12 d-flex align-items-center justify-content-between mb-4">
                                     <h2 class="panel-title font-16 fw-semibold text-primary mb-0">
-                                      Insurance Card Images</h2>
-                                    <!-- <a class="font-16 fw-medium text-primary mb-0 cursor-pointer">Expand
-                                      All</a> -->
+                                      Insurance Card Images <span class="font-14">(View
+                                        Only)</span>
+                                    </h2>
+                                    <!-- <a
+                                                                    class="font-16 fw-medium text-primary mb-0 cursor-pointer">Expand
+                                                                    All</a> -->
                                   </div>
                                   <div class="col-12 insurance-card-wrapper">
                                     <div class="accordion accordion-flush" id="cardAccordion">
@@ -313,33 +316,36 @@
                                 </div>
                               </div>
                             </mat-expansion-panel>
-                            <mat-expansion-panel class="insurance-panel mb-4" togglePosition="after">
+                            <!-- <mat-expansion-panel class="insurance-panel mb-4"
+                                                    togglePosition="after">
 
-                              <mat-expansion-panel-header class="insurance-header">
-                                <mat-panel-title class="panel-title font-16 fw-semibold text-primary">
-                                  Other Insurance
-                                </mat-panel-title>
-                              </mat-expansion-panel-header>
+                                                    <mat-expansion-panel-header class="insurance-header">
+                                                        <mat-panel-title
+                                                            class="panel-title font-16 fw-semibold text-primary">
+                                                            Other Insurance
+                                                        </mat-panel-title>
+                                                    </mat-expansion-panel-header>
 
-                              <div class="panel-content">
-                              </div>
-                            </mat-expansion-panel>
+                                                    <div class="panel-content">
+                                                    </div>
+                                                </mat-expansion-panel> -->
                           </mat-accordion>
                           <div class="card other-tips d-flex flex-row gap-3 align-items-start mb-0">
                             <mat-icon class="flex-shrink-0">info</mat-icon>
                             <div class="d-flex flex-column w-100">
                               <p class="font-16 text-secondary fw-semibold mb-2">Provider
                                 Reference Only</p>
-                              <p class="font-14 text-secondary fw-medium mb-1 d-flex align-items-center">
-                                <mat-icon class="me-2">done</mat-icon> Insurance
+                              <p class="font-14 text-secondary fw-medium mb-1 gap-2 d-flex align-items-center">
+                                <mat-icon class="flex-shrink-0">done</mat-icon> Insurance
                                 information is not editable during consultation
                               </p>
-                              <p class="font-14 text-secondary fw-medium mb-1 d-flex align-items-center">
-                                <mat-icon class="me-2">done</mat-icon> No billing actions
+                              <p class="font-14 text-secondary fw-medium mb-1 gap-2 d-flex align-items-center">
+                                <mat-icon class="flex-shrink-0">done</mat-icon> No billing
+                                actions
                                 can be initiated from this screen
                               </p>
-                              <p class="font-14 text-secondary fw-medium mb-1 d-flex align-items-center">
-                                <mat-icon class="me-2">done</mat-icon> For coverage
+                              <p class="font-14 text-secondary fw-medium mb-1 gap-2 d-flex align-items-center">
+                                <mat-icon class="flex-shrink-0">done</mat-icon> For coverage
                                 questions, refer patient to front desk after appointment
                               </p>
                             </div>
